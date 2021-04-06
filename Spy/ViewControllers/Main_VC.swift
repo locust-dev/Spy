@@ -10,7 +10,8 @@ import UIKit
 class Main_VC: UIViewController {
 
     @IBOutlet var locationsButtons: [UIButton]!
-    @IBOutlet weak var countOfPlayers: UITextField!
+    @IBOutlet weak var playersTF: UITextField!
+    @IBOutlet weak var timerTF: UITextField!
     
     var locations = Location.getLocation()
     var location: String!
@@ -28,7 +29,8 @@ class Main_VC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let whoSpyVC = segue.destination as? WhoIsSpy_VC else { return }
         whoSpyVC.location = location
-        whoSpyVC.countOfPlayers = Int(countOfPlayers.text ?? "0")
+        whoSpyVC.countOfPlayers = Int(playersTF.text ?? "0")
+        whoSpyVC.totalTime = (Int(timerTF.text ?? "") ?? 0) * 60
     }
     
     @IBAction func buttonsLocation(_ sender: UIButton) {

@@ -25,7 +25,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ln4-qR-rEi">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="цифра" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ln4-qR-rEi">
                                         <rect key="frame" x="187" y="0.0" width="167" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -105,13 +105,32 @@
                                     <segue destination="OCO-dt-HP6" kind="show" id="gaU-VM-JIu"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5Dl-wm-YGN">
+                                <rect key="frame" x="30" y="384" width="354" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Таймер (мин)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVg-e1-2oh">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="минуты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIV-J6-07i">
+                                        <rect key="frame" x="187" y="0.0" width="167" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5Dl-wm-YGN" firstAttribute="top" secondItem="AgU-ni-wpu" secondAttribute="bottom" constant="24" id="EXa-av-r1z"/>
                             <constraint firstItem="GxJ-s5-Tpf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NtY-iP-8xg"/>
+                            <constraint firstItem="5Dl-wm-YGN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ULx-wp-D17"/>
                             <constraint firstItem="AgU-ni-wpu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="YRA-HR-eE5"/>
                             <constraint firstItem="OqE-qL-GY1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="eBP-3W-ElZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Dl-wm-YGN" secondAttribute="trailing" constant="30" id="fFd-Qg-ita"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AgU-ni-wpu" secondAttribute="trailing" constant="30" id="gAu-eU-8zE"/>
                             <constraint firstItem="GxJ-s5-Tpf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="geb-Ae-PgB"/>
                             <constraint firstItem="OqE-qL-GY1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="qPg-jO-AfT"/>
@@ -121,7 +140,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Шпион" id="qhp-Qm-WQ1"/>
                     <connections>
-                        <outlet property="countOfPlayers" destination="Ln4-qR-rEi" id="xMW-lK-ofz"/>
+                        <outlet property="playersTF" destination="Ln4-qR-rEi" id="xMW-lK-ofz"/>
+                        <outlet property="timerTF" destination="fIV-J6-07i" id="t3l-vY-Cua"/>
                         <outletCollection property="locationsButtons" destination="soB-OJ-cHj" collectionClass="NSMutableArray" id="qjD-Bw-vj3"/>
                         <outletCollection property="locationsButtons" destination="zRr-0Z-Y2g" collectionClass="NSMutableArray" id="qGf-kW-RsI"/>
                         <outletCollection property="locationsButtons" destination="Kvw-Rf-Nhh" collectionClass="NSMutableArray" id="gxs-sg-kur"/>
@@ -173,7 +193,7 @@
                                     <segue destination="n50-Z1-19i" kind="unwind" unwindAction="unwindFor:" id="4bF-jQ-WhF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB1-br-xZS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB1-br-xZS">
                                 <rect key="frame" x="44" y="241" width="296" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -225,20 +245,32 @@
                                     <segue destination="s0V-RI-oDa" kind="unwind" unwindAction="unwindFor:" id="Az7-m0-tri"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIMER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-bU-9Ar">
+                                <rect key="frame" x="95" y="190" width="229" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Qm-1F-ULh"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dzX-XZ-YwJ" firstAttribute="centerX" secondItem="ium-Fc-Yc9" secondAttribute="centerX" id="1mP-34-AzW"/>
+                            <constraint firstItem="ec1-bU-9Ar" firstAttribute="leading" secondItem="2Qm-1F-ULh" secondAttribute="leading" constant="95" id="JOd-VL-h1n"/>
                             <constraint firstItem="dzX-XZ-YwJ" firstAttribute="centerY" secondItem="ium-Fc-Yc9" secondAttribute="centerY" id="Omc-lL-Nx4"/>
+                            <constraint firstItem="ec1-bU-9Ar" firstAttribute="top" secondItem="ium-Fc-Yc9" secondAttribute="topMargin" constant="50" id="YKx-GA-0A3"/>
+                            <constraint firstItem="2Qm-1F-ULh" firstAttribute="trailing" secondItem="ec1-bU-9Ar" secondAttribute="trailing" constant="90" id="Z3r-48-ezN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dzp-Tk-DMW"/>
+                    <connections>
+                        <outlet property="timerLabel" destination="ec1-bU-9Ar" id="laz-kg-q6c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1HY-oI-8UM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="s0V-RI-oDa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2480" y="72"/>
+            <point key="canvasLocation" x="2479.7101449275365" y="71.651785714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gsk-zi-aif">

@@ -17,6 +17,7 @@ class WhoIsSpy_VC: UIViewController {
     
     var location: String!
     var countOfPlayers: Int!
+    var totalTime: Int!
     
     var whenScreenNext = 0
     var whenShowLocation = 1
@@ -28,7 +29,9 @@ class WhoIsSpy_VC: UIViewController {
         
         navigationItem.hidesBackButton = true
         
-        whoIsSpyBTN.setTitle("Игрок 1, нажми, чтобы увидеть свою роль", for: .normal)
+        whoIsSpyBTN.setTitle("Игрок 1, \n нажми, \n чтобы увидеть свою роль", for: .normal)
+        whoIsSpyBTN.titleLabel?.lineBreakMode = .byWordWrapping
+        
         playersLabel.text = "Количество игроков: \(String(countOfPlayers ?? 0))"
     
         whichPlayerWillSpy = Int.random(in: 1...(countOfPlayers ?? 3))
@@ -38,7 +41,10 @@ class WhoIsSpy_VC: UIViewController {
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let gameVC = segue.destination as? Game_VC else { return }
+        gameVC.totalTime = totalTime
+    }
     
     @IBAction func whoIsSpyPressed(_ sender: UIButton) {
         
@@ -51,23 +57,19 @@ class WhoIsSpy_VC: UIViewController {
             whenScreenNext += 1
             print(whenScreenNext)
         } else if whenScreenNext % 2 == 0 {
+            sender.setTitle("Ты обычный гражданин. \n Локация:\(location ?? "")", for: .normal)
             sender.backgroundColor = #colorLiteral(red: 0.8006544605, green: 0.5798318559, blue: 0, alpha: 1)
-            sender.setTitle(location, for: .normal)
             whenScreenNext += 1
             print(whenScreenNext)
         } else {
+            sender.setTitle("Передайте телефон \n другому игроку", for: .normal)
             sender.backgroundColor = #colorLiteral(red: 1, green: 0.5070373533, blue: 0.9813989472, alpha: 0.3563387031)
-            sender.setTitle("Передайте телефон другому игроку", for: .normal)
             whenScreenNext += 1
             whenShowLocation += 1
             print(whenScreenNext)
         }
-        
-
-            
-            
-        
     }
+    
     
     
     
