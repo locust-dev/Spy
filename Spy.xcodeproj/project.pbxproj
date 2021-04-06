@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		E954F006261C950B00E89673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F005261C950B00E89673 /* AppDelegate.swift */; };
 		E954F008261C950B00E89673 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F007261C950B00E89673 /* SceneDelegate.swift */; };
-		E954F00A261C950B00E89673 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F009261C950B00E89673 /* ViewController.swift */; };
+		E954F00A261C950B00E89673 /* Main_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F009261C950B00E89673 /* Main_VC.swift */; };
 		E954F00D261C950B00E89673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F00B261C950B00E89673 /* Main.storyboard */; };
 		E954F00F261C950C00E89673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E954F00E261C950C00E89673 /* Assets.xcassets */; };
 		E954F012261C950C00E89673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F010261C950C00E89673 /* LaunchScreen.storyboard */; };
+		E954F01F261C96D800E89673 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F01E261C96D800E89673 /* Locations.swift */; };
+		E954F024261CB2EB00E89673 /* ButtonsForSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F023261CB2EB00E89673 /* ButtonsForSpy.swift */; };
+		E9FD485C261CC658005C29A1 /* WhoIsSpy_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD485B261CC658005C29A1 /* WhoIsSpy_VC.swift */; };
+		E9FD485F261D0F52005C29A1 /* Game_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD485E261D0F52005C29A1 /* Game_VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E954F002261C950A00E89673 /* Spy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E954F005261C950B00E89673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E954F007261C950B00E89673 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E954F009261C950B00E89673 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E954F009261C950B00E89673 /* Main_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_VC.swift; sourceTree = "<group>"; };
 		E954F00C261C950B00E89673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E954F00E261C950C00E89673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E954F011261C950C00E89673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E954F013261C950C00E89673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E954F01E261C96D800E89673 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		E954F023261CB2EB00E89673 /* ButtonsForSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsForSpy.swift; sourceTree = "<group>"; };
+		E9FD485B261CC658005C29A1 /* WhoIsSpy_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoIsSpy_VC.swift; sourceTree = "<group>"; };
+		E9FD485E261D0F52005C29A1 /* Game_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_VC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,59 @@
 		E954F004261C950A00E89673 /* Spy */ = {
 			isa = PBXGroup;
 			children = (
-				E954F005261C950B00E89673 /* AppDelegate.swift */,
-				E954F007261C950B00E89673 /* SceneDelegate.swift */,
-				E954F009261C950B00E89673 /* ViewController.swift */,
-				E954F00B261C950B00E89673 /* Main.storyboard */,
-				E954F00E261C950C00E89673 /* Assets.xcassets */,
-				E954F010261C950C00E89673 /* LaunchScreen.storyboard */,
-				E954F013261C950C00E89673 /* Info.plist */,
+				E954F01D261C96C700E89673 /* Data model */,
+				E9FD4864261D0F6D005C29A1 /* Supportings */,
+				E9FD4862261D0F59005C29A1 /* ViewControllers */,
+				E9FD4868261D0FB8005C29A1 /* Storyboards */,
+				E9FD4867261D0FA1005C29A1 /* Files */,
 			);
 			path = Spy;
+			sourceTree = "<group>";
+		};
+		E954F01D261C96C700E89673 /* Data model */ = {
+			isa = PBXGroup;
+			children = (
+				E954F01E261C96D800E89673 /* Locations.swift */,
+			);
+			path = "Data model";
+			sourceTree = "<group>";
+		};
+		E9FD4862261D0F59005C29A1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E954F009261C950B00E89673 /* Main_VC.swift */,
+				E9FD485B261CC658005C29A1 /* WhoIsSpy_VC.swift */,
+				E9FD485E261D0F52005C29A1 /* Game_VC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E9FD4864261D0F6D005C29A1 /* Supportings */ = {
+			isa = PBXGroup;
+			children = (
+				E954F005261C950B00E89673 /* AppDelegate.swift */,
+				E954F007261C950B00E89673 /* SceneDelegate.swift */,
+				E954F023261CB2EB00E89673 /* ButtonsForSpy.swift */,
+				E954F013261C950C00E89673 /* Info.plist */,
+			);
+			path = Supportings;
+			sourceTree = "<group>";
+		};
+		E9FD4867261D0FA1005C29A1 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				E954F00E261C950C00E89673 /* Assets.xcassets */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		E9FD4868261D0FB8005C29A1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E954F00B261C950B00E89673 /* Main.storyboard */,
+				E954F010261C950C00E89673 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E954F00A261C950B00E89673 /* ViewController.swift in Sources */,
+				E954F024261CB2EB00E89673 /* ButtonsForSpy.swift in Sources */,
+				E954F00A261C950B00E89673 /* Main_VC.swift in Sources */,
 				E954F006261C950B00E89673 /* AppDelegate.swift in Sources */,
+				E9FD485F261D0F52005C29A1 /* Game_VC.swift in Sources */,
+				E954F01F261C96D800E89673 /* Locations.swift in Sources */,
+				E9FD485C261CC658005C29A1 /* WhoIsSpy_VC.swift in Sources */,
 				E954F008261C950B00E89673 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +344,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
-				INFOPLIST_FILE = Spy/Info.plist;
+				INFOPLIST_FILE = Spy/Supportings/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +364,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
-				INFOPLIST_FILE = Spy/Info.plist;
+				INFOPLIST_FILE = Spy/Supportings/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
