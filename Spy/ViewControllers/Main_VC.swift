@@ -9,40 +9,72 @@ import UIKit
 
 class Main_VC: UIViewController {
 
-    @IBOutlet var locationsButtons: [UIButton]!
-    @IBOutlet weak var playersTF: UITextField!
-    @IBOutlet weak var timerTF: UITextField!
+    @IBOutlet weak var chooseLocation: UIButton!
+    @IBOutlet weak var startButtonOutlet: UIButton!
     
-    var locations = Location.getLocation()
-    var location: String!
+    @IBOutlet weak var countOfPlayers: UILabel!
+    @IBOutlet weak var timerCount: UILabel!
+    
+    var currentGroup: Group!
+    var players = 3
+    var timer = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for (button, location) in zip(locationsButtons, locations) {
-            button.setTitle(location.title, for: .normal)
-        }
-        
-        
+        chooseLocation.layer.cornerRadius = chooseLocation.frame.height / 2
+        startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.height / 2
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let whoSpyVC = segue.destination as? WhoIsSpy_VC else { return }
-        whoSpyVC.location = location
-        whoSpyVC.countOfPlayers = Int(playersTF.text ?? "0")
-        whoSpyVC.totalTime = (Int(timerTF.text ?? "") ?? 0) * 60
+        whoSpyVC.currentGroup = currentGroup
+        whoSpyVC.countOfPlayers = players
+        whoSpyVC.totalTime = timer * 60
     }
     
-    @IBAction func buttonsLocation(_ sender: UIButton) {
-        locationsButtons.forEach { (btn) in
-            btn.backgroundColor = .darkGray
+    @IBAction func gameBegins() {
+        currentGroup != nil
+            ? performSegue(withIdentifier: "whoIsSpy", sender: nil)
+            : alert(title: "Нет локации!", message: "Пожалуйста, выберите локацию!")
+    }
+    
+    
+    @IBAction func playerCountPressed(_ sender: UIButton) {
+        if sender.tag == 1 {
+            players += 1
+            countOfPlayers.text = String(players)
+        } else if sender.tag == 0, players != 3 {
+            players -= 1
+            countOfPlayers.text = String(players)
         }
-        
-        sender.backgroundColor = .lightGray
-        location = sender.title(for: .normal)
     }
     
-    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {}
+    @IBAction func timerPressed(_ sender: UIButton) {
+        if sender.tag == 1 {
+            timer += 1
+            timerCount.text = String(timer)
+        } else if sender.tag == 0, timer != 1 {
+            timer -= 1
+            timerCount.text = String(timer)
+        }
+    }
+    
+    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
+        guard let sourceVC = unwindSegue.source as? Container_VC else { return }
+        currentGroup = sourceVC.currentGroup
+        chooseLocation.setTitle(currentGroup.title, for: .normal)
+    }
     
 }
 
+extension Main_VC {
+    
+    private func alert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+
+}

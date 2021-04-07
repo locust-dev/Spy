@@ -5,28 +5,36 @@
 //  Created by Илья Тюрин on 06.04.2021.
 //
 
-struct Location {
-    
+
+struct Group {
     let title: String!
-    let group: Groupe!
+    let locations: [String]!
     
-    static func getLocation() -> [Location] {
+    static func getGroupes() -> [Group] {
         [
-            Location(title: "Russia", group: .coutries),
-            Location(title: "Japan", group: .coutries),
-            Location(title: "USA", group: .coutries),
-            Location(title: "Golf", group: .sports),
-            Location(title: "Stadium", group: .sports),
-            Location(title: "Hockey field", group: .sports)
+            Group(title: Groupes.coutries.rawValue, locations: Groupes.coutries.definition),
+            Group(title: Groupes.sports.rawValue, locations: Groupes.sports.definition),
+            Group(title: Groupes.travels.rawValue, locations: Groupes.travels.definition)
         ]
         
     }
+}
+
+enum Groupes: String {
+    case coutries = "Страны"
+    case sports = "Спорт"
+    case travels = "Путешествия"
     
+    var definition: [String] {
+        switch self {
+        case .coutries:
+            return ["Россия", "Беларусь", "Япония", "США", "Украина"]
+        case .sports:
+            return ["Спорт площадка", "Поле для гольфа", "Стадион", "Серфинг", "Хоккейная арена"]
+        case .travels:
+            return ["Самолет", "Корабль", "Подводная лодка", "Автобус", "Трамвай"]
+        }
+    }
 }
 
-
-enum Groupe {
-    case coutries
-    case sports
-}
 

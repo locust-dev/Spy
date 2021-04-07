@@ -15,14 +15,14 @@ class WhoIsSpy_VC: UIViewController {
     // TEST
     @IBOutlet weak var testLabel: UILabel!
     
-    var location: String!
+    var currentGroup: Group!
     var countOfPlayers: Int!
     var totalTime: Int!
     
-    var whenScreenNext = 0
-    var whenShowLocation = 1
-    var whichPlayerWillSpy: Int!
-    
+    private var whichPlayerWillSpy: Int!
+    private var randomLocationFromGroup: String!
+    private var whenScreenNext = 0
+    private var whenShowLocation = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,7 @@ class WhoIsSpy_VC: UIViewController {
         playersLabel.text = "Количество игроков: \(String(countOfPlayers ?? 0))"
     
         whichPlayerWillSpy = Int.random(in: 1...(countOfPlayers ?? 3))
+        randomLocationFromGroup = currentGroup.locations.randomElement()
         
         //TEST
         testLabel.text = "Отладка(which number is spy): \(String(whichPlayerWillSpy ?? 0))"
@@ -57,7 +58,7 @@ class WhoIsSpy_VC: UIViewController {
             whenScreenNext += 1
             print(whenScreenNext)
         } else if whenScreenNext % 2 == 0 {
-            sender.setTitle("Ты обычный гражданин. \n Локация:\(location ?? "")", for: .normal)
+            sender.setTitle("Ты обычный гражданин. \n Локация:\(randomLocationFromGroup ?? "")", for: .normal)
             sender.backgroundColor = #colorLiteral(red: 0.8006544605, green: 0.5798318559, blue: 0, alpha: 1)
             whenScreenNext += 1
             print(whenScreenNext)
