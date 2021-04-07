@@ -10,6 +10,7 @@ import UIKit
 class Game_VC: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var overButton: UIButton!
     
     var timer: Timer!
     var totalTime = 1
@@ -18,7 +19,9 @@ class Game_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.hidesBackButton = true
         timerLabel.text = timeFormatted(totalTime)
+        overButton.layer.cornerRadius = overButton.frame.height / 2
         
         timer = Timer.scheduledTimer(
             timeInterval: 1,

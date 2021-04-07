@@ -9,11 +9,10 @@ import UIKit
 
 class WhoIsSpy_VC: UIViewController {
     
+    @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var whoIsSpyBTN: UIButton!
-    @IBOutlet weak var playersLabel: UILabel!
-    
-    // TEST
-    @IBOutlet weak var testLabel: UILabel!
+
+    @IBOutlet weak var whoIsSpyLabel: UILabel!
     
     var currentGroup: Group!
     var countOfPlayers: Int!
@@ -28,18 +27,13 @@ class WhoIsSpy_VC: UIViewController {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
+        navigationItem.title = "\(countOfPlayers!) игрока, 1 шпион!"
         
-        whoIsSpyBTN.setTitle("Игрок 1, \n нажми, \n чтобы увидеть свою роль", for: .normal)
-        whoIsSpyBTN.titleLabel?.lineBreakMode = .byWordWrapping
-        
-        playersLabel.text = "Количество игроков: \(String(countOfPlayers ?? 0))"
+        whoIsSpyBTN.layer.cornerRadius = 35
+        exitButton.layer.cornerRadius = exitButton.frame.height / 2
     
         whichPlayerWillSpy = Int.random(in: 1...(countOfPlayers ?? 3))
         randomLocationFromGroup = currentGroup.locations.randomElement()
-        
-        //TEST
-        testLabel.text = "Отладка(which number is spy): \(String(whichPlayerWillSpy ?? 0))"
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,22 +46,19 @@ class WhoIsSpy_VC: UIViewController {
         if whenScreenNext == countOfPlayers * 2 - 1 {
             performSegue(withIdentifier: "toStartGame", sender: nil)
         } else if whenShowLocation == whichPlayerWillSpy {
-            sender.backgroundColor = #colorLiteral(red: 0.8006544605, green: 0.5798318559, blue: 0, alpha: 1)
-            sender.setTitle("Ты шпиён!", for: .normal)
+            sender.backgroundColor = #colorLiteral(red: 1, green: 0.693910043, blue: 0.1788305099, alpha: 0.8833525197)
+            whoIsSpyLabel.text = "Ты шпион!"
             whenShowLocation += 1
             whenScreenNext += 1
-            print(whenScreenNext)
         } else if whenScreenNext % 2 == 0 {
-            sender.setTitle("Ты обычный гражданин. \n Локация:\(randomLocationFromGroup ?? "")", for: .normal)
-            sender.backgroundColor = #colorLiteral(red: 0.8006544605, green: 0.5798318559, blue: 0, alpha: 1)
+            sender.backgroundColor = #colorLiteral(red: 1, green: 0.693910043, blue: 0.1788305099, alpha: 0.8833525197)
+            whoIsSpyLabel.text = "Ты обычный гражданин. Локация: \(randomLocationFromGroup ?? "")"
             whenScreenNext += 1
-            print(whenScreenNext)
         } else {
-            sender.setTitle("Передайте телефон \n другому игроку", for: .normal)
-            sender.backgroundColor = #colorLiteral(red: 1, green: 0.5070373533, blue: 0.9813989472, alpha: 0.3563387031)
+            sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.3882404252)
+            whoIsSpyLabel.text = "Передайте телефон другому игроку"
             whenScreenNext += 1
             whenShowLocation += 1
-            print(whenScreenNext)
         }
     }
     
