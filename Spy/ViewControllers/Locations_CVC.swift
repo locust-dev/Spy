@@ -12,11 +12,12 @@ private let reuseIdentifier = "locGroup"
 class Locations_CVC: UICollectionViewController {
     
     let groupes = Group.getGroupes()
+    let images = ["countries", "sports", "travels"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        navigationItem.backBarButtonItem?.tintColor = .white
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -28,6 +29,11 @@ class Locations_CVC: UICollectionViewController {
     
         cell.group = groupes[indexPath.row]
         cell.groupName.text = cell.group.title
+        cell.image.image = UIImage(named: images[indexPath.row])
+        cell.image.alpha = 0.9
+        cell.layer.cornerRadius = 25
+        cell.groupName.layer.cornerRadius = 25
+        cell.groupName.layer.masksToBounds = true
         
         return cell
     }

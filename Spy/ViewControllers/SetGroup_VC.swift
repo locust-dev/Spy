@@ -25,7 +25,7 @@ class SetGroup_VC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "location", for: indexPath) as! LocationCellTable
 
         cell.locationLabel.text = currentGroup.locations[indexPath.row]
-
+        
         return cell
     }
 

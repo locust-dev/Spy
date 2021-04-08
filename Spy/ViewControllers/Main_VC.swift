@@ -12,6 +12,12 @@ class Main_VC: UIViewController {
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
     
+   
+    @IBOutlet weak var plusCount: UIButton!
+    @IBOutlet weak var plusTimer: UIButton!
+    @IBOutlet weak var minusCount: UIButton!
+    @IBOutlet weak var minusTimer: UIButton!
+    
     @IBOutlet weak var countOfPlayers: UILabel!
     @IBOutlet weak var timerCount: UILabel!
     
@@ -24,6 +30,12 @@ class Main_VC: UIViewController {
         
         chooseLocation.layer.cornerRadius = chooseLocation.frame.height / 2
         startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.height / 2
+        
+        plusCount.setBackgroundImage(UIImage(named: "plus"), for: .normal)
+        plusTimer.setBackgroundImage(UIImage(named: "plus"), for: .normal)
+        minusCount.setBackgroundImage(UIImage(named: "minus"), for: .normal)
+        minusTimer.setBackgroundImage(UIImage(named: "minus"), for: .normal)
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

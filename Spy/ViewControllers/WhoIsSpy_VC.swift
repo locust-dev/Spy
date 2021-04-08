@@ -46,12 +46,12 @@ class WhoIsSpy_VC: UIViewController {
         if whenScreenNext == countOfPlayers * 2 - 1 {
             performSegue(withIdentifier: "toStartGame", sender: nil)
         } else if whenShowLocation == whichPlayerWillSpy {
-            sender.backgroundColor = #colorLiteral(red: 1, green: 0.693910043, blue: 0.1788305099, alpha: 0.8833525197)
+            sender.backgroundColor = #colorLiteral(red: 0, green: 0.7167256775, blue: 0.7167256775, alpha: 0.7028695416)
             whoIsSpyLabel.text = "Ты шпион!"
             whenShowLocation += 1
             whenScreenNext += 1
         } else if whenScreenNext % 2 == 0 {
-            sender.backgroundColor = #colorLiteral(red: 1, green: 0.693910043, blue: 0.1788305099, alpha: 0.8833525197)
+            sender.backgroundColor = #colorLiteral(red: 0, green: 0.7167256775, blue: 0.7167256775, alpha: 0.7028695416)
             whoIsSpyLabel.text = "Ты обычный гражданин. Локация: \(randomLocationFromGroup ?? "")"
             whenScreenNext += 1
         } else {

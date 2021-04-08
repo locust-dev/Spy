@@ -10,12 +10,9 @@ import UIKit
 class LocationCell: UICollectionViewCell {
     
     @IBOutlet weak var groupName: UILabel!
+    @IBOutlet weak var image: UIImageView!
     
     var group: Group!
-    
-    @IBAction func choosePressed() {
-        
-    }
     
     
 }
