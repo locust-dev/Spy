@@ -16,7 +16,8 @@ class Container_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "\(currentGroup.title ?? ""):"
+        navigationItem.title = "\(currentGroup.title ?? "")"
+        navigationController?.navigationBar.tintColor = .white
         chooseOutlet.layer.cornerRadius = chooseOutlet.frame.height / 2
     }
     

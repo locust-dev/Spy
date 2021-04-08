@@ -12,18 +12,12 @@ class Main_VC: UIViewController {
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
     
-   
-    @IBOutlet weak var plusCount: UIButton!
-    @IBOutlet weak var plusTimer: UIButton!
-    @IBOutlet weak var minusCount: UIButton!
-    @IBOutlet weak var minusTimer: UIButton!
-    
-    @IBOutlet weak var countOfPlayers: UILabel!
-    @IBOutlet weak var timerCount: UILabel!
-    
     var currentGroup: Group!
     var players = 3
     var timer = 1
+    
+    private var playersPicker: [Int] = []
+    private var timerPicker: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +25,13 @@ class Main_VC: UIViewController {
         chooseLocation.layer.cornerRadius = chooseLocation.frame.height / 2
         startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.height / 2
         
-        plusCount.setBackgroundImage(UIImage(named: "plus"), for: .normal)
-        plusTimer.setBackgroundImage(UIImage(named: "plus"), for: .normal)
-        minusCount.setBackgroundImage(UIImage(named: "minus"), for: .normal)
-        minusTimer.setBackgroundImage(UIImage(named: "minus"), for: .normal)
+        for player in 3...30 {
+            playersPicker.append(player)
+        }
         
+        for minute in 1...50 {
+            timerPicker.append(minute)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,33 +41,13 @@ class Main_VC: UIViewController {
         whoSpyVC.totalTime = timer * 60
     }
     
-    @IBAction func gameBegins() {
+    @IBAction func begins(_ sender: UIButton) {
+        sender.showAnimation()
         currentGroup != nil
             ? performSegue(withIdentifier: "whoIsSpy", sender: nil)
             : alert(title: "Нет локации!", message: "Пожалуйста, выберите локацию!")
     }
-    
-    
-    @IBAction func playerCountPressed(_ sender: UIButton) {
-        if sender.tag == 1 {
-            players += 1
-            countOfPlayers.text = String(players)
-        } else if sender.tag == 0, players != 3 {
-            players -= 1
-            countOfPlayers.text = String(players)
-        }
-    }
-    
-    @IBAction func timerPressed(_ sender: UIButton) {
-        if sender.tag == 1 {
-            timer += 1
-            timerCount.text = String(timer)
-        } else if sender.tag == 0, timer != 1 {
-            timer -= 1
-            timerCount.text = String(timer)
-        }
-    }
-    
+
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
         guard let sourceVC = unwindSegue.source as? Container_VC else { return }
         currentGroup = sourceVC.currentGroup
@@ -89,4 +65,32 @@ extension Main_VC {
         present(alert, animated: true)
     }
 
+}
+
+
+extension Main_VC: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        pickerView.tag == 1
+            ? playersPicker.count
+            : timerPicker.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        pickerView.tag == 1
+            ? String(playersPicker[row])
+            : String(timerPicker[row])
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView.tag == 1 {
+            players = playersPicker[row]
+        } else {
+            timer = timerPicker[row]
+        }
+    }
 }

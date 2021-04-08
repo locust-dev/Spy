@@ -14,5 +14,12 @@ class LocationCell: UICollectionViewCell {
     
     var group: Group!
     
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+        
+    }
+    
     
 }

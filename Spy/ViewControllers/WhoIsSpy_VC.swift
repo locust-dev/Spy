@@ -13,6 +13,9 @@ class WhoIsSpy_VC: UIViewController {
     @IBOutlet weak var whoIsSpyBTN: UIButton!
 
     @IBOutlet weak var whoIsSpyLabel: UILabel!
+    @IBOutlet weak var whoIsSpyLocation: UILabel!
+    
+    @IBOutlet weak var icon: UIImageView!
     
     var currentGroup: Group!
     var countOfPlayers: Int!
@@ -28,6 +31,7 @@ class WhoIsSpy_VC: UIViewController {
         
         navigationItem.hidesBackButton = true
         navigationItem.title = "\(countOfPlayers!) игрока, 1 шпион!"
+        whoIsSpyLocation.text = ""
         
         whoIsSpyBTN.layer.cornerRadius = 35
         exitButton.layer.cornerRadius = exitButton.frame.height / 2
@@ -42,29 +46,53 @@ class WhoIsSpy_VC: UIViewController {
     }
     
     @IBAction func whoIsSpyPressed(_ sender: UIButton) {
-        
+            
+        sender.showAnimation()
         if whenScreenNext == countOfPlayers * 2 - 1 {
             performSegue(withIdentifier: "toStartGame", sender: nil)
         } else if whenShowLocation == whichPlayerWillSpy {
             sender.backgroundColor = #colorLiteral(red: 0, green: 0.7167256775, blue: 0.7167256775, alpha: 0.7028695416)
             whoIsSpyLabel.text = "Ты шпион!"
+            icon.image = UIImage(named: "spy")
             whenShowLocation += 1
             whenScreenNext += 1
         } else if whenScreenNext % 2 == 0 {
             sender.backgroundColor = #colorLiteral(red: 0, green: 0.7167256775, blue: 0.7167256775, alpha: 0.7028695416)
-            whoIsSpyLabel.text = "Ты обычный гражданин. Локация: \(randomLocationFromGroup ?? "")"
+            whoIsSpyLabel.text = "Ты обычный гражданин.\n Постарайся вычислить шпиона!"
+            whoIsSpyLocation.text = "\(randomLocationFromGroup ?? "")"
+            icon.image = UIImage(named: "locationIcon")
             whenScreenNext += 1
         } else {
             sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.3882404252)
             whoIsSpyLabel.text = "Передайте телефон другому игроку"
+            whoIsSpyLocation.text = ""
+            icon.image = nil
             whenScreenNext += 1
             whenShowLocation += 1
         }
     }
     
     
+}
+
+public extension UIView {
     
-    
+    func showAnimation() {
+        
+        UIView.animate(withDuration: 0.1,
+                       delay: 0,
+                       options: .curveLinear,
+                       animations: { [weak self] in
+                        self?.transform = CGAffineTransform.init(scaleX: 0.95, y: 0.95)
+                       }) {  (done) in
+            UIView.animate(withDuration: 0.1,
+                           delay: 0,
+                           options: .curveLinear,
+                           animations: { [weak self] in
+                            self?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                           })
+        }
+    }
     
     
 }

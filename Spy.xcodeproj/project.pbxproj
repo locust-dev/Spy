@@ -14,6 +14,7 @@
 		E954F00F261C950C00E89673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E954F00E261C950C00E89673 /* Assets.xcassets */; };
 		E954F012261C950C00E89673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F010261C950C00E89673 /* LaunchScreen.storyboard */; };
 		E954F01F261C96D800E89673 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F01E261C96D800E89673 /* Locations.swift */; };
+		E9866459261F957300755D17 /* ButtonSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9866458261F957300755D17 /* ButtonSpy.swift */; };
 		E9E7B69B261DE47300455F72 /* Locations_CVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B69A261DE47300455F72 /* Locations_CVC.swift */; };
 		E9E7B69E261DE49E00455F72 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B69D261DE49E00455F72 /* LocationCell.swift */; };
 		E9E7B6A1261E0EA400455F72 /* SetGroup_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B6A0261E0EA400455F72 /* SetGroup_VC.swift */; };
@@ -33,6 +34,7 @@
 		E954F011261C950C00E89673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E954F013261C950C00E89673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E954F01E261C96D800E89673 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		E9866458261F957300755D17 /* ButtonSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSpy.swift; sourceTree = "<group>"; };
 		E9E7B69A261DE47300455F72 /* Locations_CVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations_CVC.swift; sourceTree = "<group>"; };
 		E9E7B69D261DE49E00455F72 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		E9E7B6A0261E0EA400455F72 /* SetGroup_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGroup_VC.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				E954F005261C950B00E89673 /* AppDelegate.swift */,
 				E954F007261C950B00E89673 /* SceneDelegate.swift */,
+				E9866458261F957300755D17 /* ButtonSpy.swift */,
 				E9E7B69D261DE49E00455F72 /* LocationCell.swift */,
 				E9E7B6A4261E1D7900455F72 /* LocationCellTable.swift */,
 				E9E7B6A7261E216400455F72 /* Container_VC.swift */,
@@ -207,6 +210,7 @@
 				E9E7B6A5261E1D7900455F72 /* LocationCellTable.swift in Sources */,
 				E954F01F261C96D800E89673 /* Locations.swift in Sources */,
 				E9E7B69B261DE47300455F72 /* Locations_CVC.swift in Sources */,
+				E9866459261F957300755D17 /* ButtonSpy.swift in Sources */,
 				E9E7B6A8261E216400455F72 /* Container_VC.swift in Sources */,
 				E9E7B69E261DE49E00455F72 /* LocationCell.swift in Sources */,
 				E9E7B6A1261E0EA400455F72 /* SetGroup_VC.swift in Sources */,
