@@ -272,26 +272,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7DX-e4-EJ3" id="lTH-zK-dzA">
                                     <rect key="frame" x="0.0" y="0.0" width="330" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYE-f6-CHv">
-                                            <rect key="frame" x="21" y="12" width="300" height="46"/>
-                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="PYE-f6-CHv" secondAttribute="trailing" constant="1" id="1H5-pV-c3b"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="PYE-f6-CHv" secondAttribute="bottom" constant="1" id="5iK-u2-Xfz"/>
-                                        <constraint firstItem="PYE-f6-CHv" firstAttribute="top" secondItem="lTH-zK-dzA" secondAttribute="topMargin" constant="1" id="PLx-1y-tXh"/>
-                                        <constraint firstItem="PYE-f6-CHv" firstAttribute="leading" secondItem="lTH-zK-dzA" secondAttribute="leadingMargin" constant="1" id="soI-Cu-Lrx"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.045454205234892395" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="locationLabel" destination="PYE-f6-CHv" id="xKP-bV-vhL"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -350,7 +333,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="165" id="5rl-qz-OIL"/>
                                     <constraint firstAttribute="height" constant="62" id="9mS-eR-i5z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
                                 <state key="normal" title="Выход">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>

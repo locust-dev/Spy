@@ -37,6 +37,10 @@ class WhoIsSpy_VC: UIViewController {
     
         whichPlayerWillSpy = Int.random(in: 1...(countOfPlayers ?? 3))
         randomLocationFromGroup = currentGroup.locations.randomElement()
+        
+        whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
+        whoIsSpyBTN.clipsToBounds = true
+        whoIsSpyBTN.alpha = 0.5
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,12 +49,12 @@ class WhoIsSpy_VC: UIViewController {
     }
     
     @IBAction func whoIsSpyPressed(_ sender: UIButton) {
-            
-        sender.showAnimation()
+        sender.showAnimationWithHaptic()
+        
         if whenScreenNext == countOfPlayers * 2 - 1 {
             performSegue(withIdentifier: "toStartGame", sender: nil)
         } else if whenShowLocation == whichPlayerWillSpy {
-            sender.backgroundColor = #colorLiteral(red: 0, green: 0.7167256775, blue: 0.7167256775, alpha: 0.7028695416)
+            whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy2"), for: .normal)
             whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(40)
             whoIsSpyLabel.text = "Ты шпион!"
             whoIsSpyLocation.text = "Постарайся понять, о какой локации говорят игроки."
@@ -59,7 +63,7 @@ class WhoIsSpy_VC: UIViewController {
             whenShowLocation += 1
             whenScreenNext += 1
         } else if whenScreenNext % 2 == 0 {
-            sender.backgroundColor = #colorLiteral(red: 0, green: 0.7167256775, blue: 0.7167256775, alpha: 0.7028695416)
+            whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy2"), for: .normal)
             whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(15)
             whoIsSpyLabel.text = "Ты обычный гражданин.\n Постарайся вычислить шпиона!"
             whoIsSpyLocation.text = "\(randomLocationFromGroup ?? "")"
@@ -67,7 +71,7 @@ class WhoIsSpy_VC: UIViewController {
             whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(30)
             whenScreenNext += 1
         } else {
-            sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.3882404252)
+            sender.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
             whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(20)
             whoIsSpyLabel.text = "Передайте телефон другому игроку"
             whoIsSpyLocation.text = ""
@@ -80,24 +84,4 @@ class WhoIsSpy_VC: UIViewController {
     
 }
 
-public extension UIView {
-    
-    func showAnimation() {
-        
-        UIView.animate(withDuration: 0.1,
-                       delay: 0,
-                       options: .curveLinear,
-                       animations: { [weak self] in
-                        self?.transform = CGAffineTransform.init(scaleX: 0.95, y: 0.95)
-                       }) {  (done) in
-            UIView.animate(withDuration: 0.1,
-                           delay: 0,
-                           options: .curveLinear,
-                           animations: { [weak self] in
-                            self?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-                           })
-        }
-    }
-    
-    
-}
+

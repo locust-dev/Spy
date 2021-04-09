@@ -26,14 +26,14 @@ class Locations_CVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationCell
-    
-        cell.group = groupes[indexPath.row]
-        cell.groupName.text = cell.group.title
-        cell.image.image = UIImage(named: images[indexPath.row])
         
+        // Data model
+        cell.group = groupes[indexPath.row]
+        // Image
+        cell.image.image = UIImage(named: images[indexPath.row])
         // Label
         cell.groupName.layer.shadowRadius = 1
-        
+        cell.groupName.text = cell.group.title
         // Corners
         cell.contentView.layer.cornerRadius = 25
         cell.contentView.layer.masksToBounds = true
@@ -44,9 +44,7 @@ class Locations_CVC: UICollectionViewController {
         cell.layer.shadowRadius = 5
         cell.layer.shadowOpacity = 1
         cell.layer.shadowOffset = CGSize(width: 1, height: 1)
-        
-
-        
+    
         return cell
     }
     

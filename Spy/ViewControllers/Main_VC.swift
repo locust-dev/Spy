@@ -26,6 +26,7 @@ class Main_VC: UIViewController {
         
         chooseLocation.layer.cornerRadius = chooseLocation.frame.height / 2
         startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.height / 2
+        navigationItem.rightBarButtonItem.
         
         for player in 3...30 {
             playersPicker.append(player)
@@ -48,7 +49,7 @@ class Main_VC: UIViewController {
     }
     
     @IBAction func begins(_ sender: UIButton) {
-        sender.showAnimation()
+        sender.showAnimationWithHaptic()
         currentGroup != nil
             ? performSegue(withIdentifier: "whoIsSpy", sender: nil)
             : alert(title: "Нет локации!", message: "Пожалуйста, выберите локацию!")
