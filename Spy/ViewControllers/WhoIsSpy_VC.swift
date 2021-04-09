@@ -30,7 +30,6 @@ class WhoIsSpy_VC: UIViewController {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
-        navigationItem.title = "\(countOfPlayers!) игрока, 1 шпион!"
         whoIsSpyLocation.text = ""
         
         whoIsSpyBTN.layer.cornerRadius = 35
@@ -52,21 +51,27 @@ class WhoIsSpy_VC: UIViewController {
             performSegue(withIdentifier: "toStartGame", sender: nil)
         } else if whenShowLocation == whichPlayerWillSpy {
             sender.backgroundColor = #colorLiteral(red: 0, green: 0.7167256775, blue: 0.7167256775, alpha: 0.7028695416)
+            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(40)
             whoIsSpyLabel.text = "Ты шпион!"
+            whoIsSpyLocation.text = "Постарайся понять, о какой локации говорят игроки."
+            whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(15)
             icon.image = UIImage(named: "spy")
             whenShowLocation += 1
             whenScreenNext += 1
         } else if whenScreenNext % 2 == 0 {
             sender.backgroundColor = #colorLiteral(red: 0, green: 0.7167256775, blue: 0.7167256775, alpha: 0.7028695416)
+            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(15)
             whoIsSpyLabel.text = "Ты обычный гражданин.\n Постарайся вычислить шпиона!"
             whoIsSpyLocation.text = "\(randomLocationFromGroup ?? "")"
             icon.image = UIImage(named: "locationIcon")
+            whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(30)
             whenScreenNext += 1
         } else {
             sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.3882404252)
+            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(20)
             whoIsSpyLabel.text = "Передайте телефон другому игроку"
             whoIsSpyLocation.text = ""
-            icon.image = nil
+            icon.image = UIImage(named: "share")
             whenScreenNext += 1
             whenShowLocation += 1
         }

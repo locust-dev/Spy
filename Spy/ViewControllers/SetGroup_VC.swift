@@ -13,7 +13,13 @@ class SetGroup_VC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let image = UIImageView(image: UIImage(named: "Spy_Background"))
+        image.frame = UIScreen.main.bounds
+        self.tableView.backgroundView = image
+        image.contentMode = .scaleAspectFill
+        
+        self.tableView.contentInset.top = 20
     }
 
 
@@ -25,6 +31,7 @@ class SetGroup_VC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "location", for: indexPath) as! LocationCellTable
 
         cell.locationLabel.text = currentGroup.locations[indexPath.row]
+        cell.accessoryView?.tintColor = .white
         
         return cell
     }

@@ -12,6 +12,8 @@ class Main_VC: UIViewController {
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
     
+    @IBOutlet var pickers: [UIPickerView]!
+    
     var currentGroup: Group!
     var players = 3
     var timer = 1
@@ -31,6 +33,10 @@ class Main_VC: UIViewController {
         
         for minute in 1...50 {
             timerPicker.append(minute)
+        }
+        
+        for picker in pickers {
+            picker.tintColor = .white
         }
     }
 
@@ -80,17 +86,19 @@ extension Main_VC: UIPickerViewDelegate, UIPickerViewDataSource {
             : timerPicker.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        pickerView.tag == 1
-            ? String(playersPicker[row])
-            : String(timerPicker[row])
-    }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
             players = playersPicker[row]
         } else {
             timer = timerPicker[row]
         }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        pickerView.tag == 1
+            ? NSAttributedString(string: String(playersPicker[row]),
+                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+            : NSAttributedString(string: String(timerPicker[row]),
+                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
 }

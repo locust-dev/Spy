@@ -32,8 +32,8 @@ class Locations_CVC: UICollectionViewController {
         cell.image.image = UIImage(named: images[indexPath.row])
         
         // Label
-        cell.groupName.layer.cornerRadius = 25
-        cell.groupName.layer.masksToBounds = true
+        cell.groupName.layer.shadowRadius = 1
+        
         // Corners
         cell.contentView.layer.cornerRadius = 25
         cell.contentView.layer.masksToBounds = true
@@ -44,6 +44,8 @@ class Locations_CVC: UICollectionViewController {
         cell.layer.shadowRadius = 5
         cell.layer.shadowOpacity = 1
         cell.layer.shadowOffset = CGSize(width: 1, height: 1)
+        
+
         
         return cell
     }
