@@ -19,6 +19,8 @@ class Game_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setBackgroundImage(with: "Spy_Background", for: view)
+        
         navigationItem.hidesBackButton = true
         timerLabel.text = timeFormatted(totalTime)
         overButton.layer.cornerRadius = overButton.frame.height / 2

@@ -26,10 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spy_Background" translatesAutoresizingMaskIntoConstraints="NO" id="eie-ed-fJF">
-                                <rect key="frame" x="-10" y="-10" width="434" height="916"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-Xl-owC">
                                 <rect key="frame" x="77" y="622" width="260" height="140"/>
                                 <subviews>
@@ -151,10 +147,6 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="30" minY="30" maxX="30" maxY="30"/>
                         </collectionViewFlowLayout>
-                        <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spy_Background" id="7ze-ER-pwV">
-                            <rect key="frame" x="0.0" y="-140" width="414" height="896"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="locGroup" id="2vk-dT-ITZ" customClass="LocationCell" customModule="Spy" customModuleProvider="target">
                                 <rect key="frame" x="30" y="30" width="150" height="150"/>
@@ -296,9 +288,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spy_Background" translatesAutoresizingMaskIntoConstraints="NO" id="LhL-nS-Oux">
-                                <rect key="frame" x="-10" y="-10" width="434" height="916"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jz-wl-PVj" customClass="ButtonSpy" customModule="Spy" customModuleProvider="target">
                                 <rect key="frame" x="32" y="198" width="350" height="500"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.38824042516038909" colorSpace="custom" customColorSpace="sRGB"/>
@@ -358,15 +347,11 @@
                             <constraint firstItem="3jz-wl-PVj" firstAttribute="bottom" secondItem="m8z-gJ-cZK" secondAttribute="bottom" constant="58" id="L5e-Ng-9Tc"/>
                             <constraint firstItem="g2f-q8-e8B" firstAttribute="leading" secondItem="3jz-wl-PVj" secondAttribute="leading" constant="85" id="OiM-d7-7Av"/>
                             <constraint firstItem="3jz-wl-PVj" firstAttribute="trailing" secondItem="g2f-q8-e8B" secondAttribute="trailing" constant="85" id="VWS-r3-CBO"/>
-                            <constraint firstAttribute="trailing" secondItem="LhL-nS-Oux" secondAttribute="trailing" constant="-10" id="YKG-8b-69m"/>
                             <constraint firstItem="4U8-Vu-4Tr" firstAttribute="top" secondItem="3jz-wl-PVj" secondAttribute="top" constant="60" id="brj-9g-ula"/>
                             <constraint firstItem="4U8-Vu-4Tr" firstAttribute="leading" secondItem="3jz-wl-PVj" secondAttribute="leading" constant="10" id="cBN-A5-ujm"/>
                             <constraint firstItem="4U8-Vu-4Tr" firstAttribute="trailing" secondItem="3jz-wl-PVj" secondAttribute="trailing" constant="-10" id="m7C-WF-heU"/>
-                            <constraint firstAttribute="bottom" secondItem="LhL-nS-Oux" secondAttribute="bottom" constant="-10" id="o05-j7-6G2"/>
                             <constraint firstItem="eSL-PN-rMU" firstAttribute="top" secondItem="3jz-wl-PVj" secondAttribute="bottom" constant="51" id="phH-F5-vhD"/>
                             <constraint firstItem="m8z-gJ-cZK" firstAttribute="leading" secondItem="3jz-wl-PVj" secondAttribute="leading" constant="30" id="rDf-a2-QQj"/>
-                            <constraint firstItem="LhL-nS-Oux" firstAttribute="leading" secondItem="W3t-VS-MKe" secondAttribute="leading" constant="-10" id="v3E-DY-eAs"/>
-                            <constraint firstItem="LhL-nS-Oux" firstAttribute="top" secondItem="W3t-VS-MKe" secondAttribute="top" constant="-10" id="vdP-KK-ESX"/>
                             <constraint firstItem="eSL-PN-rMU" firstAttribute="centerX" secondItem="W3t-VS-MKe" secondAttribute="centerX" id="ypL-ma-8Se"/>
                         </constraints>
                     </view>
@@ -393,9 +378,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spy_Background" translatesAutoresizingMaskIntoConstraints="NO" id="lef-n5-cS1">
-                                <rect key="frame" x="-10" y="-10" width="434" height="916"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzX-XZ-YwJ">
                                 <rect key="frame" x="107" y="652" width="200" height="60"/>
                                 <color key="backgroundColor" red="0.6655848124" green="0.71088971999999995" blue="0.68892257180000005" alpha="0.35633870309999999" colorSpace="custom" customColorSpace="sRGB"/>
@@ -422,14 +404,10 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ec1-bU-9Ar" firstAttribute="top" secondItem="2Qm-1F-ULh" secondAttribute="top" constant="50" id="CG5-CA-pGb"/>
-                            <constraint firstAttribute="bottom" secondItem="lef-n5-cS1" secondAttribute="bottom" constant="-10" id="E4P-Oo-pbJ"/>
                             <constraint firstItem="ec1-bU-9Ar" firstAttribute="leading" secondItem="2Qm-1F-ULh" secondAttribute="leading" constant="20" id="E9r-Lu-5Qu"/>
                             <constraint firstItem="2Qm-1F-ULh" firstAttribute="trailing" secondItem="ec1-bU-9Ar" secondAttribute="trailing" constant="20" id="F7t-yE-cj4"/>
-                            <constraint firstAttribute="trailing" secondItem="lef-n5-cS1" secondAttribute="trailing" constant="-10" id="U5W-FZ-goF"/>
                             <constraint firstItem="dzX-XZ-YwJ" firstAttribute="centerX" secondItem="ium-Fc-Yc9" secondAttribute="centerX" id="h0T-Pi-66d"/>
-                            <constraint firstItem="lef-n5-cS1" firstAttribute="top" secondItem="ium-Fc-Yc9" secondAttribute="top" constant="-10" id="h53-vz-fTC"/>
                             <constraint firstItem="2Qm-1F-ULh" firstAttribute="bottom" secondItem="dzX-XZ-YwJ" secondAttribute="bottom" constant="150" id="mNV-vg-aZF"/>
-                            <constraint firstItem="lef-n5-cS1" firstAttribute="leading" secondItem="ium-Fc-Yc9" secondAttribute="leading" constant="-10" id="p0s-ji-E96"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dzp-Tk-DMW"/>
@@ -467,7 +445,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Spy_Background" width="441" height="900"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

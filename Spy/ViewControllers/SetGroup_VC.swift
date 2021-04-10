@@ -13,12 +13,8 @@ class SetGroup_VC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let image = UIImageView(image: UIImage(named: "Spy_Background"))
-        image.frame = UIScreen.main.bounds
-        self.tableView.backgroundView = image
-        image.contentMode = .scaleAspectFill
-        
+    
+        tableView.backgroundView = UIImageView(image: UIImage(named: "Spy_Background"))
         self.tableView.contentInset.top = 20
     }
 

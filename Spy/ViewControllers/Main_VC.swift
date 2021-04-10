@@ -24,6 +24,8 @@ class Main_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setBackgroundImage(with: "Spy_Background", for: view)
+        
         chooseLocation.layer.cornerRadius = chooseLocation.frame.height / 2
         startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.height / 2
         

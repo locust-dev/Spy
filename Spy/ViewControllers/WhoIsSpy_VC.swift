@@ -29,6 +29,8 @@ class WhoIsSpy_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setBackgroundImage(with: "Spy_Background", for: view)
+        
         navigationItem.hidesBackButton = true
         whoIsSpyLocation.text = ""
         
@@ -41,6 +43,7 @@ class WhoIsSpy_VC: UIViewController {
         whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
         whoIsSpyBTN.clipsToBounds = true
         whoIsSpyBTN.alpha = 0.5
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

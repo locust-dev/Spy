@@ -17,6 +17,7 @@ class Locations_CVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundView = UIImageView(image: UIImage(named: "Spy_Background"))
         navigationController?.navigationBar.tintColor = .white
     }
     
