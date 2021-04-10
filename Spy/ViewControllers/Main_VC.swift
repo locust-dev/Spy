@@ -26,7 +26,6 @@ class Main_VC: UIViewController {
         
         chooseLocation.layer.cornerRadius = chooseLocation.frame.height / 2
         startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.height / 2
-        navigationItem.rightBarButtonItem.
         
         for player in 3...30 {
             playersPicker.append(player)
