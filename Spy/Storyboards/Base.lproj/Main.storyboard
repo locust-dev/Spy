@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uey-Zg-xbh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -198,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="1737.68115942029" y="-834.375"/>
         </scene>
-        <!--Группа-->
+        <!--ContainerVC-->
         <scene sceneID="X16-5Q-EBt">
             <objects>
                 <viewController id="apq-RE-6GB" customClass="Container_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
@@ -224,7 +223,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MN4-5d-6BD" kind="unwind" identifier="backFromLocations" unwindAction="unwindFor:" id="hkN-aq-NIm"/>
+                                    <action selector="chooseButton" destination="apq-RE-6GB" eventType="touchUpInside" id="TdC-8H-nCB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -239,26 +238,26 @@
                             <constraint firstItem="oaV-f9-E1q" firstAttribute="trailing" secondItem="j9i-6y-wE1" secondAttribute="trailing" id="vGw-XG-sd9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Группа" id="5c3-ws-5Xa"/>
                     <connections>
                         <outlet property="chooseOutlet" destination="KXa-1C-K3j" id="cwe-av-0p4"/>
+                        <segue destination="MN4-5d-6BD" kind="unwind" identifier="backFromLocations" unwindAction="unwindFor:" id="66M-F0-30b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZe-BC-QgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="MN4-5d-6BD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2515.9420289855075" y="-835.04464285714278"/>
+            <point key="canvasLocation" x="2500" y="-835"/>
         </scene>
         <!--Группа-->
         <scene sceneID="5fZ-wt-V1B">
             <objects>
                 <tableViewController id="1KG-g3-gV6" customClass="SetGroup_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="F2C-xG-tzz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="F2C-xG-tzz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="location" rowHeight="70" id="7DX-e4-EJ3" customClass="LocationCellTable" customModule="Spy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="location" rowHeight="70" id="7DX-e4-EJ3" customClass="LocationCellTable" customModule="Spy" customModuleProvider="target">
                                 <rect key="frame" x="20" y="55.5" width="374" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7DX-e4-EJ3" id="lTH-zK-dzA">

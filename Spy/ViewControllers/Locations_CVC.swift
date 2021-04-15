@@ -50,6 +50,11 @@ class Locations_CVC: UICollectionViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Think
+//        guard let containerVC = segue.destination as? Container_VC else { return }
+//        guard let indexPath = collectionView.indexPathsForSelectedItems else { return }
+//        let group = groupes[indexPath]
+//        containerVC.currentGroup = groupes
         if segue.identifier == "showSetLocation" {
             if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
                 let setVC = segue.destination as! Container_VC

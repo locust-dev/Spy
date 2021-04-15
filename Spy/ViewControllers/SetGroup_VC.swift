@@ -8,35 +8,46 @@
 import UIKit
 
 class SetGroup_VC: UITableViewController {
-
+    
     var currentGroup: Group!
+    var locationsForRecover: Group!
+    var delegate: SetGroupDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         tableView.backgroundView = UIImageView(image: UIImage(named: "Spy_Background"))
-        self.tableView.contentInset.top = 20
+        tableView.contentInset.top = 20
     }
-
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentGroup.locations.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "location", for: indexPath) as! LocationCellTable
-
-        cell.textLabel?.text = currentGroup.locations[indexPath.row]
-        cell.textLabel?.font = UIFont(name: "Montserrat", size: 22)
-        cell.textLabel?.textColor = .white
-        cell.accessoryView?.tintColor = .white
+        let cell = tableView.dequeueReusableCell(withIdentifier: "location", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = currentGroup.locations[indexPath.row]
+        content.textProperties.font = UIFont(name: "Montserrat", size: 22) ?? .systemFont(ofSize: 22)
+        content.textProperties.color = .white
+        cell.contentConfiguration = content
         
         return cell
     }
-
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.textLabel?.text = "rrr"
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        
+        if cell.accessoryType == .checkmark {
+            currentGroup.locations[indexPath.row] = ""
+            cell.accessoryType = .none
+        } else {
+            currentGroup.locations[indexPath.row] = locationsForRecover.locations[indexPath.row]
+            cell.accessoryType = .checkmark
+        }
+        delegate.getChangedGroup(new: currentGroup)
     }
+    
+    
 }

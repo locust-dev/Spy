@@ -14,7 +14,7 @@ class Main_VC: UIViewController {
     
     @IBOutlet var pickers: [UIPickerView]!
     
-    var currentGroup: Group!
+    var currentGroup: Group?
     var players = 3
     var timer = 1
     
@@ -25,7 +25,6 @@ class Main_VC: UIViewController {
         super.viewDidLoad()
         
         setBackgroundImage(with: "Spy_Background", for: view)
-        
         chooseLocation.layer.cornerRadius = chooseLocation.frame.height / 2
         startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.height / 2
         
@@ -59,23 +58,12 @@ class Main_VC: UIViewController {
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
         guard let sourceVC = unwindSegue.source as? Container_VC else { return }
         currentGroup = sourceVC.currentGroup
-        chooseLocation.setTitle(currentGroup.title, for: .normal)
+        chooseLocation.setTitle(currentGroup?.title, for: .normal)
     }
     
 }
 
-extension Main_VC {
-    
-    private func alert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
-
-}
-
-
+// MARK: - Picker View configure
 extension Main_VC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

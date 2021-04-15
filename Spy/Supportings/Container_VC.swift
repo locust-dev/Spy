@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SetGroupDelegate {
+    func getChangedGroup(new group: Group)
+}
+
 class Container_VC: UIViewController {
 
     @IBOutlet weak var chooseOutlet: UIButton!
@@ -23,8 +27,28 @@ class Container_VC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tableVC = segue.destination as? SetGroup_VC else { return }
+        tableVC.delegate = self
         tableVC.currentGroup = currentGroup
+        tableVC.locationsForRecover = currentGroup
     }
-   
+    
+    @IBAction func chooseButton() {
+        if currentGroup.locations.isEmpty {
+            alert(title: "Ошибка!", message: "Должна быть выбрана хотя бы одна локация из списка!")
+        } else {
+            performSegue(withIdentifier: "backFromLocations", sender: nil)
+        }
+    }
+    
+}
 
+
+extension Container_VC: SetGroupDelegate {
+    func getChangedGroup(new group: Group) {
+        currentGroup.locations = group.locations.filter{$0 != ""}
+        
+        if currentGroup.locations.isEmpty {
+        alert(title: "Ошибка!", message: "Должна быть выбрана хотя бы одна локация из списка!")
+        }
+    }
 }

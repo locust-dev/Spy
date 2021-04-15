@@ -22,7 +22,6 @@
 		E9E7B69B261DE47300455F72 /* Locations_CVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B69A261DE47300455F72 /* Locations_CVC.swift */; };
 		E9E7B69E261DE49E00455F72 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B69D261DE49E00455F72 /* LocationCell.swift */; };
 		E9E7B6A1261E0EA400455F72 /* SetGroup_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B6A0261E0EA400455F72 /* SetGroup_VC.swift */; };
-		E9E7B6A5261E1D7900455F72 /* LocationCellTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B6A4261E1D7900455F72 /* LocationCellTable.swift */; };
 		E9E7B6A8261E216400455F72 /* Container_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B6A7261E216400455F72 /* Container_VC.swift */; };
 		E9FD485C261CC658005C29A1 /* WhoIsSpy_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD485B261CC658005C29A1 /* WhoIsSpy_VC.swift */; };
 		E9FD485F261D0F52005C29A1 /* Game_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD485E261D0F52005C29A1 /* Game_VC.swift */; };
@@ -46,7 +45,6 @@
 		E9E7B69A261DE47300455F72 /* Locations_CVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations_CVC.swift; sourceTree = "<group>"; };
 		E9E7B69D261DE49E00455F72 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		E9E7B6A0261E0EA400455F72 /* SetGroup_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGroup_VC.swift; sourceTree = "<group>"; };
-		E9E7B6A4261E1D7900455F72 /* LocationCellTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellTable.swift; sourceTree = "<group>"; };
 		E9E7B6A7261E216400455F72 /* Container_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_VC.swift; sourceTree = "<group>"; };
 		E9FD485B261CC658005C29A1 /* WhoIsSpy_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoIsSpy_VC.swift; sourceTree = "<group>"; };
 		E9FD485E261D0F52005C29A1 /* Game_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_VC.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				E954F007261C950B00E89673 /* SceneDelegate.swift */,
 				E9866458261F957300755D17 /* ButtonSpy.swift */,
 				E9E7B69D261DE49E00455F72 /* LocationCell.swift */,
-				E9E7B6A4261E1D7900455F72 /* LocationCellTable.swift */,
 				E9E7B6A7261E216400455F72 /* Container_VC.swift */,
 				E954F013261C950C00E89673 /* Info.plist */,
 			);
@@ -239,7 +236,6 @@
 				E954F00A261C950B00E89673 /* Main_VC.swift in Sources */,
 				E954F006261C950B00E89673 /* AppDelegate.swift in Sources */,
 				E9FD485F261D0F52005C29A1 /* Game_VC.swift in Sources */,
-				E9E7B6A5261E1D7900455F72 /* LocationCellTable.swift in Sources */,
 				E954F01F261C96D800E89673 /* Locations.swift in Sources */,
 				E9E7B69B261DE47300455F72 /* Locations_CVC.swift in Sources */,
 				E9866459261F957300755D17 /* ButtonSpy.swift in Sources */,
@@ -397,13 +393,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = voxx.Spy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -417,13 +414,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = voxx.Spy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

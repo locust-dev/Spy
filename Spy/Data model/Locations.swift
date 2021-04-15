@@ -8,7 +8,7 @@
 
 struct Group {
     let title: String!
-    let locations: [String]!
+    var locations: [String]!
     
     static func getGroupes() -> [Group] {
         [
