@@ -20,6 +20,7 @@ class WhoIsSpy_VC: UIViewController {
     var currentGroup: Group!
     var countOfPlayers: Int!
     var totalTime: Int!
+    var countOfSpies: Int!
     
     private var whichPlayerWillSpy: Int!
     private var randomLocationFromGroup: String!

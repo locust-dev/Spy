@@ -26,10 +26,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-Xl-owC">
-                                <rect key="frame" x="77" y="622" width="260" height="140"/>
+                                <rect key="frame" x="77" y="582" width="260" height="220"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1B-ho-wLK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZ2-Ub-x4U">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="60"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.1069335842" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Nqd-vU-odu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
+                                        <state key="normal" title="Шпионов: 1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="sNt-yo-Vl6" kind="popoverPresentation" identifier="spyes" popoverAnchorView="XZ2-Ub-x4U" id="xBX-Fb-XqH">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1B-ho-wLK">
+                                        <rect key="frame" x="0.0" y="80" width="260" height="60"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10693358424461921" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="bmH-vd-jU7"/>
@@ -43,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxJ-s5-Tpf">
-                                        <rect key="frame" x="0.0" y="80" width="260" height="60"/>
+                                        <rect key="frame" x="0.0" y="160" width="260" height="60"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10693358424461921" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
                                         <state key="normal" title="Начать игру!">
@@ -61,16 +77,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WYp-y4-m8D">
-                                <rect key="frame" x="20" y="320" width="374" height="28"/>
+                                <rect key="frame" x="20" y="320" width="374" height="29.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Таймер" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVg-e1-2oh">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игроков" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxC-zK-uqa">
-                                        <rect key="frame" x="192" y="0.0" width="182" height="28"/>
+                                        <rect key="frame" x="192" y="0.0" width="182" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -78,7 +94,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RkR-Qp-LQP">
-                                <rect key="frame" x="20" y="348" width="374" height="160"/>
+                                <rect key="frame" x="20" y="349.5" width="374" height="160"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoy-qS-Mjj">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="160"/>
@@ -98,7 +114,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Постарайся вычислить шпиона!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIi-cu-gMd">
-                                <rect key="frame" x="20" y="140" width="378" height="20"/>
+                                <rect key="frame" x="20" y="140" width="378" height="21"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -125,7 +141,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4JJ-vA-1II" secondAttribute="trailing" constant="20" id="8Ws-5J-688"/>
                             <constraint firstItem="4JJ-vA-1II" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EWX-pS-AF2"/>
                             <constraint firstItem="RkR-Qp-LQP" firstAttribute="top" secondItem="WYp-y4-m8D" secondAttribute="bottom" id="Ga8-BZ-jAk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aN8-Xl-owC" secondAttribute="bottom" constant="100" id="Jrn-Hj-Sf8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aN8-Xl-owC" secondAttribute="bottom" constant="60" id="Jrn-Hj-Sf8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WYp-y4-m8D" secondAttribute="trailing" constant="20" id="Qnx-qe-8tF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NIi-cu-gMd" secondAttribute="trailing" constant="16" id="e4B-QL-Q1M"/>
                             <constraint firstItem="NIi-cu-gMd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oaQ-Zp-YrL"/>
@@ -139,6 +155,7 @@
                     <navigationItem key="navigationItem" title="Шпион" id="qhp-Qm-WQ1"/>
                     <connections>
                         <outlet property="chooseLocation" destination="G1B-ho-wLK" id="Utq-W5-lfz"/>
+                        <outlet property="countSpyButton" destination="XZ2-Ub-x4U" id="ntD-Jo-dTA"/>
                         <outlet property="faqButton" destination="4JJ-vA-1II" id="UCo-Ie-5dJ"/>
                         <outlet property="startButtonOutlet" destination="GxJ-s5-Tpf" id="fc4-R3-J26"/>
                         <outletCollection property="pickers" destination="xoy-qS-Mjj" collectionClass="NSMutableArray" id="2W2-Dv-4hG"/>
@@ -149,7 +166,7 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="71.651785714285708"/>
         </scene>
-        <!--Container ForFAQVC-->
+        <!--Как играть?-->
         <scene sceneID="mzR-O0-W5M">
             <objects>
                 <viewController id="N5R-Mk-FuA" customClass="ContainerForFAQ_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,7 +185,7 @@
                                 <color key="backgroundColor" red="0.6655848124" green="0.71088971999999995" blue="0.68892257180000005" alpha="0.35633870309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="NdI-Hn-YoA"/>
-                                    <constraint firstAttribute="width" constant="209" id="jQ3-mx-zBS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="209" id="jQ3-mx-zBS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
                                 <state key="normal" title="Все понятно!">
@@ -190,7 +207,7 @@
                             <constraint firstItem="Rei-B1-p0E" firstAttribute="leading" secondItem="OPr-zq-TaK" secondAttribute="leading" id="kRh-Pn-kWW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RcF-8B-6pg"/>
+                    <navigationItem key="navigationItem" title="Как играть?" id="RcF-8B-6pg"/>
                     <connections>
                         <outlet property="allRightOutlet" destination="0AV-fy-Vik" id="gIu-6N-h0k"/>
                     </connections>
@@ -371,13 +388,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8z-gJ-cZK">
-                                <rect key="frame" x="62" y="605" width="290" height="35"/>
+                                <rect key="frame" x="62" y="603" width="290" height="37"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Коснитесь, чтобы узнать роль!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U8-Vu-4Tr">
-                                <rect key="frame" x="42" y="258" width="330" height="70"/>
+                                <rect key="frame" x="42" y="258" width="330" height="73.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -398,7 +415,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g2f-q8-e8B">
-                                <rect key="frame" x="117" y="366" width="180" height="180"/>
+                                <rect key="frame" x="117" y="364" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="g2f-q8-e8B" secondAttribute="height" multiplier="1:1" id="kfG-Ge-vjr"/>
                                 </constraints>
@@ -461,7 +478,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:20" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-bU-9Ar">
-                                <rect key="frame" x="20" y="190" width="374" height="93.5"/>
+                                <rect key="frame" x="20" y="190" width="374" height="98"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -486,7 +503,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1HY-oI-8UM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="s0V-RI-oDa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2575" y="72"/>
+            <point key="canvasLocation" x="2574" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gsk-zi-aif">
@@ -510,6 +527,40 @@
             </objects>
             <point key="canvasLocation" x="210" y="72"/>
         </scene>
+        <!--How Much Spy Popover-->
+        <scene sceneID="Mqt-g4-D7a">
+            <objects>
+                <viewController storyboardIdentifier="popVC" id="sNt-yo-Vl6" customClass="HowMuchSpyPopover" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HgY-lz-X74">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yfz-RQ-si0">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sNt-yo-Vl6" id="tTO-6Z-2Ve"/>
+                                    <outlet property="delegate" destination="sNt-yo-Vl6" id="sMh-6u-xCn"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H1C-8D-8xt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yfz-RQ-si0" firstAttribute="bottom" secondItem="H1C-8D-8xt" secondAttribute="bottom" id="2ok-RD-nt0"/>
+                            <constraint firstItem="Yfz-RQ-si0" firstAttribute="leading" secondItem="H1C-8D-8xt" secondAttribute="leading" id="QPZ-eA-3cr"/>
+                            <constraint firstItem="Yfz-RQ-si0" firstAttribute="trailing" secondItem="H1C-8D-8xt" secondAttribute="trailing" id="Teb-ml-5zW"/>
+                            <constraint firstItem="Yfz-RQ-si0" firstAttribute="top" secondItem="HgY-lz-X74" secondAttribute="top" id="faE-zy-L3H"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="250" height="250"/>
+                    <connections>
+                        <outlet property="pickerSpyCount" destination="Yfz-RQ-si0" id="dOA-qj-NfD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSe-SS-eX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="647"/>
+        </scene>
         <!--FAQ_VC-->
         <scene sceneID="1Tb-M7-nJ6">
             <objects>
@@ -525,6 +576,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="jeh-Nr-Zti"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BPR-yZ-QeD" firstAttribute="top" secondItem="HpP-6T-3UY" secondAttribute="topMargin" id="956-BB-LvC"/>

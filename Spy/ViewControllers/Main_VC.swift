@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol HowMuchSpiesDelegate {
+    func getSpiesCount(count: Int)
+}
+
 class Main_VC: UIViewController {
 
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
     @IBOutlet weak var faqButton: UIButton!
+    @IBOutlet weak var countSpyButton: UIButton!
     
     @IBOutlet var pickers: [UIPickerView]!
     
@@ -20,6 +25,7 @@ class Main_VC: UIViewController {
         locations: Groupes.allLocations.definition)
     
     var players = 3
+    var spiesCount = 1
     var timer = 1
     
     private var playersPicker: [Int] = []
@@ -28,19 +34,20 @@ class Main_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBackgroundImage(with: "Spy_Background", for: view)
-        
-        chooseLocation.layer.cornerRadius = chooseLocation.frame.height / 2
         chooseLocation.setTitle(currentGroup.title, for: .normal)
         
-        faqButton.layer.cornerRadius = faqButton.frame.height / 2
-        startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.height / 2
-        
-        for player in 3...30 {
+        setupGestures()
+        setBackgroundImage(with: "Spy_Background", for: view)
+        setCornerRadiusToCircle(chooseLocation,
+                                faqButton,
+                                startButtonOutlet,
+                                countSpyButton)
+
+        for player in 3...25 {
             playersPicker.append(player)
         }
         
-        for minute in 1...50 {
+        for minute in 1...30 {
             timerPicker.append(minute)
         }
         
@@ -54,18 +61,48 @@ class Main_VC: UIViewController {
         whoSpyVC.currentGroup = currentGroup
         whoSpyVC.countOfPlayers = players
         whoSpyVC.totalTime = timer * 60
+        whoSpyVC.countOfSpies = spiesCount
     }
     
     @IBAction func begins(_ sender: UIButton) {
         sender.showAnimationWithHaptic()
     }
-
+    
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
         guard let sourceVC = unwindSegue.source as? Container_VC else { return }
         currentGroup = sourceVC.currentGroup
         chooseLocation.setTitle(currentGroup.title, for: .normal)
     }
     
+}
+
+// MARK: - Configure popover
+extension Main_VC: UIPopoverPresentationControllerDelegate {
+
+    private func setupGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        tapGesture.numberOfTapsRequired = 1
+        countSpyButton.addGestureRecognizer(tapGesture)
+    }
+
+    @objc private func tapped() {
+        guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? HowMuchSpyPopover else { return }
+        popVC.modalPresentationStyle = .popover
+        popVC.players = players
+        popVC.delegate = self
+        
+        guard let popOverVC = popVC.popoverPresentationController else { return }
+        popOverVC.delegate = self
+        popOverVC.sourceView = countSpyButton
+        popOverVC.sourceRect = CGRect(x: countSpyButton.bounds.midX, y: countSpyButton.bounds.minY, width: 0, height: 0)
+        popVC.preferredContentSize = CGSize(width: 250, height: 250)
+        present(popVC, animated: true)
+    }
+
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+
 }
 
 // MARK: - Picker View configure
@@ -95,5 +132,13 @@ extension Main_VC: UIPickerViewDelegate, UIPickerViewDataSource {
                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
             : NSAttributedString(string: String(timerPicker[row]),
                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+}
+
+// MARK: - Pass Data From Popover
+extension Main_VC: HowMuchSpiesDelegate {
+    func getSpiesCount(count: Int) {
+        spiesCount = count
+        countSpyButton.setTitle(String("Шпионов: \(count)"), for: .normal)
     }
 }

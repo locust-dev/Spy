@@ -26,4 +26,9 @@ extension UIViewController {
         present(alert, animated: true)
     }
     
+    func setCornerRadiusToCircle(_ button: UIButton...) {
+        button.forEach{ button in
+            button.layer.cornerRadius = button.frame.height / 2
+        }
+    }
 }
