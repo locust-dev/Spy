@@ -10,8 +10,8 @@ import UIKit
 extension UIViewController {
     
     func setBackgroundImage(with image: String, for view: UIView) {
-        let imageView = UIImageView(image: UIImage(named: "Spy_Background"))
-        imageView.frame = UIScreen.main.bounds
+        let imageView = UIImageView(image: UIImage(named: image))
+        imageView.frame = view.bounds
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.center = view.center

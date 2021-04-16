@@ -25,14 +25,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-Xl-owC">
-                                <rect key="frame" x="77" y="582" width="260" height="220"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-Xl-owC">
+                                <rect key="frame" x="89.5" y="622" width="235" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZ2-Ub-x4U">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="50"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.1069335842" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Nqd-vU-odu"/>
+                                            <constraint firstAttribute="height" constant="50" id="bss-Ne-0A9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
                                         <state key="normal" title="Шпионов: 1">
@@ -45,11 +45,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1B-ho-wLK">
-                                        <rect key="frame" x="0.0" y="80" width="260" height="60"/>
+                                        <rect key="frame" x="0.0" y="60" width="235" height="50"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10693358424461921" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="bmH-vd-jU7"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
                                         <state key="normal" title="Выбрать локацию">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,7 +56,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxJ-s5-Tpf">
-                                        <rect key="frame" x="0.0" y="160" width="260" height="60"/>
+                                        <rect key="frame" x="0.0" y="120" width="235" height="50"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10693358424461921" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
                                         <state key="normal" title="Начать игру!">
@@ -72,38 +69,37 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="GxJ-s5-Tpf" firstAttribute="height" secondItem="G1B-ho-wLK" secondAttribute="height" id="Hrp-dp-OF6"/>
-                                    <constraint firstAttribute="width" constant="260" id="MNT-E1-CbO"/>
+                                    <constraint firstAttribute="width" constant="235" id="MNT-E1-CbO"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WYp-y4-m8D">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WYp-y4-m8D">
                                 <rect key="frame" x="20" y="320" width="374" height="29.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Таймер" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVg-e1-2oh">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="29.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игроков" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxC-zK-uqa">
-                                        <rect key="frame" x="192" y="0.0" width="182" height="29.5"/>
+                                        <rect key="frame" x="187" y="0.0" width="187" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RkR-Qp-LQP">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RkR-Qp-LQP">
                                 <rect key="frame" x="20" y="349.5" width="374" height="160"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoy-qS-Mjj">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="160"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="160"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="civ-Al-ScL"/>
                                         </connections>
                                     </pickerView>
                                     <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kS8-g8-J1B">
-                                        <rect key="frame" x="192" y="0.0" width="182" height="160"/>
+                                        <rect key="frame" x="187" y="0.0" width="187" height="160"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="1Ba-fF-RAy"/>
                                         </connections>
@@ -141,7 +137,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4JJ-vA-1II" secondAttribute="trailing" constant="20" id="8Ws-5J-688"/>
                             <constraint firstItem="4JJ-vA-1II" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EWX-pS-AF2"/>
                             <constraint firstItem="RkR-Qp-LQP" firstAttribute="top" secondItem="WYp-y4-m8D" secondAttribute="bottom" id="Ga8-BZ-jAk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aN8-Xl-owC" secondAttribute="bottom" constant="60" id="Jrn-Hj-Sf8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aN8-Xl-owC" secondAttribute="bottom" constant="70" id="Jrn-Hj-Sf8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WYp-y4-m8D" secondAttribute="trailing" constant="20" id="Qnx-qe-8tF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NIi-cu-gMd" secondAttribute="trailing" constant="16" id="e4B-QL-Q1M"/>
                             <constraint firstItem="NIi-cu-gMd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oaQ-Zp-YrL"/>
@@ -420,6 +416,12 @@
                                     <constraint firstAttribute="width" secondItem="g2f-q8-e8B" secondAttribute="height" multiplier="1:1" id="kfG-Ge-vjr"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Коснитесь, чтобы узнать роль!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f11-uo-B2X">
+                                <rect key="frame" x="32" y="198" width="350" height="500"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MEs-gE-540"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -428,14 +430,18 @@
                             <constraint firstItem="3jz-wl-PVj" firstAttribute="centerX" secondItem="W3t-VS-MKe" secondAttribute="centerX" id="9Iw-KY-T6A"/>
                             <constraint firstItem="m8z-gJ-cZK" firstAttribute="trailing" secondItem="3jz-wl-PVj" secondAttribute="trailing" constant="-30" id="A3M-bt-vQX"/>
                             <constraint firstItem="3jz-wl-PVj" firstAttribute="centerY" secondItem="W3t-VS-MKe" secondAttribute="centerY" id="CjG-g0-g7b"/>
+                            <constraint firstItem="3jz-wl-PVj" firstAttribute="bottom" secondItem="f11-uo-B2X" secondAttribute="bottom" id="I9R-MP-Fhl"/>
                             <constraint firstItem="3jz-wl-PVj" firstAttribute="bottom" secondItem="m8z-gJ-cZK" secondAttribute="bottom" constant="58" id="L5e-Ng-9Tc"/>
                             <constraint firstItem="g2f-q8-e8B" firstAttribute="leading" secondItem="3jz-wl-PVj" secondAttribute="leading" constant="85" id="OiM-d7-7Av"/>
                             <constraint firstItem="3jz-wl-PVj" firstAttribute="trailing" secondItem="g2f-q8-e8B" secondAttribute="trailing" constant="85" id="VWS-r3-CBO"/>
+                            <constraint firstItem="3jz-wl-PVj" firstAttribute="top" secondItem="f11-uo-B2X" secondAttribute="top" id="Wqv-IW-XAI"/>
                             <constraint firstItem="4U8-Vu-4Tr" firstAttribute="top" secondItem="3jz-wl-PVj" secondAttribute="top" constant="60" id="brj-9g-ula"/>
                             <constraint firstItem="4U8-Vu-4Tr" firstAttribute="leading" secondItem="3jz-wl-PVj" secondAttribute="leading" constant="10" id="cBN-A5-ujm"/>
+                            <constraint firstItem="3jz-wl-PVj" firstAttribute="leading" secondItem="f11-uo-B2X" secondAttribute="leading" id="caR-9e-hXw"/>
                             <constraint firstItem="4U8-Vu-4Tr" firstAttribute="trailing" secondItem="3jz-wl-PVj" secondAttribute="trailing" constant="-10" id="m7C-WF-heU"/>
                             <constraint firstItem="eSL-PN-rMU" firstAttribute="top" secondItem="3jz-wl-PVj" secondAttribute="bottom" constant="51" id="phH-F5-vhD"/>
                             <constraint firstItem="m8z-gJ-cZK" firstAttribute="leading" secondItem="3jz-wl-PVj" secondAttribute="leading" constant="30" id="rDf-a2-QQj"/>
+                            <constraint firstItem="3jz-wl-PVj" firstAttribute="trailing" secondItem="f11-uo-B2X" secondAttribute="trailing" id="vfx-gV-A2r"/>
                             <constraint firstItem="eSL-PN-rMU" firstAttribute="centerX" secondItem="W3t-VS-MKe" secondAttribute="centerX" id="ypL-ma-8Se"/>
                         </constraints>
                     </view>
@@ -443,6 +449,7 @@
                     <connections>
                         <outlet property="exitButton" destination="eSL-PN-rMU" id="N9t-9u-XF9"/>
                         <outlet property="icon" destination="g2f-q8-e8B" id="00B-F4-Nrd"/>
+                        <outlet property="startTextLabel" destination="f11-uo-B2X" id="9ru-GZ-bPy"/>
                         <outlet property="whoIsSpyBTN" destination="3jz-wl-PVj" id="QqA-rl-G1M"/>
                         <outlet property="whoIsSpyLabel" destination="4U8-Vu-4Tr" id="P8A-4n-GPI"/>
                         <outlet property="whoIsSpyLocation" destination="m8z-gJ-cZK" id="EYT-ha-ZK2"/>
@@ -452,7 +459,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPI-D2-e2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="n50-Z1-19i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="72"/>
+            <point key="canvasLocation" x="1860.8695652173915" y="71.651785714285708"/>
         </scene>
         <!--GameVC-->
         <scene sceneID="jAb-Ac-Ytp">

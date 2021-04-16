@@ -35,6 +35,7 @@ class Main_VC: UIViewController {
         super.viewDidLoad()
         
         chooseLocation.setTitle(currentGroup.title, for: .normal)
+        createPlayersAndTimer()
         
         setupGestures()
         setBackgroundImage(with: "Spy_Background", for: view)
@@ -42,18 +43,6 @@ class Main_VC: UIViewController {
                                 faqButton,
                                 startButtonOutlet,
                                 countSpyButton)
-
-        for player in 3...25 {
-            playersPicker.append(player)
-        }
-        
-        for minute in 1...30 {
-            timerPicker.append(minute)
-        }
-        
-        for picker in pickers {
-            picker.tintColor = .white
-        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,6 +96,20 @@ extension Main_VC: UIPopoverPresentationControllerDelegate {
 
 // MARK: - Picker View configure
 extension Main_VC: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    private func createPlayersAndTimer() {
+        for player in 3...25 {
+            playersPicker.append(player)
+        }
+        
+        for minute in 1...30 {
+            timerPicker.append(minute)
+        }
+        
+        for picker in pickers {
+            picker.tintColor = .white
+        }
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

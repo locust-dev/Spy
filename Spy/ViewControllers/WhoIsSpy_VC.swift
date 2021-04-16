@@ -11,40 +11,35 @@ class WhoIsSpy_VC: UIViewController {
     
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var whoIsSpyBTN: UIButton!
-
     @IBOutlet weak var whoIsSpyLabel: UILabel!
     @IBOutlet weak var whoIsSpyLocation: UILabel!
+    @IBOutlet weak var startTextLabel: UILabel!
     
     @IBOutlet weak var icon: UIImageView!
     
     var currentGroup: Group!
     var countOfPlayers: Int!
-    var totalTime: Int!
     var countOfSpies: Int!
+    var totalTime: Int!
     
-    private var whichPlayerWillSpy: Int!
+    private var roles: [Bool] = []
+    private var touches = 0
+    private var index = 0
     private var randomLocationFromGroup: String!
-    private var whenScreenNext = 0
-    private var whenShowLocation = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setBackgroundImage(with: "Spy_Background", for: view)
+        setCornerRadiusToCircle(exitButton)
+        spyButtonConfigure()
+        addedRole()
         
-        navigationItem.hidesBackButton = true
         whoIsSpyLocation.text = ""
+        whoIsSpyLabel.isHidden = true
         
-        whoIsSpyBTN.layer.cornerRadius = 35
-        exitButton.layer.cornerRadius = exitButton.frame.height / 2
-    
-        whichPlayerWillSpy = Int.random(in: 1...(countOfPlayers ?? 3))
         randomLocationFromGroup = currentGroup.locations.randomElement()
-        
-        whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
-        whoIsSpyBTN.clipsToBounds = true
-        whoIsSpyBTN.alpha = 0.5
-        
+        navigationItem.hidesBackButton = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,38 +49,74 @@ class WhoIsSpy_VC: UIViewController {
     
     @IBAction func whoIsSpyPressed(_ sender: UIButton) {
         sender.showAnimationWithHaptic()
+        whoIsSpyLabel.isHidden = false
+        startTextLabel.isHidden = true
         
-        if whenScreenNext == countOfPlayers * 2 - 1 {
+        if index == roles.count {
             performSegue(withIdentifier: "toStartGame", sender: nil)
-        } else if whenShowLocation == whichPlayerWillSpy {
-            whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy2"), for: .normal)
-            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(40)
-            whoIsSpyLabel.text = "Ты шпион!"
-            whoIsSpyLocation.text = "Постарайся понять, о какой локации говорят игроки."
-            whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(15)
-            icon.image = UIImage(named: "spy")
-            whenShowLocation += 1
-            whenScreenNext += 1
-        } else if whenScreenNext % 2 == 0 {
-            whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy2"), for: .normal)
-            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(15)
-            whoIsSpyLabel.text = "Ты обычный гражданин.\n Постарайся вычислить шпиона!"
-            whoIsSpyLocation.text = "\(randomLocationFromGroup ?? "")"
-            icon.image = UIImage(named: "locationIcon")
-            whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(30)
-            whenScreenNext += 1
+        } else if touches % 2 == 0 {
+            switch roles[index] {
+            case true: setRoleSpyIfTrue(role: true)
+            default: setRoleSpyIfTrue(role: false)
+            }
+            index += 1
+            touches += 1
         } else {
-            sender.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
-            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(20)
-            whoIsSpyLabel.text = "Передайте телефон другому игроку"
-            whoIsSpyLocation.text = ""
-            icon.image = UIImage(named: "share")
-            whenScreenNext += 1
-            whenShowLocation += 1
+            givePhoneNextPlayer()
+            touches += 1
         }
     }
     
     
 }
 
-
+// MARK: - Private Methods
+extension WhoIsSpy_VC {
+    
+    private func setRoleSpyIfTrue(role: Bool) {
+        if role {
+            whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy2"), for: .normal)
+            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(40)
+            whoIsSpyLabel.text = "Ты шпион!"
+            whoIsSpyLocation.text = "Постарайся понять, о какой локации говорят игроки."
+            whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(15)
+            icon.image = UIImage(named: "spy")
+        } else {
+            whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy2"), for: .normal)
+            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(15)
+            whoIsSpyLabel.text = "Ты обычный гражданин.\n Постарайся вычислить шпиона!"
+            whoIsSpyLocation.text = "\(randomLocationFromGroup ?? "")"
+            icon.image = UIImage(named: "locationIcon")
+            whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(30)
+        }
+        
+    }
+    
+    private func givePhoneNextPlayer() {
+        whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
+        whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(20)
+        whoIsSpyLabel.text = "Передайте телефон другому игроку"
+        whoIsSpyLocation.text = ""
+        icon.image = UIImage(named: "share")
+    }
+    
+    private func spyButtonConfigure() {
+        whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
+        whoIsSpyBTN.layer.cornerRadius = 35
+        whoIsSpyBTN.clipsToBounds = true
+        whoIsSpyBTN.alpha = 0.5
+    }
+    
+    private func addedRole() {
+        for _ in 1...countOfSpies {
+            roles.append(true)
+        }
+        
+        for _ in countOfSpies..<countOfPlayers {
+            roles.append(false)
+        }
+        roles.shuffle()
+    }
+    
+    
+}
