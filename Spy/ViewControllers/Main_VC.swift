@@ -11,10 +11,14 @@ class Main_VC: UIViewController {
 
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
+    @IBOutlet weak var faqButton: UIButton!
     
     @IBOutlet var pickers: [UIPickerView]!
     
-    var currentGroup: Group?
+    var currentGroup = Group(
+        title: Groupes.allLocations.rawValue,
+        locations: Groupes.allLocations.definition)
+    
     var players = 3
     var timer = 1
     
@@ -25,7 +29,11 @@ class Main_VC: UIViewController {
         super.viewDidLoad()
         
         setBackgroundImage(with: "Spy_Background", for: view)
+        
         chooseLocation.layer.cornerRadius = chooseLocation.frame.height / 2
+        chooseLocation.setTitle(currentGroup.title, for: .normal)
+        
+        faqButton.layer.cornerRadius = faqButton.frame.height / 2
         startButtonOutlet.layer.cornerRadius = startButtonOutlet.frame.height / 2
         
         for player in 3...30 {
@@ -50,15 +58,12 @@ class Main_VC: UIViewController {
     
     @IBAction func begins(_ sender: UIButton) {
         sender.showAnimationWithHaptic()
-        currentGroup != nil
-            ? performSegue(withIdentifier: "whoIsSpy", sender: nil)
-            : alert(title: "Нет локации!", message: "Пожалуйста, выберите локацию!")
     }
 
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
         guard let sourceVC = unwindSegue.source as? Container_VC else { return }
         currentGroup = sourceVC.currentGroup
-        chooseLocation.setTitle(currentGroup?.title, for: .normal)
+        chooseLocation.setTitle(currentGroup.title, for: .normal)
     }
     
 }

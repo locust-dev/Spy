@@ -28,8 +28,7 @@ class WhoIsSpy_VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(currentGroup.locations ?? "")
+
         setBackgroundImage(with: "Spy_Background", for: view)
         
         navigationItem.hidesBackButton = true

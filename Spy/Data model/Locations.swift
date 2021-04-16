@@ -12,6 +12,7 @@ struct Group {
     
     static func getGroupes() -> [Group] {
         [
+            Group(title: Groupes.allLocations.rawValue, locations: Groupes.allLocations.definition),
             Group(title: Groupes.coutries.rawValue, locations: Groupes.coutries.definition),
             Group(title: Groupes.sports.rawValue, locations: Groupes.sports.definition),
             Group(title: Groupes.travels.rawValue, locations: Groupes.travels.definition),
@@ -25,12 +26,22 @@ struct Group {
 }
 
 enum Groupes: String {
+    case allLocations = "Все локации"
     case coutries = "Страны"
     case sports = "Спорт"
     case travels = "Путешествия"
     case culture = "Культура"
     case child = "Дети"
     case timeMachine = "Машина времени"
+    
+    var allLocation: [String] {
+        Groupes.coutries.definition +
+        Groupes.sports.definition +
+        Groupes.travels.definition +
+        Groupes.culture.definition +
+        Groupes.child.definition +
+        Groupes.timeMachine.definition
+    }
     
     var definition: [String] {
         switch self {
@@ -46,8 +57,11 @@ enum Groupes: String {
             return ["Детская площадка", "Школа", "Детский сад", "Зоопарк", "Каток"]
         case .timeMachine:
             return ["Древняя греция", "Город будущего", "1980-е", "1990-е", "Вторая мировая"]
+        case .allLocations:
+            return allLocation
         }
     }
+    
 }
 
 

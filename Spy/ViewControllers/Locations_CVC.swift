@@ -12,7 +12,7 @@ private let reuseIdentifier = "locGroup"
 class Locations_CVC: UICollectionViewController {
     
     let groupes = Group.getGroupes()
-    let images = ["countries", "sports", "travels", "culture", "child", "timeMachine"]
+    let images = ["allLocations", "countries", "sports", "travels", "culture", "child", "timeMachine"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +22,13 @@ class Locations_CVC: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return groupes.count
+    
+        groupes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationCell
+        
         
         // Data model
         cell.group = groupes[indexPath.row]
@@ -45,7 +47,7 @@ class Locations_CVC: UICollectionViewController {
         cell.layer.shadowRadius = 5
         cell.layer.shadowOpacity = 1
         cell.layer.shadowOffset = CGSize(width: 1, height: 1)
-    
+        
         return cell
     }
     
@@ -62,7 +64,6 @@ class Locations_CVC: UICollectionViewController {
             }
         }
     }
-    
     
     
 }
