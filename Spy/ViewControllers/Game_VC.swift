@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class Game_VC: UIViewController {
     
@@ -41,7 +42,8 @@ class Game_VC: UIViewController {
         } else {
             if let timer = timer {
                 timer.invalidate()
-                timerLabel.text = "Время вышло!"
+                timerLabel.text = "Время вышло! Шпион побеждает!"
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 self.timer = nil
             }
         }
