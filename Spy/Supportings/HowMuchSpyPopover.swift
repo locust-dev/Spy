@@ -23,7 +23,7 @@ class HowMuchSpyPopover: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        setBackgroundImage(with: "popoverBackground", for: view)
+        setBackgroundImage(with: "back", for: view)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

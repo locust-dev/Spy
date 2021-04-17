@@ -20,13 +20,9 @@ class Main_VC: UIViewController {
     
     @IBOutlet var pickers: [UIPickerView]!
     
-    var currentGroup = Group(
-        title: Groupes.allLocations.rawValue,
-        locations: Groupes.allLocations.definition)
-    
-    var players = 3
-    var spiesCount = 1
-    var timer = 1
+    var game = Game(time: 1, players: 3, spies: 1)
+    var currentGroup = LocationGroup(title: Groupes.allLocations.rawValue,
+                             locations: Groupes.allLocations.definition)
     
     private var playersPicker: [Int] = []
     private var timerPicker: [Int] = []
@@ -48,9 +44,7 @@ class Main_VC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let whoSpyVC = segue.destination as? WhoIsSpy_VC else { return }
         whoSpyVC.currentGroup = currentGroup
-        whoSpyVC.countOfPlayers = players
-        whoSpyVC.totalTime = timer * 60
-        whoSpyVC.countOfSpies = spiesCount
+        whoSpyVC.currentGame = game
     }
     
     @IBAction func begins(_ sender: UIButton) {
@@ -77,14 +71,14 @@ extension Main_VC: UIPopoverPresentationControllerDelegate {
     @objc private func tapped() {
         guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? HowMuchSpyPopover else { return }
         popVC.modalPresentationStyle = .popover
-        popVC.players = players
+        popVC.players = game.players
         popVC.delegate = self
         
         guard let popOverVC = popVC.popoverPresentationController else { return }
         popOverVC.delegate = self
         popOverVC.sourceView = countSpyButton
-        popOverVC.sourceRect = CGRect(x: countSpyButton.bounds.midX, y: countSpyButton.bounds.minY, width: 0, height: 0)
-        popVC.preferredContentSize = CGSize(width: 250, height: 250)
+        popOverVC.sourceRect = CGRect(x: countSpyButton.bounds.midX, y: countSpyButton.bounds.minY + -10, width: 0, height: 0)
+        popVC.preferredContentSize = CGSize(width: 300, height: 300)
         present(popVC, animated: true)
     }
 
@@ -123,9 +117,9 @@ extension Main_VC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
-            players = playersPicker[row]
+            game.players = playersPicker[row]
         } else {
-            timer = timerPicker[row]
+            game.time = timerPicker[row]
         }
     }
     
@@ -141,7 +135,7 @@ extension Main_VC: UIPickerViewDelegate, UIPickerViewDataSource {
 // MARK: - Pass Data From Popover
 extension Main_VC: HowMuchSpiesDelegate {
     func getSpiesCount(count: Int) {
-        spiesCount = count
+        game.spies = count
         countSpyButton.setTitle(String("Шпионов: \(count)"), for: .normal)
     }
 }

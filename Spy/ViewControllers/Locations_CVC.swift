@@ -11,7 +11,7 @@ private let reuseIdentifier = "locGroup"
 
 class Locations_CVC: UICollectionViewController {
     
-    let groupes = Group.getGroupes()
+    let groupes = LocationGroup.getGroupes()
     let images = ["allLocations", "countries", "sports", "travels", "culture", "child", "timeMachine"]
     
     override func viewDidLoad() {
@@ -34,6 +34,11 @@ class Locations_CVC: UICollectionViewController {
         cell.group = groupes[indexPath.row]
         // Image
         cell.image.image = UIImage(named: images[indexPath.row])
+        // Background
+        let imageBack = UIImageView(image: UIImage(named: "backgroundForCell"))
+        imageBack.layer.cornerRadius = 25
+        imageBack.clipsToBounds = true
+        cell.backgroundView = imageBack
         // Label
         cell.groupName.layer.shadowRadius = 1
         cell.groupName.text = cell.group.title
@@ -52,7 +57,7 @@ class Locations_CVC: UICollectionViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Think
+// Think
 //        guard let containerVC = segue.destination as? Container_VC else { return }
 //        guard let indexPath = collectionView.indexPathsForSelectedItems else { return }
 //        let group = groupes[indexPath]

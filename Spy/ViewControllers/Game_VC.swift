@@ -15,7 +15,6 @@ class Game_VC: UIViewController {
     var timer: Timer!
     var totalTime = 1
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

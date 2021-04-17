@@ -14,13 +14,10 @@ class WhoIsSpy_VC: UIViewController {
     @IBOutlet weak var whoIsSpyLabel: UILabel!
     @IBOutlet weak var whoIsSpyLocation: UILabel!
     @IBOutlet weak var startTextLabel: UILabel!
-    
     @IBOutlet weak var icon: UIImageView!
     
-    var currentGroup: Group!
-    var countOfPlayers: Int!
-    var countOfSpies: Int!
-    var totalTime: Int!
+    var currentGroup: LocationGroup!
+    var currentGame: Game!
     
     private var roles: [Bool] = []
     private var touches = 0
@@ -36,15 +33,16 @@ class WhoIsSpy_VC: UIViewController {
         addedRole()
         
         whoIsSpyLocation.text = ""
+        startTextLabel.text = "Игрок 1. \n Коснись, чтобы узнать роль!"
         whoIsSpyLabel.isHidden = true
         
-        randomLocationFromGroup = currentGroup.locations.randomElement()
         navigationItem.hidesBackButton = true
+        randomLocationFromGroup = currentGroup.locations.randomElement()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let gameVC = segue.destination as? Game_VC else { return }
-        gameVC.totalTime = totalTime
+        gameVC.totalTime = currentGame.time * 60
     }
     
     @IBAction func whoIsSpyPressed(_ sender: UIButton) {
@@ -83,11 +81,11 @@ extension WhoIsSpy_VC {
             icon.image = UIImage(named: "spy")
         } else {
             whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy2"), for: .normal)
-            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(15)
-            whoIsSpyLabel.text = "Ты обычный гражданин.\n Постарайся вычислить шпиона!"
-            whoIsSpyLocation.text = "\(randomLocationFromGroup ?? "")"
+            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(30)
+            whoIsSpyLabel.text = randomLocationFromGroup
+            whoIsSpyLocation.text = "Ты обычный гражданин.\n Постарайся вычислить шпиона!"
             icon.image = UIImage(named: "locationIcon")
-            whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(30)
+            whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(15)
         }
         
     }
@@ -95,7 +93,7 @@ extension WhoIsSpy_VC {
     private func givePhoneNextPlayer() {
         whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
         whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(20)
-        whoIsSpyLabel.text = "Передайте телефон другому игроку"
+        whoIsSpyLabel.text = "Игрок \(index + 1) \n Нажми, чтобы увидеть свою роль"
         whoIsSpyLocation.text = ""
         icon.image = UIImage(named: "share")
     }
@@ -108,11 +106,11 @@ extension WhoIsSpy_VC {
     }
     
     private func addedRole() {
-        for _ in 1...countOfSpies {
+        for _ in 1...currentGame.spies {
             roles.append(true)
         }
         
-        for _ in countOfSpies..<countOfPlayers {
+        for _ in currentGame.spies..<currentGame.players {
             roles.append(false)
         }
         roles.shuffle()

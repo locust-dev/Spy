@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E91D1C64262AE53C0007736F /* Data Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* Data Manager.swift */; };
 		E9393B1C2620B50A00E0D09F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9393B1B2620B50A00E0D09F /* UIView.swift */; };
 		E9393B212620BB1400E0D09F /* o_Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */; };
 		E9393B222620BB1400E0D09F /* o_MontserratBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9393B202620BB1400E0D09F /* o_MontserratBold.ttf */; };
@@ -17,10 +18,10 @@
 		E954F00D261C950B00E89673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F00B261C950B00E89673 /* Main.storyboard */; };
 		E954F00F261C950C00E89673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E954F00E261C950C00E89673 /* Assets.xcassets */; };
 		E954F012261C950C00E89673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F010261C950C00E89673 /* LaunchScreen.storyboard */; };
-		E954F01F261C96D800E89673 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F01E261C96D800E89673 /* Locations.swift */; };
+		E954F01F261C96D800E89673 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F01E261C96D800E89673 /* Data.swift */; };
+		E97C7A16262B1556001D75F7 /* FAQ_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C7A15262B1556001D75F7 /* FAQ_VC.swift */; };
 		E9866459261F957300755D17 /* ButtonSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9866458261F957300755D17 /* ButtonSpy.swift */; };
 		E9CCA8D226290D4F008B5F24 /* ContainerForFAQ_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCA8D126290D4F008B5F24 /* ContainerForFAQ_VC.swift */; };
-		E9CCA8D526290D67008B5F24 /* FAQ_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCA8D426290D67008B5F24 /* FAQ_VC.swift */; };
 		E9E0EC9126219309001AD4C9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0EC9026219309001AD4C9 /* UIViewController.swift */; };
 		E9E7B69B261DE47300455F72 /* Locations_CVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B69A261DE47300455F72 /* Locations_CVC.swift */; };
 		E9E7B69E261DE49E00455F72 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B69D261DE49E00455F72 /* LocationCell.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E91D1C63262AE53C0007736F /* Data Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Manager.swift"; sourceTree = "<group>"; };
 		E9393B1B2620B50A00E0D09F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = o_Montserrat.ttf; sourceTree = "<group>"; };
 		E9393B202620BB1400E0D09F /* o_MontserratBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = o_MontserratBold.ttf; sourceTree = "<group>"; };
@@ -43,10 +45,10 @@
 		E954F00E261C950C00E89673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E954F011261C950C00E89673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E954F013261C950C00E89673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E954F01E261C96D800E89673 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		E954F01E261C96D800E89673 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E97C7A15262B1556001D75F7 /* FAQ_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ_VC.swift; sourceTree = "<group>"; };
 		E9866458261F957300755D17 /* ButtonSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSpy.swift; sourceTree = "<group>"; };
 		E9CCA8D126290D4F008B5F24 /* ContainerForFAQ_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerForFAQ_VC.swift; sourceTree = "<group>"; };
-		E9CCA8D426290D67008B5F24 /* FAQ_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ_VC.swift; sourceTree = "<group>"; };
 		E9E0EC9026219309001AD4C9 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E9E7B69A261DE47300455F72 /* Locations_CVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations_CVC.swift; sourceTree = "<group>"; };
 		E9E7B69D261DE49E00455F72 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E91D1C62262AE52C0007736F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E91D1C63262AE53C0007736F /* Data Manager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		E9393B1A2620B4FD00E0D09F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 			children = (
 				E9393B1A2620B4FD00E0D09F /* Extensions */,
 				E972BD5E262061250005D20D /* Fonts */,
+				E91D1C62262AE52C0007736F /* Service */,
 				E954F01D261C96C700E89673 /* Data model */,
 				E9FD4864261D0F6D005C29A1 /* Supportings */,
 				E9FD4862261D0F59005C29A1 /* ViewControllers */,
@@ -109,7 +120,7 @@
 		E954F01D261C96C700E89673 /* Data model */ = {
 			isa = PBXGroup;
 			children = (
-				E954F01E261C96D800E89673 /* Locations.swift */,
+				E954F01E261C96D800E89673 /* Data.swift */,
 			);
 			path = "Data model";
 			sourceTree = "<group>";
@@ -131,7 +142,7 @@
 				E9E7B6A0261E0EA400455F72 /* SetGroup_VC.swift */,
 				E9FD485B261CC658005C29A1 /* WhoIsSpy_VC.swift */,
 				E9FD485E261D0F52005C29A1 /* Game_VC.swift */,
-				E9CCA8D426290D67008B5F24 /* FAQ_VC.swift */,
+				E97C7A15262B1556001D75F7 /* FAQ_VC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -241,16 +252,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E0EC9126219309001AD4C9 /* UIViewController.swift in Sources */,
+				E91D1C64262AE53C0007736F /* Data Manager.swift in Sources */,
 				E9393B1C2620B50A00E0D09F /* UIView.swift in Sources */,
 				E954F00A261C950B00E89673 /* Main_VC.swift in Sources */,
 				E954F006261C950B00E89673 /* AppDelegate.swift in Sources */,
 				E94F05C42629B6860039899C /* HowMuchSpyPopover.swift in Sources */,
 				E9FD485F261D0F52005C29A1 /* Game_VC.swift in Sources */,
-				E954F01F261C96D800E89673 /* Locations.swift in Sources */,
+				E954F01F261C96D800E89673 /* Data.swift in Sources */,
 				E9E7B69B261DE47300455F72 /* Locations_CVC.swift in Sources */,
 				E9866459261F957300755D17 /* ButtonSpy.swift in Sources */,
 				E9E7B6A8261E216400455F72 /* Container_VC.swift in Sources */,
-				E9CCA8D526290D67008B5F24 /* FAQ_VC.swift in Sources */,
+				E97C7A16262B1556001D75F7 /* FAQ_VC.swift in Sources */,
 				E9CCA8D226290D4F008B5F24 /* ContainerForFAQ_VC.swift in Sources */,
 				E9E7B69E261DE49E00455F72 /* LocationCell.swift in Sources */,
 				E9E7B6A1261E0EA400455F72 /* SetGroup_VC.swift in Sources */,

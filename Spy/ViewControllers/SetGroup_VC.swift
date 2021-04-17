@@ -9,8 +9,8 @@ import UIKit
 
 class SetGroup_VC: UITableViewController {
     
-    var currentGroup: Group!
-    var locationsForRecover: Group!
+    var currentGroup: LocationGroup!
+    var locationsForRecover: LocationGroup!
     var delegate: SetGroupDelegate!
     
     override func viewDidLoad() {

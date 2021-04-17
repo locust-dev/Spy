@@ -8,14 +8,14 @@
 import UIKit
 
 protocol SetGroupDelegate {
-    func getChangedGroup(new group: Group)
+    func getChangedGroup(new group: LocationGroup)
 }
 
 class Container_VC: UIViewController {
 
     @IBOutlet weak var chooseOutlet: UIButton!
     
-    var currentGroup: Group!
+    var currentGroup: LocationGroup!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class Container_VC: UIViewController {
 
 
 extension Container_VC: SetGroupDelegate {
-    func getChangedGroup(new group: Group) {
+    func getChangedGroup(new group: LocationGroup) {
         currentGroup.locations = group.locations.filter{$0 != ""}
         
         if currentGroup.locations.isEmpty {
