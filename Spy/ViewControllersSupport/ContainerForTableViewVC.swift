@@ -12,7 +12,7 @@ protocol SetGroupDelegate {
 }
 
 class ContainerForTableViewVC: UIViewController {
-
+    
     @IBOutlet weak var chooseOutlet: UIButton!
     @IBOutlet weak var addOutlet: UIButton!
     
@@ -26,15 +26,10 @@ class ContainerForTableViewVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toTable" {
-            guard let tableVC = segue.destination as? SetGroupVC else { return }
-            tableVC.delegate = self
-            tableVC.currentGroup = currentGroup
-            tableVC.locationsForRecover = currentGroup
-        } else {
-            guard let addVC = segue.destination as? AddPlayersLocationsVC else { return }
-            addVC.currentGroup = currentGroup
-        }
+        guard let tableVC = segue.destination as? SetGroupVC else { return }
+        tableVC.delegate = self
+        tableVC.currentGroup = currentGroup
+        tableVC.locationsForRecover = currentGroup
     }
     
     @IBAction func chooseButton() {
@@ -43,11 +38,6 @@ class ContainerForTableViewVC: UIViewController {
         } else {
             performSegue(withIdentifier: "backFromLocations", sender: nil)
         }
-    }
-    
-    @IBAction func unwindToTable(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source as! AddPlayersLocationsVC
-        currentGroup.addedLocations = sourceViewController.currentGroup.addedLocations
     }
     
 }
@@ -59,8 +49,8 @@ extension ContainerForTableViewVC: SetGroupDelegate {
         currentGroup.locations = group.locations.filter{$0 != ""}
         
         if currentGroup.locations.isEmpty {
-        alert(title: "Ошибка!", message: "Должна быть выбрана хотя бы одна локация из списка!")
+            alert(title: "Ошибка!", message: "Должна быть выбрана хотя бы одна локация из списка!")
         }
     }
-
+    
 }

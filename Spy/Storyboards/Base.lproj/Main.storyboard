@@ -385,7 +385,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5k-MK-OZo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3417" y="-1002"/>
+            <point key="canvasLocation" x="3413" y="-653"/>
         </scene>
         <!--Who Is SpyVC-->
         <scene sceneID="2fp-6R-85k">
@@ -548,75 +548,6 @@
                 <exit id="s0V-RI-oDa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2574" y="72"/>
-        </scene>
-        <!--Новая локация-->
-        <scene sceneID="M1h-xL-dpV">
-            <objects>
-                <viewController id="vsU-L1-WC7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jUC-dE-G2I">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="1Yw-aa-8DG">
-                                <rect key="frame" x="20" y="64" width="374" height="227.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите название новой локации" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8q-iw-XNN">
-                                        <rect key="frame" x="74" y="0.0" width="226.5" height="56.5"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="23"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название локации" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GSR-bq-VdG">
-                                        <rect key="frame" x="37" y="94.5" width="300" height="45"/>
-                                        <color key="backgroundColor" red="0.6655848124" green="0.71088971999999995" blue="0.68892257180000005" alpha="0.35633870309999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="JGl-lS-skh"/>
-                                            <constraint firstAttribute="height" constant="45" id="NSh-Kb-l1c"/>
-                                        </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="vsU-L1-WC7" id="hj7-eh-v1r"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYf-tH-YtJ">
-                                        <rect key="frame" x="117" y="177.5" width="140" height="50"/>
-                                        <color key="backgroundColor" red="0.60390461240000004" green="0.60390461240000004" blue="0.60390461240000004" alpha="0.69744042510000004" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="eDW-8y-11G"/>
-                                            <constraint firstAttribute="width" constant="140" id="uxI-wo-Yza"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="21"/>
-                                        <state key="normal" title="Добавить">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="okButtonPressed:" destination="vsU-L1-WC7" eventType="touchUpInside" id="yIN-LP-3dd"/>
-                                            <segue destination="cA5-vX-KeO" kind="unwind" unwindAction="unwindToTable:" id="Tub-ie-SOZ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="aog-r8-fca"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aog-r8-fca" firstAttribute="trailing" secondItem="1Yw-aa-8DG" secondAttribute="trailing" constant="20" id="0xb-NC-wP5"/>
-                            <constraint firstItem="1Yw-aa-8DG" firstAttribute="leading" secondItem="aog-r8-fca" secondAttribute="leading" constant="20" id="5On-Nh-eCd"/>
-                            <constraint firstItem="1Yw-aa-8DG" firstAttribute="top" secondItem="aog-r8-fca" secondAttribute="top" constant="20" id="Le3-UH-F4g"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Новая локация" id="BR9-Ch-GQK"/>
-                    <connections>
-                        <outlet property="addLocationTF" destination="GSR-bq-VdG" id="tAa-wl-P5O"/>
-                        <outlet property="okButtonOutlet" destination="uYf-tH-YtJ" id="qFq-p9-gpW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kZ2-2z-7uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="cA5-vX-KeO" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="4042" y="-175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gsk-zi-aif">
