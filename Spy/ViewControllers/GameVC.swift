@@ -22,6 +22,7 @@ class GameVC: UIViewController {
         
         navigationItem.hidesBackButton = true
         setBackgroundImage(with: "Spy_Background", for: view)
+        addShadows(overButton)
         setCornerRadiusToCircle(overButton)
         
         timerLabel.text = timeFormatted(totalTime)
@@ -43,6 +44,7 @@ class GameVC: UIViewController {
             timer.invalidate()
             faqLabel.isHidden = true
             timerLabel.text = "Время вышло!"
+            timerLabel.font = timerLabel.font.withSize(40)
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             self.timer = nil
         }

@@ -28,6 +28,7 @@ class WhoIsSpyVC: UIViewController {
         super.viewDidLoad()
         
         setBackgroundImage(with: "Spy_Background", for: view)
+        addShadows(whoIsSpyBTN, exitButton)
         setCornerRadiusToCircle(exitButton)
         spyButtonConfigure()
         addedRole()
@@ -74,7 +75,7 @@ extension WhoIsSpyVC {
         
         if role {
             whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy2"), for: .normal)
-            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(40)
+            whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(36)
             whoIsSpyLabel.text = "Ты шпион!"
             whoIsSpyLocation.text = "Постарайся понять, о какой локации говорят игроки."
             whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(15)
@@ -92,9 +93,10 @@ extension WhoIsSpyVC {
     
     private func givePhoneNextPlayer() {
         whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
-        whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(20)
-        whoIsSpyLabel.text = "Игрок \(index + 1) \n Нажми, чтобы увидеть свою роль"
-        whoIsSpyLocation.text = ""
+        whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(26)
+        whoIsSpyLabel.text = "Игрок \(index + 1)"
+        whoIsSpyLocation.text = "Нажми, чтобы увидеть свою роль"
+        whoIsSpyLocation.font = whoIsSpyLocation.font.withSize(18)
         icon.image = UIImage(named: "share")
     }
     

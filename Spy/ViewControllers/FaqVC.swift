@@ -29,11 +29,10 @@ class FaqVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "info", for: indexPath)
         let info = faq.definition[indexPath.section]
         
-        var content = cell.defaultContentConfiguration()
-        content.text = info
-        content.textProperties.font = UIFont(name: "Montserrat", size: 20) ?? .systemFont(ofSize: 22)
-        content.textProperties.color = .white
-        cell.contentConfiguration = content
+        cell.textLabel?.text = info
+        cell.textLabel?.font = UIFont(name: "Montserrat", size: 20) ?? .systemFont(ofSize: 22)
+        cell.textLabel?.textColor = .white
+        cell.textLabel?.numberOfLines = 0
         
         return cell
     }
@@ -49,7 +48,5 @@ class FaqVC: UITableViewController {
         
         return view
     }
-    
-    
 
 }

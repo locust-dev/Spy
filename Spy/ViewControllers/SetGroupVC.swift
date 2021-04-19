@@ -17,6 +17,7 @@ class SetGroupVC: UITableViewController {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "Spy_Background"))
         tableView.contentInset.top = 20
+        tableView.contentInset.bottom = 100
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,12 +31,15 @@ class SetGroupVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "location", for: indexPath)
+        let selectionColor = UIView()
         
-        var content = cell.defaultContentConfiguration()
-        content.text = currentGroup.locations[indexPath.row]
-        content.textProperties.font = UIFont(name: "Montserrat", size: 22) ?? .systemFont(ofSize: 22)
-        content.textProperties.color = .white
-        cell.contentConfiguration = content
+        cell.textLabel?.text = currentGroup.locations[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Montserrat", size: 22) ?? .systemFont(ofSize: 22)
+        cell.textLabel?.textColor = .white
+        cell.textLabel?.numberOfLines = 0
+        selectionColor.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        cell.selectedBackgroundView = selectionColor
+
         return cell
     }
     

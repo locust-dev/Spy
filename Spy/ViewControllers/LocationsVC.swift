@@ -18,6 +18,7 @@ class LocationsVC: UICollectionViewController {
         super.viewDidLoad()
         collectionView.backgroundView = UIImageView(image: UIImage(named: "Spy_Background"))
         navigationController?.navigationBar.tintColor = .white
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,5 +67,14 @@ class LocationsVC: UICollectionViewController {
         }
     }
     
+}
+
+extension LocationsVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingWidth: CGFloat = 30 * 2
+        let avalibleWidth = collectionView.frame.width - paddingWidth
+        return CGSize(width: avalibleWidth, height: 110)
+    }
     
 }

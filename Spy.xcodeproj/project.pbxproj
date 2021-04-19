@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB5515C3911F9C3F899F2088 /* Pods_Spy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */; };
 		E91D1C64262AE53C0007736F /* Data Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* Data Manager.swift */; };
 		E9393B1C2620B50A00E0D09F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9393B1B2620B50A00E0D09F /* UIView.swift */; };
 		E9393B212620BB1400E0D09F /* o_Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */; };
@@ -32,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49063B9FF2375D28AE9FAD77 /* Pods-Spy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spy.release.xcconfig"; path = "Target Support Files/Pods-Spy/Pods-Spy.release.xcconfig"; sourceTree = "<group>"; };
+		50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE8F449D5A0DACDAD7E9D43 /* Pods-Spy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spy.debug.xcconfig"; path = "Target Support Files/Pods-Spy/Pods-Spy.debug.xcconfig"; sourceTree = "<group>"; };
 		E91D1C63262AE53C0007736F /* Data Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Manager.swift"; sourceTree = "<group>"; };
 		E9393B1B2620B50A00E0D09F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = o_Montserrat.ttf; sourceTree = "<group>"; };
@@ -63,12 +67,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5515C3911F9C3F899F2088 /* Pods_Spy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F6C3F86C3B368D96042F9EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C04D94C80A05DA11FDBC4920 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FE8F449D5A0DACDAD7E9D43 /* Pods-Spy.debug.xcconfig */,
+				49063B9FF2375D28AE9FAD77 /* Pods-Spy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E91D1C62262AE52C0007736F /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +114,8 @@
 			children = (
 				E954F004261C950A00E89673 /* Spy */,
 				E954F003261C950A00E89673 /* Products */,
+				C04D94C80A05DA11FDBC4920 /* Pods */,
+				7F6C3F86C3B368D96042F9EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E954F016261C950C00E89673 /* Build configuration list for PBXNativeTarget "Spy" */;
 			buildPhases = (
+				2259422D26AEAAE98870809F /* [CP] Check Pods Manifest.lock */,
 				E954EFFE261C950A00E89673 /* Sources */,
 				E954EFFF261C950A00E89673 /* Frameworks */,
 				E954F000261C950A00E89673 /* Resources */,
+				16262A78F85A6C84EB7E0743 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +279,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16262A78F85A6C84EB7E0743 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Spy/Pods-Spy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Spy/Pods-Spy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spy/Pods-Spy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2259422D26AEAAE98870809F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E954EFFE261C950A00E89673 /* Sources */ = {
@@ -419,13 +487,14 @@
 		};
 		E954F017261C950C00E89673 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE8F449D5A0DACDAD7E9D43 /* Pods-Spy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,13 +509,14 @@
 		};
 		E954F018261C950C00E89673 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49063B9FF2375D28AE9FAD77 /* Pods-Spy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

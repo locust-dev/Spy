@@ -22,6 +22,7 @@ class ContainerForTableViewVC: UIViewController {
         navigationItem.title = "\(currentGroup.title ?? "")"
         navigationController?.navigationBar.tintColor = .white
         setCornerRadiusToCircle(chooseOutlet)
+        setBackgroundImage(with: "backForButtons", for: chooseOutlet)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

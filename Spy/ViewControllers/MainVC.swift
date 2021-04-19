@@ -36,19 +36,29 @@ class MainVC: UIViewController {
         setupGestures()
         setBackgroundImage(with: "Spy_Background", for: view)
         
-        addShadows(chooseLocation,
-                   faqButton,
-                   startButtonOutlet,
-                   countSpyButton)
-        setCornerRadiusToCircle(chooseLocation,
-                                faqButton,
-                                startButtonOutlet,
-                                countSpyButton)
+        addShadows(
+            chooseLocation,
+            faqButton,
+            startButtonOutlet,
+            countSpyButton
+        )
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.sizeToFit()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        setCornerRadiusToCircle(
+            chooseLocation,
+            faqButton,
+            startButtonOutlet,
+            countSpyButton
+        )
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,7 +98,7 @@ extension MainVC: UIPopoverPresentationControllerDelegate {
         popOverVC.delegate = self
         popOverVC.sourceView = countSpyButton
         popOverVC.sourceRect = CGRect(x: countSpyButton.bounds.midX, y: countSpyButton.bounds.minY + -10, width: 0, height: 0)
-        popVC.preferredContentSize = CGSize(width: 300, height: 300)
+        popVC.preferredContentSize = CGSize(width: 250, height: 250)
         present(popVC, animated: true)
     }
 
@@ -128,6 +138,8 @@ extension MainVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
             game.players = playersPicker[row]
+            game.spies = 1
+            countSpyButton.setTitle("Шпионов: 1", for: .normal)
         } else {
             game.time = timerPicker[row]
         }

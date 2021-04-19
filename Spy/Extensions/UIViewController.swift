@@ -44,7 +44,7 @@ extension UIViewController {
     func addShadows(_ outlets: UIView...) {
         outlets.forEach { outlet in
             outlet.layer.shadowOpacity = 0.7
-            outlet.layer.shadowOffset = CGSize(width: 7, height: 10)
+            outlet.layer.shadowOffset = CGSize(width: 3, height: 3)
             outlet.layer.shadowColor = UIColor.black.cgColor
             outlet.layer.shadowRadius = 5.0
         }
