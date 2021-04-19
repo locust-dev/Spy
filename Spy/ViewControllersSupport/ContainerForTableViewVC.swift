@@ -14,7 +14,6 @@ protocol SetGroupDelegate {
 class ContainerForTableViewVC: UIViewController {
     
     @IBOutlet weak var chooseOutlet: UIButton!
-    @IBOutlet weak var addOutlet: UIButton!
     
     var currentGroup: LocationGroup!
     
