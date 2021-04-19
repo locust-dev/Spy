@@ -20,7 +20,7 @@
         <!--Шпион-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="Main_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,7 +165,7 @@
         <!--FAQ-->
         <scene sceneID="mzR-O0-W5M">
             <objects>
-                <viewController id="N5R-Mk-FuA" customClass="ContainerForFAQ_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N5R-Mk-FuA" customClass="ContainerForFaqVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SE1-R6-adC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,10 +213,10 @@
             </objects>
             <point key="canvasLocation" x="1860.8695652173915" y="795.53571428571422"/>
         </scene>
-        <!--FAQ_VC-->
+        <!--FaqVC-->
         <scene sceneID="Egn-BD-PZ4">
             <objects>
-                <tableViewController id="CcI-Z6-5at" customClass="FAQ_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="CcI-Z6-5at" customClass="FaqVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="70" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="PIS-Al-Lle">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,7 +245,7 @@
         <!--Локации-->
         <scene sceneID="6NR-Gi-vz2">
             <objects>
-                <collectionViewController id="w76-oP-7B7" customClass="Locations_CVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="w76-oP-7B7" customClass="LocationsVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Da5-N5-bEA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,10 +305,10 @@
             </objects>
             <point key="canvasLocation" x="1860.8695652173915" y="-651.5625"/>
         </scene>
-        <!--ContainerVC-->
+        <!--Container For Table ViewVC-->
         <scene sceneID="X16-5Q-EBt">
             <objects>
-                <viewController id="apq-RE-6GB" customClass="Container_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="apq-RE-6GB" customClass="ContainerForTableViewVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oDV-Qp-2H7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -316,7 +316,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaV-f9-E1q">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <connections>
-                                    <segue destination="1KG-g3-gV6" kind="embed" identifier="show" id="IfX-Zw-TPw"/>
+                                    <segue destination="1KG-g3-gV6" kind="embed" identifier="toTable" id="IfX-Zw-TPw"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXa-1C-K3j">
@@ -354,13 +354,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZe-BC-QgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="MN4-5d-6BD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2622" y="-652"/>
+            <point key="canvasLocation" x="2621.739130434783" y="-652.23214285714278"/>
         </scene>
         <!--Группа-->
         <scene sceneID="5fZ-wt-V1B">
             <objects>
-                <tableViewController id="1KG-g3-gV6" customClass="SetGroup_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="F2C-xG-tzz">
+                <tableViewController id="1KG-g3-gV6" customClass="SetGroupVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="F2C-xG-tzz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -385,12 +385,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5k-MK-OZo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3400" y="-651"/>
+            <point key="canvasLocation" x="3417" y="-1002"/>
         </scene>
         <!--Who Is SpyVC-->
         <scene sceneID="2fp-6R-85k">
             <objects>
-                <viewController id="OCO-dt-HP6" customClass="WhoIsSpy_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OCO-dt-HP6" customClass="WhoIsSpyVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W3t-VS-MKe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,7 +416,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Коснитесь, чтобы узнать роль!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U8-Vu-4Tr">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Коснитесь, чтобы узнать роль!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U8-Vu-4Tr">
                                 <rect key="frame" x="42" y="258" width="330" height="73.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -491,7 +491,7 @@
         <!--GameVC-->
         <scene sceneID="jAb-Ac-Ytp">
             <objects>
-                <viewController id="CbJ-Qa-lV7" customClass="Game_VC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CbJ-Qa-lV7" customClass="GameVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ium-Fc-Yc9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -517,6 +517,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Постарайтесь вычислить шпиона, пока время не истекло!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tr8-qX-YTW">
+                                <rect key="frame" x="20" y="296" width="374" height="84.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Qm-1F-ULh"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -524,12 +530,16 @@
                             <constraint firstItem="ec1-bU-9Ar" firstAttribute="top" secondItem="2Qm-1F-ULh" secondAttribute="top" constant="50" id="CG5-CA-pGb"/>
                             <constraint firstItem="ec1-bU-9Ar" firstAttribute="leading" secondItem="2Qm-1F-ULh" secondAttribute="leading" constant="20" id="E9r-Lu-5Qu"/>
                             <constraint firstItem="2Qm-1F-ULh" firstAttribute="trailing" secondItem="ec1-bU-9Ar" secondAttribute="trailing" constant="20" id="F7t-yE-cj4"/>
+                            <constraint firstItem="tr8-qX-YTW" firstAttribute="leading" secondItem="2Qm-1F-ULh" secondAttribute="leading" constant="20" id="H54-X6-fwD"/>
+                            <constraint firstItem="tr8-qX-YTW" firstAttribute="top" secondItem="ec1-bU-9Ar" secondAttribute="bottom" constant="8" symbolic="YES" id="TQv-rC-7AF"/>
+                            <constraint firstItem="2Qm-1F-ULh" firstAttribute="trailing" secondItem="tr8-qX-YTW" secondAttribute="trailing" constant="20" id="dEw-6M-6vj"/>
                             <constraint firstItem="dzX-XZ-YwJ" firstAttribute="centerX" secondItem="ium-Fc-Yc9" secondAttribute="centerX" id="h0T-Pi-66d"/>
                             <constraint firstItem="2Qm-1F-ULh" firstAttribute="bottom" secondItem="dzX-XZ-YwJ" secondAttribute="bottom" constant="150" id="mNV-vg-aZF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dzp-Tk-DMW"/>
                     <connections>
+                        <outlet property="faqLabel" destination="tr8-qX-YTW" id="k1F-zi-391"/>
                         <outlet property="overButton" destination="dzX-XZ-YwJ" id="Zpy-12-jkX"/>
                         <outlet property="timerLabel" destination="ec1-bU-9Ar" id="laz-kg-q6c"/>
                     </connections>
@@ -539,12 +549,81 @@
             </objects>
             <point key="canvasLocation" x="2574" y="72"/>
         </scene>
+        <!--Новая локация-->
+        <scene sceneID="M1h-xL-dpV">
+            <objects>
+                <viewController id="vsU-L1-WC7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jUC-dE-G2I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="1Yw-aa-8DG">
+                                <rect key="frame" x="20" y="64" width="374" height="227.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите название новой локации" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8q-iw-XNN">
+                                        <rect key="frame" x="74" y="0.0" width="226.5" height="56.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название локации" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GSR-bq-VdG">
+                                        <rect key="frame" x="37" y="94.5" width="300" height="45"/>
+                                        <color key="backgroundColor" red="0.6655848124" green="0.71088971999999995" blue="0.68892257180000005" alpha="0.35633870309999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="JGl-lS-skh"/>
+                                            <constraint firstAttribute="height" constant="45" id="NSh-Kb-l1c"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vsU-L1-WC7" id="hj7-eh-v1r"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYf-tH-YtJ">
+                                        <rect key="frame" x="117" y="177.5" width="140" height="50"/>
+                                        <color key="backgroundColor" red="0.60390461240000004" green="0.60390461240000004" blue="0.60390461240000004" alpha="0.69744042510000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eDW-8y-11G"/>
+                                            <constraint firstAttribute="width" constant="140" id="uxI-wo-Yza"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="21"/>
+                                        <state key="normal" title="Добавить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="okButtonPressed:" destination="vsU-L1-WC7" eventType="touchUpInside" id="yIN-LP-3dd"/>
+                                            <segue destination="cA5-vX-KeO" kind="unwind" unwindAction="unwindToTable:" id="Tub-ie-SOZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aog-r8-fca"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aog-r8-fca" firstAttribute="trailing" secondItem="1Yw-aa-8DG" secondAttribute="trailing" constant="20" id="0xb-NC-wP5"/>
+                            <constraint firstItem="1Yw-aa-8DG" firstAttribute="leading" secondItem="aog-r8-fca" secondAttribute="leading" constant="20" id="5On-Nh-eCd"/>
+                            <constraint firstItem="1Yw-aa-8DG" firstAttribute="top" secondItem="aog-r8-fca" secondAttribute="top" constant="20" id="Le3-UH-F4g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новая локация" id="BR9-Ch-GQK"/>
+                    <connections>
+                        <outlet property="addLocationTF" destination="GSR-bq-VdG" id="tAa-wl-P5O"/>
+                        <outlet property="okButtonOutlet" destination="uYf-tH-YtJ" id="qFq-p9-gpW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZ2-2z-7uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cA5-vX-KeO" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4042" y="-175"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gsk-zi-aif">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uey-Zg-xbh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="b6Z-eV-iba">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" largeTitles="YES" id="b6Z-eV-iba">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
@@ -561,10 +640,10 @@
             </objects>
             <point key="canvasLocation" x="210" y="72"/>
         </scene>
-        <!--How Much Spy Popover-->
+        <!--How Many Spies Popover-->
         <scene sceneID="Mqt-g4-D7a">
             <objects>
-                <viewController storyboardIdentifier="popVC" id="sNt-yo-Vl6" customClass="HowMuchSpyPopover" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popVC" id="sNt-yo-Vl6" customClass="HowManySpiesPopover" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HgY-lz-X74">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

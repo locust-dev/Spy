@@ -11,7 +11,7 @@ protocol HowMuchSpiesDelegate {
     func getSpiesCount(count: Int)
 }
 
-class Main_VC: UIViewController {
+class MainVC: UIViewController {
 
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
@@ -35,14 +35,24 @@ class Main_VC: UIViewController {
         
         setupGestures()
         setBackgroundImage(with: "Spy_Background", for: view)
+        
+        addShadows(chooseLocation,
+                   faqButton,
+                   startButtonOutlet,
+                   countSpyButton)
         setCornerRadiusToCircle(chooseLocation,
                                 faqButton,
                                 startButtonOutlet,
                                 countSpyButton)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.sizeToFit()
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let whoSpyVC = segue.destination as? WhoIsSpy_VC else { return }
+        guard let whoSpyVC = segue.destination as? WhoIsSpyVC else { return }
         whoSpyVC.currentGroup = currentGroup
         whoSpyVC.currentGame = game
     }
@@ -52,7 +62,7 @@ class Main_VC: UIViewController {
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
-        guard let sourceVC = unwindSegue.source as? Container_VC else { return }
+        guard let sourceVC = unwindSegue.source as? ContainerForTableViewVC else { return }
         currentGroup = sourceVC.currentGroup
         chooseLocation.setTitle(currentGroup.title, for: .normal)
     }
@@ -60,7 +70,7 @@ class Main_VC: UIViewController {
 }
 
 // MARK: - Configure popover
-extension Main_VC: UIPopoverPresentationControllerDelegate {
+extension MainVC: UIPopoverPresentationControllerDelegate {
 
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
@@ -69,7 +79,7 @@ extension Main_VC: UIPopoverPresentationControllerDelegate {
     }
 
     @objc private func tapped() {
-        guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? HowMuchSpyPopover else { return }
+        guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? HowManySpiesPopover else { return }
         popVC.modalPresentationStyle = .popover
         popVC.players = game.players
         popVC.delegate = self
@@ -89,7 +99,7 @@ extension Main_VC: UIPopoverPresentationControllerDelegate {
 }
 
 // MARK: - Picker View configure
-extension Main_VC: UIPickerViewDelegate, UIPickerViewDataSource {
+extension MainVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     private func createPlayersAndTimer() {
         for player in 3...25 {
@@ -133,7 +143,7 @@ extension Main_VC: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 // MARK: - Pass Data From Popover
-extension Main_VC: HowMuchSpiesDelegate {
+extension MainVC: HowMuchSpiesDelegate {
     func getSpiesCount(count: Int) {
         game.spies = count
         countSpyButton.setTitle(String("Шпионов: \(count)"), for: .normal)

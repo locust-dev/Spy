@@ -1,5 +1,5 @@
 //
-//  Locations_CVC.swift
+//  LocationsVC.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 07.04.2021.
@@ -9,29 +9,25 @@ import UIKit
 
 private let reuseIdentifier = "locGroup"
 
-class Locations_CVC: UICollectionViewController {
+class LocationsVC: UICollectionViewController {
     
     let groupes = LocationGroup.getGroupes()
     let images = ["allLocations", "countries", "sports", "travels", "culture", "child", "timeMachine"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         collectionView.backgroundView = UIImageView(image: UIImage(named: "Spy_Background"))
         navigationController?.navigationBar.tintColor = .white
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
         groupes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationCell
+        let group = groupes[indexPath.item]
         
-        
-        // Data model
-        cell.group = groupes[indexPath.row]
         // Image
         cell.image.image = UIImage(named: images[indexPath.row])
         // Background
@@ -41,7 +37,7 @@ class Locations_CVC: UICollectionViewController {
         cell.backgroundView = imageBack
         // Label
         cell.groupName.layer.shadowRadius = 1
-        cell.groupName.text = cell.group.title
+        cell.groupName.text = group.title
         // Corners
         cell.contentView.layer.cornerRadius = 25
         cell.contentView.layer.masksToBounds = true
@@ -64,7 +60,7 @@ class Locations_CVC: UICollectionViewController {
 //        containerVC.currentGroup = groupes
         if segue.identifier == "showSetLocation" {
             if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
-                let setVC = segue.destination as! Container_VC
+                let setVC = segue.destination as! ContainerForTableViewVC
                 setVC.currentGroup = groupes[indexPath.row]
             }
         }

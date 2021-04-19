@@ -7,16 +7,14 @@
 
 import UIKit
 
-class FAQ_VC: UITableViewController {
+class FaqVC: UITableViewController {
 
     let faq = Faq()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.backgroundView = UIImageView(image: UIImage(named: "Spy_Background"))
         tableView.contentInset.top = 20
-        
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

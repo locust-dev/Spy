@@ -1,5 +1,5 @@
 //
-//  Container_VC.swift
+//  ContainerForTableViewVC.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 07.04.2021.
@@ -11,9 +11,10 @@ protocol SetGroupDelegate {
     func getChangedGroup(new group: LocationGroup)
 }
 
-class Container_VC: UIViewController {
+class ContainerForTableViewVC: UIViewController {
 
     @IBOutlet weak var chooseOutlet: UIButton!
+    @IBOutlet weak var addOutlet: UIButton!
     
     var currentGroup: LocationGroup!
     
@@ -21,14 +22,19 @@ class Container_VC: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "\(currentGroup.title ?? "")"
         navigationController?.navigationBar.tintColor = .white
-        chooseOutlet.layer.cornerRadius = chooseOutlet.frame.height / 2
+        setCornerRadiusToCircle(chooseOutlet)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tableVC = segue.destination as? SetGroup_VC else { return }
-        tableVC.delegate = self
-        tableVC.currentGroup = currentGroup
-        tableVC.locationsForRecover = currentGroup
+        if segue.identifier == "toTable" {
+            guard let tableVC = segue.destination as? SetGroupVC else { return }
+            tableVC.delegate = self
+            tableVC.currentGroup = currentGroup
+            tableVC.locationsForRecover = currentGroup
+        } else {
+            guard let addVC = segue.destination as? AddPlayersLocationsVC else { return }
+            addVC.currentGroup = currentGroup
+        }
     }
     
     @IBAction func chooseButton() {
@@ -39,10 +45,16 @@ class Container_VC: UIViewController {
         }
     }
     
+    @IBAction func unwindToTable(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as! AddPlayersLocationsVC
+        currentGroup.addedLocations = sourceViewController.currentGroup.addedLocations
+    }
+    
 }
 
 
-extension Container_VC: SetGroupDelegate {
+extension ContainerForTableViewVC: SetGroupDelegate {
+    
     func getChangedGroup(new group: LocationGroup) {
         currentGroup.locations = group.locations.filter{$0 != ""}
         
@@ -50,4 +62,5 @@ extension Container_VC: SetGroupDelegate {
         alert(title: "Ошибка!", message: "Должна быть выбрана хотя бы одна локация из списка!")
         }
     }
+
 }

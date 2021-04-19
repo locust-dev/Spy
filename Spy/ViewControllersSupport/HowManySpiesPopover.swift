@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HowMuchSpyPopover: UIViewController {
+class HowManySpiesPopover: UIViewController {
     
     @IBOutlet weak var pickerSpyCount: UIPickerView!
     
@@ -34,7 +34,7 @@ class HowMuchSpyPopover: UIViewController {
 }
 
 // MARK: - Spyes Count Configure
-extension HowMuchSpyPopover {
+extension HowManySpiesPopover {
     
     private func getSpiesCount() {
         if players % 2 == 1 {
@@ -55,7 +55,7 @@ extension HowMuchSpyPopover {
 }
 
 // MARK: - Picker View Configure
-extension HowMuchSpyPopover:  UIPickerViewDelegate, UIPickerViewDataSource {
+extension HowManySpiesPopover:  UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1

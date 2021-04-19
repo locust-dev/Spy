@@ -9,6 +9,7 @@
 struct LocationGroup {
     let title: String!
     var locations: [String]!
+    var addedLocations: [String] = []
 }
 
 struct Game {

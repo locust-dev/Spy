@@ -11,12 +11,21 @@ extension UIViewController {
     
     func setBackgroundImage(with image: String, for view: UIView) {
         let imageView = UIImageView(image: UIImage(named: image))
-        imageView.frame = view.bounds
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.center = view.center
-        view.addSubview(imageView)
-        view.sendSubviewToBack(imageView)
+
+        if view is UIButton {
+            imageView.frame = view.bounds
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.layer.cornerRadius = view.frame.height / 2
+            view.addSubview(imageView)
+        } else {
+            imageView.frame = view.bounds
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.center = view.center
+            view.addSubview(imageView)
+            view.sendSubviewToBack(imageView)
+        }
     }
     
     func alert(title: String, message: String) {
@@ -31,4 +40,15 @@ extension UIViewController {
             button.layer.cornerRadius = button.frame.height / 2
         }
     }
+    
+    func addShadows(_ outlets: UIView...) {
+        outlets.forEach { outlet in
+            outlet.layer.shadowOpacity = 0.7
+            outlet.layer.shadowOffset = CGSize(width: 7, height: 10)
+            outlet.layer.shadowColor = UIColor.black.cgColor
+            outlet.layer.shadowRadius = 5.0
+        }
+    }
+    
+    
 }

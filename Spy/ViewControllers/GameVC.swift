@@ -1,5 +1,5 @@
 //
-//  Game_VC.swift
+//  GameVC.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 07.04.2021.
@@ -8,23 +8,23 @@
 import UIKit
 import AudioToolbox
 
-class Game_VC: UIViewController {
+class GameVC: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var faqLabel: UILabel!
     @IBOutlet weak var overButton: UIButton!
     
     var timer: Timer!
-    var totalTime = 1
+    var totalTime: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBackgroundImage(with: "Spy_Background", for: view)
-        
         navigationItem.hidesBackButton = true
-        timerLabel.text = timeFormatted(totalTime)
-        overButton.layer.cornerRadius = overButton.frame.height / 2
+        setBackgroundImage(with: "Spy_Background", for: view)
+        setCornerRadiusToCircle(overButton)
         
+        timerLabel.text = timeFormatted(totalTime)
         timer = Timer.scheduledTimer(
             timeInterval: 1,
             target: self,
@@ -39,13 +39,12 @@ class Game_VC: UIViewController {
         
         if totalTime != 0 {
             totalTime -= 1
-        } else {
-            if let timer = timer {
-                timer.invalidate()
-                timerLabel.text = "Время вышло! Шпион побеждает!"
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                self.timer = nil
-            }
+        } else if let timer = timer {
+            timer.invalidate()
+            faqLabel.isHidden = true
+            timerLabel.text = "Время вышло!"
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            self.timer = nil
         }
     }
     

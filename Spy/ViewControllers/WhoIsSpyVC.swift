@@ -1,5 +1,5 @@
 //
-//  WhoIsSpy_VC.swift
+//  WhoIsSpyVC.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 06.04.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WhoIsSpy_VC: UIViewController {
+class WhoIsSpyVC: UIViewController {
     
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var whoIsSpyBTN: UIButton!
@@ -33,22 +33,19 @@ class WhoIsSpy_VC: UIViewController {
         addedRole()
         
         whoIsSpyLocation.text = ""
-        startTextLabel.text = "Игрок 1. \n Коснись, чтобы узнать роль!"
-        whoIsSpyLabel.isHidden = true
+        startTextLabel.text = "Игрок 1 \n \n Коснись, чтобы узнать роль!"
         
         navigationItem.hidesBackButton = true
         randomLocationFromGroup = currentGroup.locations.randomElement()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let gameVC = segue.destination as? Game_VC else { return }
+        guard let gameVC = segue.destination as? GameVC else { return }
         gameVC.totalTime = currentGame.time * 60
     }
     
     @IBAction func whoIsSpyPressed(_ sender: UIButton) {
         sender.showAnimationWithHaptic()
-        whoIsSpyLabel.isHidden = false
-        startTextLabel.isHidden = true
         
         if index == roles.count {
             performSegue(withIdentifier: "toStartGame", sender: nil)
@@ -69,9 +66,12 @@ class WhoIsSpy_VC: UIViewController {
 }
 
 // MARK: - Private Methods
-extension WhoIsSpy_VC {
+extension WhoIsSpyVC {
     
     private func setRoleSpyIfTrue(role: Bool) {
+        whoIsSpyLabel.isHidden = false
+        startTextLabel.isHidden = true
+        
         if role {
             whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy2"), for: .normal)
             whoIsSpyLabel.font = whoIsSpyLabel.font.withSize(40)

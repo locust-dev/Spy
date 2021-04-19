@@ -11,7 +11,4 @@ class LocationCell: UICollectionViewCell {
     
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var image: UIImageView!
-    
-    var group: LocationGroup!
-    
 }
