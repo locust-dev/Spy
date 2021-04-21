@@ -27,8 +27,8 @@ extension LocationGroup {
             LocationGroup(title: Groupes.travels.rawValue, locations: Groupes.travels.definition),
             LocationGroup(title: Groupes.culture.rawValue, locations: Groupes.culture.definition),
             LocationGroup(title: Groupes.child.rawValue, locations: Groupes.child.definition),
-            LocationGroup(title: Groupes.timeMachine.rawValue, locations: Groupes.timeMachine.definition)
-            
+            LocationGroup(title: Groupes.timeMachine.rawValue, locations: Groupes.timeMachine.definition),
+            LocationGroup(title: Groupes.adult.rawValue, locations: Groupes.adult.definition)
         ]
         
     }

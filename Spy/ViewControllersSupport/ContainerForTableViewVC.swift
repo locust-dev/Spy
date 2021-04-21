@@ -47,7 +47,6 @@ extension ContainerForTableViewVC: SetGroupDelegate {
     
     func getChangedGroup(new group: LocationGroup) {
         currentGroup.locations = group.locations.filter{$0 != ""}
-        
         if currentGroup.locations.isEmpty {
             alert(title: "Ошибка!", message: "Должна быть выбрана хотя бы одна локация из списка!")
         }

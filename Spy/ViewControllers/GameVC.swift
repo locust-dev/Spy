@@ -35,6 +35,11 @@ class GameVC: UIViewController {
         )
     }
     
+    
+    @IBAction func gameOverPressed() {
+        timer.invalidate()
+    }
+    
     @objc private func updateTimer() {
         timerLabel.text = timeFormatted(totalTime)
         

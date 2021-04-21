@@ -12,7 +12,7 @@ private let reuseIdentifier = "locGroup"
 class LocationsVC: UICollectionViewController {
     
     let groupes = LocationGroup.getGroupes()
-    let images = ["allLocations", "countries", "sports", "travels", "culture", "child", "timeMachine"]
+    let images = ["allLocations", "countries", "sports", "travels", "culture", "child", "timeMachine", "adult"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,11 +54,6 @@ class LocationsVC: UICollectionViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-// Think
-//        guard let containerVC = segue.destination as? Container_VC else { return }
-//        guard let indexPath = collectionView.indexPathsForSelectedItems else { return }
-//        let group = groupes[indexPath]
-//        containerVC.currentGroup = groupes
         if segue.identifier == "showSetLocation" {
             if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
                 let setVC = segue.destination as! ContainerForTableViewVC

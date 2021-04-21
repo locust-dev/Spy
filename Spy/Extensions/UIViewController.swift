@@ -50,5 +50,10 @@ extension UIViewController {
         }
     }
     
+    func setHaptic(style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        let haptic = UIImpactFeedbackGenerator(style: style)
+        haptic.prepare()
+        haptic.impactOccurred()
+    }
     
 }

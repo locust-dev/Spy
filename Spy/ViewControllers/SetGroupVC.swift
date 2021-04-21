@@ -18,6 +18,7 @@ class SetGroupVC: UITableViewController {
         tableView.backgroundView = UIImageView(image: UIImage(named: "Spy_Background"))
         tableView.contentInset.top = 20
         tableView.contentInset.bottom = 100
+        tableView.allowsMultipleSelection = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,30 +32,35 @@ class SetGroupVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "location", for: indexPath)
-        let selectionColor = UIView()
         
-        cell.textLabel?.text = currentGroup.locations[indexPath.row]
-        cell.textLabel?.font = UIFont(name: "Montserrat", size: 22) ?? .systemFont(ofSize: 22)
+        if let selectedRows = tableView.indexPathsForSelectedRows, selectedRows.contains(indexPath) {
+            cell.accessoryType = .none
+        } else {
+            cell.accessoryType = .checkmark
+        }
+        
+        cell.textLabel?.text = locationsForRecover.locations[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Montserrat", size: 20) ?? .systemFont(ofSize: 20)
         cell.textLabel?.textColor = .white
         cell.textLabel?.numberOfLines = 0
-        selectionColor.backgroundColor = UIColor(white: 1, alpha: 0.5)
-        cell.selectedBackgroundView = selectionColor
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        
-        if cell.accessoryType == .checkmark {
-            currentGroup.locations[indexPath.row] = ""
-            cell.accessoryType = .none
-        } else {
-            currentGroup.locations[indexPath.row] = locationsForRecover.locations[indexPath.row]
-            cell.accessoryType = .checkmark
-        }
+        guard let cell = self.tableView.cellForRow(at: indexPath) else { return }
+        cell.accessoryType = .none
+        currentGroup.locations[indexPath.row] = ""
         delegate.getChangedGroup(new: currentGroup)
+        setHaptic(style: .medium)
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let cell = self.tableView.cellForRow(at: indexPath) else { return }
+        cell.accessoryType = .checkmark
+        currentGroup.locations[indexPath.row] = locationsForRecover.locations[indexPath.row]
+        delegate.getChangedGroup(new: currentGroup)
+        setHaptic(style: .medium)
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

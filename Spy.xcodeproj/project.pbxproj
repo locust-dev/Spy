@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB5515C3911F9C3F899F2088 /* Pods_Spy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */; };
 		E91D1C64262AE53C0007736F /* Data Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* Data Manager.swift */; };
 		E9393B1C2620B50A00E0D09F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9393B1B2620B50A00E0D09F /* UIView.swift */; };
 		E9393B212620BB1400E0D09F /* o_Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */; };
@@ -20,6 +19,7 @@
 		E954F00F261C950C00E89673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E954F00E261C950C00E89673 /* Assets.xcassets */; };
 		E954F012261C950C00E89673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F010261C950C00E89673 /* LaunchScreen.storyboard */; };
 		E954F01F261C96D800E89673 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F01E261C96D800E89673 /* Data.swift */; };
+		E9569479262F625700F054C1 /* LayoutHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9569477262F607E00F054C1 /* LayoutHelper.framework */; };
 		E97C7A16262B1556001D75F7 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C7A15262B1556001D75F7 /* FaqVC.swift */; };
 		E9B8DD63262C6FB7002B623A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8DD62262C6FB7002B623A /* UITextField.swift */; };
 		E9CCA8D226290D4F008B5F24 /* ContainerForFaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCA8D126290D4F008B5F24 /* ContainerForFaqVC.swift */; };
@@ -28,6 +28,7 @@
 		E9E7B69E261DE49E00455F72 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B69D261DE49E00455F72 /* LocationCell.swift */; };
 		E9E7B6A1261E0EA400455F72 /* SetGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B6A0261E0EA400455F72 /* SetGroupVC.swift */; };
 		E9E7B6A8261E216400455F72 /* ContainerForTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B6A7261E216400455F72 /* ContainerForTableViewVC.swift */; };
+		E9EE0E1C262F4C61002061C7 /* Pods_Spy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E9FD485C261CC658005C29A1 /* WhoIsSpyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD485B261CC658005C29A1 /* WhoIsSpyVC.swift */; };
 		E9FD485F261D0F52005C29A1 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD485E261D0F52005C29A1 /* GameVC.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		49063B9FF2375D28AE9FAD77 /* Pods-Spy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spy.release.xcconfig"; path = "Target Support Files/Pods-Spy/Pods-Spy.release.xcconfig"; sourceTree = "<group>"; };
 		50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE8F449D5A0DACDAD7E9D43 /* Pods-Spy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spy.debug.xcconfig"; path = "Target Support Files/Pods-Spy/Pods-Spy.debug.xcconfig"; sourceTree = "<group>"; };
+		E9114D75262F589700AFFD9B /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91D1C63262AE53C0007736F /* Data Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Manager.swift"; sourceTree = "<group>"; };
 		E9393B1B2620B50A00E0D09F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = o_Montserrat.ttf; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		E954F011261C950C00E89673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E954F013261C950C00E89673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E954F01E261C96D800E89673 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E9569477262F607E00F054C1 /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97C7A15262B1556001D75F7 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		E9B8DD62262C6FB7002B623A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		E9CCA8D126290D4F008B5F24 /* ContainerForFaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerForFaqVC.swift; sourceTree = "<group>"; };
@@ -58,6 +61,8 @@
 		E9E7B69D261DE49E00455F72 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		E9E7B6A0261E0EA400455F72 /* SetGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGroupVC.swift; sourceTree = "<group>"; };
 		E9E7B6A7261E216400455F72 /* ContainerForTableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerForTableViewVC.swift; sourceTree = "<group>"; };
+		E9EE0E18262F4C5A002061C7 /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9EE0E1E262F551A002061C7 /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FD485B261CC658005C29A1 /* WhoIsSpyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoIsSpyVC.swift; sourceTree = "<group>"; };
 		E9FD485E261D0F52005C29A1 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB5515C3911F9C3F899F2088 /* Pods_Spy.framework in Frameworks */,
+				E9569479262F625700F054C1 /* LayoutHelper.framework in Frameworks */,
+				E9EE0E1C262F4C61002061C7 /* Pods_Spy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,10 @@
 		7F6C3F86C3B368D96042F9EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9569477262F607E00F054C1 /* LayoutHelper.framework */,
+				E9114D75262F589700AFFD9B /* LayoutHelper.framework */,
+				E9EE0E1E262F551A002061C7 /* LayoutHelper.framework */,
+				E9EE0E18262F4C5A002061C7 /* LayoutHelper.framework */,
 				50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */,
 			);
 			name = Frameworks;
@@ -420,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -475,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -492,6 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -499,8 +510,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = voxx.Spy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -514,6 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -521,8 +535,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = voxx.Spy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
