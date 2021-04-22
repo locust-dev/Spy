@@ -29,6 +29,7 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         chooseLocation.setTitle(currentGroup.title, for: .normal)
         createPlayersAndTimer()
         
