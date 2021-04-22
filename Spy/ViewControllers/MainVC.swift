@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 protocol HowMuchSpiesDelegate {
     func getSpiesCount(count: Int)
@@ -16,6 +17,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
     @IBOutlet weak var faqButton: UIButton!
+    @IBOutlet weak var reviewButton: UIButton!
     @IBOutlet weak var countSpyButton: UIButton!
     
     @IBOutlet var pickers: [UIPickerView]!
@@ -30,19 +32,11 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chooseLocation.setTitle(currentGroup.title, for: .normal)
-        createPlayersAndTimer()
-        
-        setupGestures()
         setBackgroundImage(with: "Spy_Background", for: view)
-        
-        addShadows(
-            chooseLocation,
-            faqButton,
-            startButtonOutlet,
-            countSpyButton
-        )
-        
+        chooseLocation.setTitle(currentGroup.title, for: .normal)
+        RateManager.showRatesController()
+        createPlayersAndTimer()
+        setupGestures()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,9 +47,16 @@ class MainVC: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
+        addShadows(
+            chooseLocation,
+            startButtonOutlet,
+            countSpyButton
+        )
+        
         setCornerRadiusToCircle(
             chooseLocation,
             faqButton,
+            reviewButton,
             startButtonOutlet,
             countSpyButton
         )
@@ -69,6 +70,10 @@ class MainVC: UIViewController {
     
     @IBAction func begins(_ sender: UIButton) {
         sender.showAnimationWithHaptic()
+    }
+    
+    @IBAction func reviewButtonPressed() {
+        SKStoreReviewController.requestReview()
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
@@ -159,5 +164,22 @@ extension MainVC: HowMuchSpiesDelegate {
     func getSpiesCount(count: Int) {
         game.spies = count
         countSpyButton.setTitle(String("Шпионов: \(count)"), for: .normal)
+    }
+}
+
+// MARK: - Private Methods
+extension MainVC {
+    
+    private func alertForReview() {
+        let alert = UIAlertController(
+            title: "Понравилось приложение?",
+            message: "Будем рады, если вы поставите оценку и напишите отзыв :)",
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: "Оценить", style: .default)
+        let laterAction = UIAlertAction(title: "Позже", style: .default)
+        alert.addAction(okAction)
+        alert.addAction(laterAction)
+        present(alert, animated: true)
     }
 }

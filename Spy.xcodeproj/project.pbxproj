@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E91D1C64262AE53C0007736F /* Data Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* Data Manager.swift */; };
+		E91D1C64262AE53C0007736F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* DataManager.swift */; };
 		E9393B1C2620B50A00E0D09F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9393B1B2620B50A00E0D09F /* UIView.swift */; };
 		E9393B212620BB1400E0D09F /* o_Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */; };
 		E9393B222620BB1400E0D09F /* o_MontserratBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9393B202620BB1400E0D09F /* o_MontserratBold.ttf */; };
+		E93A3C962631AF3600312B47 /* RateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A3C952631AF3600312B47 /* RateManager.swift */; };
 		E94F05C42629B6860039899C /* HowManySpiesPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F05C32629B6860039899C /* HowManySpiesPopover.swift */; };
 		E954F006261C950B00E89673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F005261C950B00E89673 /* AppDelegate.swift */; };
 		E954F008261C950B00E89673 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F007261C950B00E89673 /* SceneDelegate.swift */; };
@@ -38,10 +39,11 @@
 		50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE8F449D5A0DACDAD7E9D43 /* Pods-Spy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spy.debug.xcconfig"; path = "Target Support Files/Pods-Spy/Pods-Spy.debug.xcconfig"; sourceTree = "<group>"; };
 		E9114D75262F589700AFFD9B /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E91D1C63262AE53C0007736F /* Data Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Manager.swift"; sourceTree = "<group>"; };
+		E91D1C63262AE53C0007736F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E9393B1B2620B50A00E0D09F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = o_Montserrat.ttf; sourceTree = "<group>"; };
 		E9393B202620BB1400E0D09F /* o_MontserratBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = o_MontserratBold.ttf; sourceTree = "<group>"; };
+		E93A3C952631AF3600312B47 /* RateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateManager.swift; sourceTree = "<group>"; };
 		E94F05C32629B6860039899C /* HowManySpiesPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowManySpiesPopover.swift; sourceTree = "<group>"; };
 		E954F002261C950A00E89673 /* Spy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E954F005261C950B00E89673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +106,8 @@
 		E91D1C62262AE52C0007736F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				E91D1C63262AE53C0007736F /* Data Manager.swift */,
+				E91D1C63262AE53C0007736F /* DataManager.swift */,
+				E93A3C952631AF3600312B47 /* RateManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -338,7 +341,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E0EC9126219309001AD4C9 /* UIViewController.swift in Sources */,
-				E91D1C64262AE53C0007736F /* Data Manager.swift in Sources */,
+				E93A3C962631AF3600312B47 /* RateManager.swift in Sources */,
+				E91D1C64262AE53C0007736F /* DataManager.swift in Sources */,
 				E9393B1C2620B50A00E0D09F /* UIView.swift in Sources */,
 				E954F00A261C950B00E89673 /* MainVC.swift in Sources */,
 				E954F006261C950B00E89673 /* AppDelegate.swift in Sources */,

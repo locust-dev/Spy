@@ -1,5 +1,5 @@
 //
-//  Data Manager.swift
+//  DataManager.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 17.04.2021.
