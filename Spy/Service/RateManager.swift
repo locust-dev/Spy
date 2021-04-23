@@ -21,7 +21,13 @@ class RateManager {
         let count = UserDefaults.standard.integer(forKey: "run_count")
         if count == 10 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                SKStoreReviewController.requestReview()
+                if let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                    if #available(iOS 14.0, *) {
+                        SKStoreReviewController.requestReview(in: windowScene)
+                    } else {
+                        SKStoreReviewController.requestReview()
+                    }
+                }
             })
         }
     }

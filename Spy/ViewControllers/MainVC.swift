@@ -72,8 +72,8 @@ class MainVC: UIViewController {
         sender.showAnimationWithHaptic()
     }
     
-    @IBAction func reviewButtonPressed() {
-        SKStoreReviewController.requestReview()
+    @IBAction func requestReviewButton() {
+        alertForReview()
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
@@ -173,10 +173,14 @@ extension MainVC {
     private func alertForReview() {
         let alert = UIAlertController(
             title: "Понравилось приложение?",
-            message: "Будем рады, если вы поставите оценку и напишите отзыв :)",
+            message: "Будем очень рады, если вы поставите оценку и напишите отзыв :)",
             preferredStyle: .alert
         )
-        let okAction = UIAlertAction(title: "Оценить", style: .default)
+        let okAction = UIAlertAction(title: "Оценить", style: .default, handler: { _ in 
+            guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id1563967736?action=write-review")
+            else { fatalError("Expected a valid URL") }
+            UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+        })
         let laterAction = UIAlertAction(title: "Позже", style: .default)
         alert.addAction(okAction)
         alert.addAction(laterAction)
