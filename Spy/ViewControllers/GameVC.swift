@@ -83,7 +83,9 @@ class GameVC: UIViewController {
     }
     
     @objc private func pauseWhenBackground(noti: Notification) {
-        timer.invalidate()
+        if let timer = timer {
+            timer.invalidate()
+        }
         let shared = UserDefaults.standard
         shared.set(Date(), forKey: "savedTime")
     }
@@ -91,7 +93,6 @@ class GameVC: UIViewController {
     @objc private func willEnterForeground(noti: Notification) {
         if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
             totalTime -= GameVC.getTimeDifference(startDate: savedDate)
-            print(totalTime!)
             createTimer()
         }
     }
