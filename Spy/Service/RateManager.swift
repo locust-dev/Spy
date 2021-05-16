@@ -5,7 +5,6 @@
 //  Created by Илья Тюрин on 22.04.2021.
 //
 
-import UIKit
 import StoreKit
 
 class RateManager {

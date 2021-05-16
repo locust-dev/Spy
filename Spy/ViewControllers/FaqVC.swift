@@ -8,8 +8,6 @@
 import UIKit
 
 class FaqVC: UITableViewController {
-
-    let faq = Faq()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,16 +16,16 @@ class FaqVC: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return faq.titles.count
+        Faq.shared.titles.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "info", for: indexPath)
-        let info = faq.definition[indexPath.section]
+        let info = Faq.shared.definition[indexPath.section]
         
         cell.textLabel?.text = info
         cell.textLabel?.font = UIFont(name: "Montserrat", size: 20) ?? .systemFont(ofSize: 22)
@@ -39,7 +37,7 @@ class FaqVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UILabel()
-        let title = faq.titles[section]
+        let title = Faq.shared.titles[section]
         
         view.textColor = .white
         view.font = UIFont(name: "Montserrat", size: 22) ?? .systemFont(ofSize: 22)

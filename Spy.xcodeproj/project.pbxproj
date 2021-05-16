@@ -19,7 +19,7 @@
 		E954F00D261C950B00E89673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F00B261C950B00E89673 /* Main.storyboard */; };
 		E954F00F261C950C00E89673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E954F00E261C950C00E89673 /* Assets.xcassets */; };
 		E954F012261C950C00E89673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F010261C950C00E89673 /* LaunchScreen.storyboard */; };
-		E954F01F261C96D800E89673 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F01E261C96D800E89673 /* Data.swift */; };
+		E954F01F261C96D800E89673 /* LocationGroupes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F01E261C96D800E89673 /* LocationGroupes.swift */; };
 		E9569479262F625700F054C1 /* LayoutHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9569477262F607E00F054C1 /* LayoutHelper.framework */; };
 		E97C7A16262B1556001D75F7 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C7A15262B1556001D75F7 /* FaqVC.swift */; };
 		E9B8DD63262C6FB7002B623A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8DD62262C6FB7002B623A /* UITextField.swift */; };
@@ -29,6 +29,7 @@
 		E9E7B69E261DE49E00455F72 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B69D261DE49E00455F72 /* LocationCell.swift */; };
 		E9E7B6A1261E0EA400455F72 /* SetGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B6A0261E0EA400455F72 /* SetGroupVC.swift */; };
 		E9E7B6A8261E216400455F72 /* ContainerForTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7B6A7261E216400455F72 /* ContainerForTableViewVC.swift */; };
+		E9EC35EF26518CFF001FB35B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC35EE26518CFF001FB35B /* Game.swift */; };
 		E9EE0E1C262F4C61002061C7 /* Pods_Spy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E9FD485C261CC658005C29A1 /* WhoIsSpyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD485B261CC658005C29A1 /* WhoIsSpyVC.swift */; };
 		E9FD485F261D0F52005C29A1 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD485E261D0F52005C29A1 /* GameVC.swift */; };
@@ -53,7 +54,7 @@
 		E954F00E261C950C00E89673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E954F011261C950C00E89673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E954F013261C950C00E89673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E954F01E261C96D800E89673 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E954F01E261C96D800E89673 /* LocationGroupes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationGroupes.swift; sourceTree = "<group>"; };
 		E9569477262F607E00F054C1 /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97C7A15262B1556001D75F7 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		E9B8DD62262C6FB7002B623A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		E9E7B69D261DE49E00455F72 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		E9E7B6A0261E0EA400455F72 /* SetGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGroupVC.swift; sourceTree = "<group>"; };
 		E9E7B6A7261E216400455F72 /* ContainerForTableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerForTableViewVC.swift; sourceTree = "<group>"; };
+		E9EC35EE26518CFF001FB35B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E9EE0E18262F4C5A002061C7 /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EE0E1E262F551A002061C7 /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FD485B261CC658005C29A1 /* WhoIsSpyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoIsSpyVC.swift; sourceTree = "<group>"; };
@@ -159,7 +161,8 @@
 		E954F01D261C96C700E89673 /* Data model */ = {
 			isa = PBXGroup;
 			children = (
-				E954F01E261C96D800E89673 /* Data.swift */,
+				E954F01E261C96D800E89673 /* LocationGroupes.swift */,
+				E9EC35EE26518CFF001FB35B /* Game.swift */,
 			);
 			path = "Data model";
 			sourceTree = "<group>";
@@ -348,12 +351,13 @@
 				E954F006261C950B00E89673 /* AppDelegate.swift in Sources */,
 				E94F05C42629B6860039899C /* HowManySpiesPopover.swift in Sources */,
 				E9FD485F261D0F52005C29A1 /* GameVC.swift in Sources */,
-				E954F01F261C96D800E89673 /* Data.swift in Sources */,
+				E954F01F261C96D800E89673 /* LocationGroupes.swift in Sources */,
 				E9E7B69B261DE47300455F72 /* LocationsVC.swift in Sources */,
 				E9E7B6A8261E216400455F72 /* ContainerForTableViewVC.swift in Sources */,
 				E9B8DD63262C6FB7002B623A /* UITextField.swift in Sources */,
 				E97C7A16262B1556001D75F7 /* FaqVC.swift in Sources */,
 				E9CCA8D226290D4F008B5F24 /* ContainerForFaqVC.swift in Sources */,
+				E9EC35EF26518CFF001FB35B /* Game.swift in Sources */,
 				E9E7B69E261DE49E00455F72 /* LocationCell.swift in Sources */,
 				E9E7B6A1261E0EA400455F72 /* SetGroupVC.swift in Sources */,
 				E9FD485C261CC658005C29A1 /* WhoIsSpyVC.swift in Sources */,
@@ -506,7 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -514,7 +518,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = voxx.Spy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
@@ -531,7 +535,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -539,7 +543,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = voxx.Spy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;

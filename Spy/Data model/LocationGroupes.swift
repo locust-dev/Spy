@@ -1,5 +1,5 @@
 //
-//  Data.swift
+//  LocationGroupes.swift.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 06.04.2021.
@@ -7,18 +7,13 @@
 
 
 struct LocationGroup {
-    let title: String!
-    var locations: [String]!
-    var addedLocations: [String] = []
-}
-
-struct Game {
-    var time: Int!
-    var players: Int!
-    var spies: Int!
-}
-
-extension LocationGroup {
+    let title: String
+    var locations: [String]
+    
+    static func getDefaultGroup() -> LocationGroup {
+        LocationGroup(title: Groupes.allLocations.rawValue, locations: Groupes.allLocations.definition)
+    }
+    
     static func getGroupes() -> [LocationGroup] {
         [
             LocationGroup(title: Groupes.allLocations.rawValue, locations: Groupes.allLocations.definition),

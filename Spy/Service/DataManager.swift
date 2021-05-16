@@ -6,6 +6,11 @@
 //
 
 class Faq {
+    
+    static let shared = Faq()
+    
+    private init() {}
+    
     let titles = ["Как играть?",
                   "Игровой процесс",
                   "Очередность вопросов",

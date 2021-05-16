@@ -27,17 +27,16 @@ class WhoIsSpyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.hidesBackButton = true
         setBackgroundImage(with: "Spy_Background", for: view)
+        whoIsSpyLocation.text = ""
+        startTextLabel.text = "Игрок 1 \n \n Коснись, чтобы узнать роль!"
+        
+        randomLocationFromGroup = currentGroup.locations.randomElement()
         addShadows(whoIsSpyBTN, exitButton)
         setCornerRadiusToCircle(exitButton)
         spyButtonConfigure()
         addedRole()
-        
-        whoIsSpyLocation.text = ""
-        startTextLabel.text = "Игрок 1 \n \n Коснись, чтобы узнать роль!"
-        
-        navigationItem.hidesBackButton = true
-        randomLocationFromGroup = currentGroup.locations.randomElement()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

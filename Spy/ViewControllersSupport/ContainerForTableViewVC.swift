@@ -19,7 +19,7 @@ class ContainerForTableViewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "\(currentGroup.title ?? "")"
+        navigationItem.title = "\(currentGroup.title)"
         navigationController?.navigationBar.tintColor = .white
         setCornerRadiusToCircle(chooseOutlet)
         setBackgroundImage(with: "backForButtons", for: chooseOutlet)

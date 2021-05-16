@@ -8,11 +8,9 @@
 import UIKit
 
 extension UITextField {
-    
     func setPlaceHolder(with text: String, and color: UIColor) {
         self.attributedPlaceholder = NSAttributedString(
             string: text,
             attributes: [NSAttributedString.Key.foregroundColor: color])
     }
-    
 }

@@ -13,7 +13,7 @@ protocol HowMuchSpiesDelegate {
 }
 
 class MainVC: UIViewController {
-
+    
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
     @IBOutlet weak var faqButton: UIButton!
@@ -22,18 +22,16 @@ class MainVC: UIViewController {
     
     @IBOutlet var pickers: [UIPickerView]!
     
-    var game = Game(time: 1, players: 3, spies: 1)
-    var currentGroup = LocationGroup(title: Groupes.allLocations.rawValue,
-                             locations: Groupes.allLocations.definition)
-    
     private var playersPicker: [Int] = []
     private var timerPicker: [Int] = []
-    
+    private var game = Game(time: 1, players: 3, spies: 1)
+    private var locationGroup = LocationGroup.getDefaultGroup()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBackgroundImage(with: "Spy_Background", for: view)
-        chooseLocation.setTitle(currentGroup.title, for: .normal)
+        chooseLocation.setTitle(locationGroup.title, for: .normal)
         RateManager.showRatesController()
         createPlayersAndTimer()
         setupGestures()
@@ -61,10 +59,10 @@ class MainVC: UIViewController {
             countSpyButton
         )
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let whoSpyVC = segue.destination as? WhoIsSpyVC else { return }
-        whoSpyVC.currentGroup = currentGroup
+        whoSpyVC.currentGroup = locationGroup
         whoSpyVC.currentGame = game
     }
     
@@ -78,21 +76,21 @@ class MainVC: UIViewController {
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
         guard let sourceVC = unwindSegue.source as? ContainerForTableViewVC else { return }
-        currentGroup = sourceVC.currentGroup
-        chooseLocation.setTitle(currentGroup.title, for: .normal)
+        locationGroup = sourceVC.currentGroup
+        chooseLocation.setTitle(locationGroup.title, for: .normal)
     }
     
 }
 
 // MARK: - Configure popover
 extension MainVC: UIPopoverPresentationControllerDelegate {
-
+    
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
         tapGesture.numberOfTapsRequired = 1
         countSpyButton.addGestureRecognizer(tapGesture)
     }
-
+    
     @objc private func tapped() {
         guard let popVC = storyboard?.instantiateViewController(identifier: "popVC") as? HowManySpiesPopover else { return }
         popVC.modalPresentationStyle = .popover
@@ -106,11 +104,11 @@ extension MainVC: UIPopoverPresentationControllerDelegate {
         popVC.preferredContentSize = CGSize(width: 250, height: 250)
         present(popVC, animated: true)
     }
-
+    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
-
+    
 }
 
 // MARK: - Picker View configure
@@ -131,7 +129,7 @@ extension MainVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -141,11 +139,12 @@ extension MainVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView.tag == 1 {
+        switch pickerView.tag {
+        case 1:
             game.players = playersPicker[row]
             game.spies = 1
             countSpyButton.setTitle("Шпионов: 1", for: .normal)
-        } else {
+        default:
             game.time = timerPicker[row]
         }
     }

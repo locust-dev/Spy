@@ -14,9 +14,10 @@ class GameVC: UIViewController {
     @IBOutlet weak var faqLabel: UILabel!
     @IBOutlet weak var overButton: UIButton!
     
-    var timer: Timer!
+    private var timer: Timer?
+    private var secondsInBackground = 0
     var totalTime: Int!
-    var secondsInBackground = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class GameVC: UIViewController {
     
     static func getTimeDifference(startDate: Date) -> Int {
         let components = Calendar.current.dateComponents([.second], from: startDate, to: Date())
-        return(components.second!)
+        return(components.second ?? 0)
     }
     
     @IBAction func stopTimerButton() {

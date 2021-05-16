@@ -18,7 +18,6 @@ class LocationsVC: UICollectionViewController {
         super.viewDidLoad()
         collectionView.backgroundView = UIImageView(image: UIImage(named: "Spy_Background"))
         navigationController?.navigationBar.tintColor = .white
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -32,7 +31,7 @@ class LocationsVC: UICollectionViewController {
         // Image
         cell.image.image = UIImage(named: images[indexPath.row])
         // Background
-        let imageBack = UIImageView(image: UIImage(named: "backgroundForCell"))
+        let imageBack = UIImageView(image: UIImage(named: "backGroundForCell"))
         imageBack.layer.cornerRadius = 25
         imageBack.clipsToBounds = true
         cell.backgroundView = imageBack
@@ -56,8 +55,8 @@ class LocationsVC: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSetLocation" {
             if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
-                let setVC = segue.destination as! ContainerForTableViewVC
-                setVC.currentGroup = groupes[indexPath.row]
+                let containerVC = segue.destination as! ContainerForTableViewVC
+                containerVC.currentGroup = groupes[indexPath.row]
             }
         }
     }
