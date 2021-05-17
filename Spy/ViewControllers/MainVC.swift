@@ -22,18 +22,21 @@ class MainVC: UIViewController {
     
     @IBOutlet var pickers: [UIPickerView]!
     
-    private var playersPicker: [Int] = []
-    private var timerPicker: [Int] = []
+    private var playersPicker = Array(3...25)
+    private var timerPicker = Array(1...25)
     private var game = Game(time: 1, players: 3, spies: 1)
     private var locationGroup = LocationGroup.getDefaultGroup()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for picker in pickers {
+            picker.tintColor = .white
+        }
+        
         setBackgroundImage(with: "Spy_Background", for: view)
         chooseLocation.setTitle(locationGroup.title, for: .normal)
         RateManager.showRatesController()
-        createPlayersAndTimer()
         setupGestures()
     }
     
@@ -113,20 +116,6 @@ extension MainVC: UIPopoverPresentationControllerDelegate {
 
 // MARK: - Picker View configure
 extension MainVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    private func createPlayersAndTimer() {
-        for player in 3...25 {
-            playersPicker.append(player)
-        }
-        
-        for minute in 1...30 {
-            timerPicker.append(minute)
-        }
-        
-        for picker in pickers {
-            picker.tintColor = .white
-        }
-    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1

@@ -26,16 +26,8 @@ class WhoIsSpyVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.hidesBackButton = true
-        setBackgroundImage(with: "Spy_Background", for: view)
-        whoIsSpyLocation.text = ""
-        startTextLabel.text = "Игрок 1 \n \n Коснись, чтобы узнать роль!"
-        
-        randomLocationFromGroup = currentGroup.locations.randomElement()
-        addShadows(whoIsSpyBTN, exitButton)
-        setCornerRadiusToCircle(exitButton)
-        spyButtonConfigure()
+        configureStartScreen()
+        configureSpyButton()
         addedRole()
     }
     
@@ -49,11 +41,11 @@ class WhoIsSpyVC: UIViewController {
         
         if index == roles.count {
             performSegue(withIdentifier: "toStartGame", sender: nil)
-        } else if touches % 2 == 0 {
-            switch roles[index] {
-            case true: setRoleSpyIfTrue(role: true)
-            default: setRoleSpyIfTrue(role: false)
-            }
+            return
+        }
+        
+        if touches % 2 == 0 {
+            roles[index] ? setRoleSpyIfTrue(role: true) : setRoleSpyIfTrue(role: false)
             index += 1
             touches += 1
         } else {
@@ -99,7 +91,7 @@ extension WhoIsSpyVC {
         icon.image = UIImage(named: "share")
     }
     
-    private func spyButtonConfigure() {
+    private func configureSpyButton() {
         whoIsSpyBTN.setBackgroundImage(UIImage(named: "forSpy1"), for: .normal)
         whoIsSpyBTN.layer.cornerRadius = 35
         whoIsSpyBTN.clipsToBounds = true
@@ -117,5 +109,13 @@ extension WhoIsSpyVC {
         roles.shuffle()
     }
     
-    
+    private func configureStartScreen() {
+        navigationItem.hidesBackButton = true
+        setBackgroundImage(with: "Spy_Background", for: view)
+        whoIsSpyLocation.text = ""
+        startTextLabel.text = "Игрок 1 \n \n Коснись, чтобы узнать роль!"
+        randomLocationFromGroup = currentGroup.locations.randomElement()
+        addShadows(whoIsSpyBTN, exitButton)
+        setCornerRadiusToCircle(exitButton)
+    }
 }

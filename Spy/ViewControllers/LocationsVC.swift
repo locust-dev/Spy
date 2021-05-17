@@ -12,7 +12,6 @@ private let reuseIdentifier = "locGroup"
 class LocationsVC: UICollectionViewController {
     
     let groupes = LocationGroup.getGroupes()
-    let images = ["allLocations", "countries", "sports", "travels", "culture", "child", "timeMachine", "adult"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,7 @@ class LocationsVC: UICollectionViewController {
         let group = groupes[indexPath.item]
         
         // Image
-        cell.image.image = UIImage(named: images[indexPath.row])
+        cell.image.image = UIImage(named: Info.shared.imagesForLocations[indexPath.row])
         // Background
         let imageBack = UIImageView(image: UIImage(named: "backGroundForCell"))
         imageBack.layer.cornerRadius = 25

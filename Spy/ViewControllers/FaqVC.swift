@@ -16,7 +16,7 @@ class FaqVC: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        Faq.shared.titles.count
+        Info.shared.titlesForFAQ.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,7 +25,7 @@ class FaqVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "info", for: indexPath)
-        let info = Faq.shared.definition[indexPath.section]
+        let info = Info.shared.definitionsForFAQ[indexPath.section]
         
         cell.textLabel?.text = info
         cell.textLabel?.font = UIFont(name: "Montserrat", size: 20) ?? .systemFont(ofSize: 22)
@@ -37,7 +37,7 @@ class FaqVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UILabel()
-        let title = Faq.shared.titles[section]
+        let title = Info.shared.titlesForFAQ[section]
         
         view.textColor = .white
         view.font = UIFont(name: "Montserrat", size: 22) ?? .systemFont(ofSize: 22)
