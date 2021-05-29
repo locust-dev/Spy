@@ -26,8 +26,8 @@ class HowManySpiesPopover: UIViewController {
         setBackgroundImage(with: "back", for: view)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         delegate.getSpiesCount(count: countOfSpyes)
     }
     

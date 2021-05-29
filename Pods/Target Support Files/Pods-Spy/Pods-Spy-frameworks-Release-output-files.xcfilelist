@@ -1,1 +1,4 @@
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayoutHelper.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileAds.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetrica.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetricaCrashes.framework

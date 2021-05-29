@@ -103,7 +103,7 @@ extension MainVC: UIPopoverPresentationControllerDelegate {
         guard let popOverVC = popVC.popoverPresentationController else { return }
         popOverVC.delegate = self
         popOverVC.sourceView = countSpyButton
-        popOverVC.sourceRect = CGRect(x: countSpyButton.bounds.midX, y: countSpyButton.bounds.minY + -10, width: 0, height: 0)
+        popOverVC.sourceRect = CGRect(x: countSpyButton.bounds.midX - 40, y: countSpyButton.bounds.minY + -10, width: 0, height: 0)
         popVC.preferredContentSize = CGSize(width: 250, height: 250)
         present(popVC, animated: true)
     }
@@ -150,6 +150,19 @@ extension MainVC: UIPickerViewDelegate, UIPickerViewDataSource {
 // MARK: - Pass Data From Popover
 extension MainVC: HowMuchSpiesDelegate {
     func getSpiesCount(count: Int) {
+        if game.players % 2 == 1 {
+            count > game.players / 2 ? setSpiesToOne() : setSpiesToNormal(count: count)
+        } else {
+            count > game.players / 2 - 1 ? setSpiesToOne() : setSpiesToNormal(count: count)
+        }
+    }
+    
+    private func setSpiesToOne() {
+        game.spies = 1
+        countSpyButton.setTitle(String("Шпионов: 1"), for: .normal)
+    }
+    
+    private func setSpiesToNormal(count: Int) {
         game.spies = count
         countSpyButton.setTitle(String("Шпионов: \(count)"), for: .normal)
     }

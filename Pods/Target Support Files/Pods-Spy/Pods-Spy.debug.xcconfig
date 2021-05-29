@@ -1,10 +1,11 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LayoutHelper"
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LayoutHelper" "${PODS_ROOT}/YandexMobileAds/dynamic" "${PODS_ROOT}/YandexMobileMetrica/ios/dynamic"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LayoutHelper/LayoutHelper.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "LayoutHelper"
+OTHER_LDFLAGS = $(inherited) -l"c++" -l"sqlite3" -l"xml2" -l"z" -framework "AVFoundation" -framework "AdSupport" -framework "CoreGraphics" -framework "CoreImage" -framework "CoreLocation" -framework "CoreMedia" -framework "CoreTelephony" -framework "Foundation" -framework "LayoutHelper" -framework "QuartzCore" -framework "StoreKit" -framework "SystemConfiguration" -framework "UIKit" -framework "WebKit" -framework "YandexMobileAds" -framework "YandexMobileMetrica" -framework "YandexMobileMetricaCrashes" -weak_framework "WebKit"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
