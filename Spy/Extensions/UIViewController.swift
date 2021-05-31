@@ -50,6 +50,16 @@ extension UIViewController {
         }
     }
     
+    func cornerRadiusAndShadows(_ button: UIButton...) {
+        button.forEach{ button in
+            button.layer.cornerRadius = button.frame.height / 2
+            button.layer.shadowOpacity = 0.7
+            button.layer.shadowOffset = CGSize(width: 3, height: 3)
+            button.layer.shadowColor = UIColor.black.cgColor
+            button.layer.shadowRadius = 5.0
+        }
+    }
+    
     func setHaptic(style: UIImpactFeedbackGenerator.FeedbackStyle) {
         let haptic = UIImpactFeedbackGenerator(style: style)
         haptic.prepare()

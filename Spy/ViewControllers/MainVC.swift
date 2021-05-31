@@ -47,14 +47,7 @@ class MainVC: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
-        addShadows(
-            chooseLocation,
-            startButtonOutlet,
-            countSpyButton
-        )
-        
-        setCornerRadiusToCircle(
+        cornerRadiusAndShadows(
             chooseLocation,
             faqButton,
             reviewButton,
@@ -103,7 +96,7 @@ extension MainVC: UIPopoverPresentationControllerDelegate {
         guard let popOverVC = popVC.popoverPresentationController else { return }
         popOverVC.delegate = self
         popOverVC.sourceView = countSpyButton
-        popOverVC.sourceRect = CGRect(x: countSpyButton.bounds.midX - 40, y: countSpyButton.bounds.minY + -10, width: 0, height: 0)
+        popOverVC.sourceRect = CGRect(x: countSpyButton.bounds.midX, y: countSpyButton.bounds.minY + -10, width: 0, height: 0)
         popVC.preferredContentSize = CGSize(width: 250, height: 250)
         present(popVC, animated: true)
     }
