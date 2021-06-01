@@ -11,7 +11,8 @@ private let reuseIdentifier = "locGroup"
 
 class LocationsVC: UICollectionViewController {
     
-    let groupes = LocationGroup.getGroupes()
+    private let groupes = LocationGroup.getGroupes()
+    private let info = InfoManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,28 +27,8 @@ class LocationsVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationCell
         let group = groupes[indexPath.item]
-        
-        // Image
-        cell.image.image = UIImage(named: Info.shared.imagesForLocations[indexPath.row])
-        // Background
-        let imageBack = UIImageView(image: UIImage(named: "backGroundForCell"))
-        imageBack.layer.cornerRadius = 25
-        imageBack.clipsToBounds = true
-        cell.backgroundView = imageBack
-        // Label
-        cell.groupName.layer.shadowRadius = 1
-        cell.groupName.text = group.title
-        // Corners
-        cell.contentView.layer.cornerRadius = 25
-        cell.contentView.layer.masksToBounds = true
-        cell.layer.cornerRadius = 25
-        cell.layer.masksToBounds = false
-        // Shadow
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowRadius = 5
-        cell.layer.shadowOpacity = 1
-        cell.layer.shadowOffset = CGSize(width: 1, height: 1)
-        
+        let image = UIImage(named: info.imagesForLocations[indexPath.row])
+        cell.configureCell(group: group, image: image!)
         return cell
     }
     
@@ -63,11 +44,9 @@ class LocationsVC: UICollectionViewController {
 }
 
 extension LocationsVC: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingWidth: CGFloat = 30 * 2
         let avalibleWidth = collectionView.frame.width - paddingWidth
         return CGSize(width: avalibleWidth, height: 110)
     }
-    
 }

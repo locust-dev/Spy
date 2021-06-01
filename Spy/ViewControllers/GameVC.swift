@@ -24,8 +24,7 @@ class GameVC: UIViewController {
         
         navigationItem.hidesBackButton = true
         setBackgroundImage(with: "Spy_Background", for: view)
-        addShadows(overButton)
-        setCornerRadiusToCircle(overButton)
+        cornerRadiusAndShadows(overButton)
         createTimer()
         
         NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -43,7 +42,10 @@ class GameVC: UIViewController {
         }
         UIApplication.shared.isIdleTimerDisabled = false
     }
-    
+}
+
+// MARK: - Private Methods
+extension GameVC {
     private func createTimer() {
         UIApplication.shared.isIdleTimerDisabled = true
         
@@ -100,4 +102,5 @@ class GameVC: UIViewController {
     
     
 }
+
 

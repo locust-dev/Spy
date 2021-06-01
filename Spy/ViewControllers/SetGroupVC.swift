@@ -65,13 +65,11 @@ class SetGroupVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UILabel()
-        
         view.textColor = .white
         view.font = UIFont(name: "Montserrat", size: 18) ?? .systemFont(ofSize: 22)
         view.numberOfLines = 0
         view.text = title
         view.textAlignment = .center
-        
         return view
     }
 

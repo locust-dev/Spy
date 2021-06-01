@@ -1,5 +1,5 @@
 //
-//  LocationGroupes.swift.swift
+//  LocationGroup.swift.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 06.04.2021.

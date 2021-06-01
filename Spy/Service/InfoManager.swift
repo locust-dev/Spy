@@ -5,10 +5,9 @@
 //  Created by Илья Тюрин on 17.04.2021.
 //
 
-class Info {
+class InfoManager {
     
-    static let shared = Info()
-    
+    static let shared = InfoManager()
     private init() {}
     
     let imagesForLocations = ["allLocations",

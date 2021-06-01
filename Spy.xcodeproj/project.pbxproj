@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E91D1C64262AE53C0007736F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* DataManager.swift */; };
+		E91D1C64262AE53C0007736F /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* InfoManager.swift */; };
 		E9393B1C2620B50A00E0D09F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9393B1B2620B50A00E0D09F /* UIView.swift */; };
 		E9393B212620BB1400E0D09F /* o_Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */; };
 		E9393B222620BB1400E0D09F /* o_MontserratBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9393B202620BB1400E0D09F /* o_MontserratBold.ttf */; };
@@ -19,7 +19,7 @@
 		E954F00D261C950B00E89673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F00B261C950B00E89673 /* Main.storyboard */; };
 		E954F00F261C950C00E89673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E954F00E261C950C00E89673 /* Assets.xcassets */; };
 		E954F012261C950C00E89673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E954F010261C950C00E89673 /* LaunchScreen.storyboard */; };
-		E954F01F261C96D800E89673 /* LocationGroupes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F01E261C96D800E89673 /* LocationGroupes.swift */; };
+		E954F01F261C96D800E89673 /* LocationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954F01E261C96D800E89673 /* LocationGroup.swift */; };
 		E9569479262F625700F054C1 /* LayoutHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9569477262F607E00F054C1 /* LayoutHelper.framework */; };
 		E97C7A16262B1556001D75F7 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C7A15262B1556001D75F7 /* FaqVC.swift */; };
 		E9B8DD63262C6FB7002B623A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8DD62262C6FB7002B623A /* UITextField.swift */; };
@@ -40,7 +40,7 @@
 		50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE8F449D5A0DACDAD7E9D43 /* Pods-Spy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spy.debug.xcconfig"; path = "Target Support Files/Pods-Spy/Pods-Spy.debug.xcconfig"; sourceTree = "<group>"; };
 		E9114D75262F589700AFFD9B /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E91D1C63262AE53C0007736F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E91D1C63262AE53C0007736F /* InfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoManager.swift; sourceTree = "<group>"; };
 		E9393B1B2620B50A00E0D09F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = o_Montserrat.ttf; sourceTree = "<group>"; };
 		E9393B202620BB1400E0D09F /* o_MontserratBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = o_MontserratBold.ttf; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		E954F00E261C950C00E89673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E954F011261C950C00E89673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E954F013261C950C00E89673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E954F01E261C96D800E89673 /* LocationGroupes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationGroupes.swift; sourceTree = "<group>"; };
+		E954F01E261C96D800E89673 /* LocationGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationGroup.swift; sourceTree = "<group>"; };
 		E9569477262F607E00F054C1 /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97C7A15262B1556001D75F7 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		E9B8DD62262C6FB7002B623A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		E91D1C62262AE52C0007736F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				E91D1C63262AE53C0007736F /* DataManager.swift */,
+				E91D1C63262AE53C0007736F /* InfoManager.swift */,
 				E93A3C952631AF3600312B47 /* RateManager.swift */,
 			);
 			path = Service;
@@ -161,7 +161,7 @@
 		E954F01D261C96C700E89673 /* Data model */ = {
 			isa = PBXGroup;
 			children = (
-				E954F01E261C96D800E89673 /* LocationGroupes.swift */,
+				E954F01E261C96D800E89673 /* LocationGroup.swift */,
 				E9EC35EE26518CFF001FB35B /* Game.swift */,
 			);
 			path = "Data model";
@@ -363,13 +363,13 @@
 			files = (
 				E9E0EC9126219309001AD4C9 /* UIViewController.swift in Sources */,
 				E93A3C962631AF3600312B47 /* RateManager.swift in Sources */,
-				E91D1C64262AE53C0007736F /* DataManager.swift in Sources */,
+				E91D1C64262AE53C0007736F /* InfoManager.swift in Sources */,
 				E9393B1C2620B50A00E0D09F /* UIView.swift in Sources */,
 				E954F00A261C950B00E89673 /* MainVC.swift in Sources */,
 				E954F006261C950B00E89673 /* AppDelegate.swift in Sources */,
 				E94F05C42629B6860039899C /* HowManySpiesPopover.swift in Sources */,
 				E9FD485F261D0F52005C29A1 /* GameVC.swift in Sources */,
-				E954F01F261C96D800E89673 /* LocationGroupes.swift in Sources */,
+				E954F01F261C96D800E89673 /* LocationGroup.swift in Sources */,
 				E9E7B69B261DE47300455F72 /* LocationsVC.swift in Sources */,
 				E9E7B6A8261E216400455F72 /* ContainerForTableViewVC.swift in Sources */,
 				E9B8DD63262C6FB7002B623A /* UITextField.swift in Sources */,
