@@ -139,22 +139,22 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-// MARK: - Pass Data From Popover
+// MARK: - Pass and check data from popover
 extension MainViewController: HowMuchSpiesDelegate {
     func getSpiesCount(count: Int) {
         if game.players % 2 == 1 {
-            count > game.players / 2 ? setSpiesToOne() : setSpiesToNormal(count: count)
+            count > game.players / 2 ? resetSpies() : setSpies(count: count)
         } else {
-            count > game.players / 2 - 1 ? setSpiesToOne() : setSpiesToNormal(count: count)
+            count > game.players / 2 - 1 ? resetSpies() : setSpies(count: count)
         }
     }
     
-    private func setSpiesToOne() {
+    private func resetSpies() {
         game.spies = 1
         countSpyButton.setTitle(String("Шпионов: 1"), for: .normal)
     }
     
-    private func setSpiesToNormal(count: Int) {
+    private func setSpies(count: Int) {
         game.spies = count
         countSpyButton.setTitle(String("Шпионов: \(count)"), for: .normal)
     }
