@@ -60,8 +60,7 @@ class WhoIsSpyViewController: UIViewController {
         whoIsSpyLocation.text = ""
         startTextLabel.text = "Игрок 1 \n \n Коснись, чтобы узнать роль!"
         randomLocationFromGroup = currentGroup.locations.randomElement()
-        addShadows(whoIsSpyBTN, exitButton)
-        setCornerRadiusToCircle(exitButton)
+        cornerAndShadows(exitButton, whoIsSpyBTN)
     }
     
 }

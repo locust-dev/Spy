@@ -14,7 +14,7 @@ class ContainerForFAQ: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .white
-        setCornerRadiusToCircle(allRightButton)
+        cornerAndShadows(allRightButton)
         setBackgroundImage(with: "backForButtons", for: allRightButton)
     }
 }

@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        cornerRadiusAndShadows(
+        cornerAndShadows(
             chooseLocation,
             faqButton,
             reviewButton,

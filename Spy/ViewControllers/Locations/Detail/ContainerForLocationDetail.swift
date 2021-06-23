@@ -21,7 +21,7 @@ class ContainerForLocationDetail: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "\(currentGroup.title)"
         navigationController?.navigationBar.tintColor = .white
-        setCornerRadiusToCircle(chooseOutlet)
+        cornerAndShadows(chooseOutlet)
         setBackgroundImage(with: "backForButtons", for: chooseOutlet)
     }
     

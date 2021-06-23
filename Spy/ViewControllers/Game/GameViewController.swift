@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
         
         navigationItem.hidesBackButton = true
         setBackgroundImage(with: "Spy_Background", for: view)
-        cornerRadiusAndShadows(overButton)
+        cornerAndShadows(overButton)
         createTimer()
         
         NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)

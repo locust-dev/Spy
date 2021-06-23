@@ -8,6 +8,22 @@
 import UIKit
 
 extension UIViewController {
+
+    func cornerAndShadows(_ button: UIButton...) {
+        button.forEach{ button in
+            button.layer.cornerRadius = button.frame.height / 2
+            button.layer.shadowOpacity = 0.7
+            button.layer.shadowOffset = CGSize(width: 3, height: 3)
+            button.layer.shadowColor = UIColor.black.cgColor
+            button.layer.shadowRadius = 5.0
+        }
+    }
+    
+    func makeHaptic(style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        let haptic = UIImpactFeedbackGenerator(style: style)
+        haptic.prepare()
+        haptic.impactOccurred()
+    }
     
     func setBackgroundImage(with image: String, for view: UIView) {
         let imageView = UIImageView(image: UIImage(named: image))
@@ -51,36 +67,4 @@ extension UIViewController {
         alert.addAction(laterAction)
         present(alert, animated: true)
     }
-    
-    func setCornerRadiusToCircle(_ button: UIButton...) {
-        button.forEach{ button in
-            button.layer.cornerRadius = button.frame.height / 2
-        }
-    }
-    
-    func addShadows(_ outlets: UIView...) {
-        outlets.forEach { outlet in
-            outlet.layer.shadowOpacity = 0.7
-            outlet.layer.shadowOffset = CGSize(width: 3, height: 3)
-            outlet.layer.shadowColor = UIColor.black.cgColor
-            outlet.layer.shadowRadius = 5.0
-        }
-    }
-    
-    func cornerRadiusAndShadows(_ button: UIButton...) {
-        button.forEach{ button in
-            button.layer.cornerRadius = button.frame.height / 2
-            button.layer.shadowOpacity = 0.7
-            button.layer.shadowOffset = CGSize(width: 3, height: 3)
-            button.layer.shadowColor = UIColor.black.cgColor
-            button.layer.shadowRadius = 5.0
-        }
-    }
-    
-    func setHaptic(style: UIImpactFeedbackGenerator.FeedbackStyle) {
-        let haptic = UIImpactFeedbackGenerator(style: style)
-        haptic.prepare()
-        haptic.impactOccurred()
-    }
-    
 }

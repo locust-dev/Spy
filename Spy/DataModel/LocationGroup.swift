@@ -24,7 +24,8 @@ struct LocationGroup {
             LocationGroup(title: Groupes.timeMachine.rawValue, locations: Groupes.timeMachine.definition),
             LocationGroup(title: Groupes.adult.rawValue, locations: Groupes.adult.definition)
         ]
-        
     }
+    
 }
+
 

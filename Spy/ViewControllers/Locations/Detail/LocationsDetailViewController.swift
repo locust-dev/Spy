@@ -52,7 +52,7 @@ class LocationsDetailViewController: UITableViewController {
         cell.accessoryType = .none
         currentGroup.locations[indexPath.row] = ""
         delegate.getChangedGroup(new: currentGroup)
-        setHaptic(style: .medium)
+        makeHaptic(style: .medium)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -60,7 +60,7 @@ class LocationsDetailViewController: UITableViewController {
         cell.accessoryType = .checkmark
         currentGroup.locations[indexPath.row] = locationsForRecover.locations[indexPath.row]
         delegate.getChangedGroup(new: currentGroup)
-        setHaptic(style: .medium)
+        makeHaptic(style: .medium)
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
