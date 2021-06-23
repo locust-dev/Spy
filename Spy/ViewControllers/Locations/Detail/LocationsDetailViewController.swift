@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SetGroupViewController: UITableViewController {
+class LocationsDetailViewController: UITableViewController {
     
     var currentGroup: LocationGroup!
     var locationsForRecover: LocationGroup!
@@ -40,7 +40,7 @@ class SetGroupViewController: UITableViewController {
         }
         
         cell.textLabel?.text = locationsForRecover.locations[indexPath.row]
-        cell.textLabel?.font = UIFont(name: "Montserrat", size: 20) ?? .systemFont(ofSize: 20)
+        cell.textLabel?.font = UIFont(name: "Montserrat", size: 20)
         cell.textLabel?.textColor = .white
         cell.textLabel?.numberOfLines = 0
 
@@ -66,12 +66,11 @@ class SetGroupViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UILabel()
         view.textColor = .white
-        view.font = UIFont(name: "Montserrat", size: 18) ?? .systemFont(ofSize: 22)
+        view.font = UIFont(name: "Montserrat", size: 18)
         view.numberOfLines = 0
         view.text = title
         view.textAlignment = .center
         return view
     }
-
     
 }

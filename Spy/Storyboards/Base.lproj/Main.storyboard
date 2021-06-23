@@ -316,7 +316,7 @@
         <!--FAQ-->
         <scene sceneID="mzR-O0-W5M">
             <objects>
-                <viewController id="N5R-Mk-FuA" customClass="ContainerForFaqVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N5R-Mk-FuA" customClass="ContainerForFAQ" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SE1-R6-adC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,7 +356,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="FAQ" id="RcF-8B-6pg"/>
                     <connections>
-                        <outlet property="allRightOutlet" destination="0AV-fy-Vik" id="gIu-6N-h0k"/>
+                        <outlet property="allRightButton" destination="0AV-fy-Vik" id="gIu-6N-h0k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETK-sl-lYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -408,7 +408,7 @@
                             <inset key="sectionInset" minX="30" minY="30" maxX="30" maxY="30"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="locGroup" id="2vk-dT-ITZ" customClass="LocationCell" customModule="Spy" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="locGroup" id="2vk-dT-ITZ" customClass="LocationsCell" customModule="Spy" customModuleProvider="target">
                                 <rect key="frame" x="32" y="30" width="350" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="h1c-A0-M1U">
@@ -456,10 +456,10 @@
             </objects>
             <point key="canvasLocation" x="1860.8695652173915" y="-651.5625"/>
         </scene>
-        <!--Container For Table ViewVC-->
+        <!--Container For Location Detail-->
         <scene sceneID="X16-5Q-EBt">
             <objects>
-                <viewController id="apq-RE-6GB" customClass="ContainerForTableViewVC" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="apq-RE-6GB" customClass="ContainerForLocationDetail" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oDV-Qp-2H7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -510,7 +510,7 @@
         <!--Группа-->
         <scene sceneID="5fZ-wt-V1B">
             <objects>
-                <tableViewController id="1KG-g3-gV6" customClass="SetGroupViewController" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="1KG-g3-gV6" customClass="LocationsDetailViewController" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="F2C-xG-tzz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

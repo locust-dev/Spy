@@ -7,13 +7,13 @@
 
 import UIKit
 
-class LocationCell: UICollectionViewCell {
+class LocationsCell: UICollectionViewCell {
     
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var imageLocation: UIImageView!
     
     func configureCell(group: LocationGroup, image: UIImage) {
-        let imageBack = UIImageView(image: UIImage(named: "backGroundForCell"))
+        let imageBack = UIImageView(image: UIImage(named: "backgroundForCell"))
         imageBack.layer.cornerRadius = 25
         imageBack.clipsToBounds = true
         backgroundView = imageBack

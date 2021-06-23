@@ -64,7 +64,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
-        guard let sourceVC = unwindSegue.source as? ContainerForTableViewVC else { return }
+        guard let sourceVC = unwindSegue.source as? ContainerForLocationDetail else { return }
         locationGroup = sourceVC.currentGroup
         chooseLocation.setTitle(locationGroup.title, for: .normal)
     }

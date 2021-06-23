@@ -25,7 +25,7 @@ class LocationsViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LocationsCell
         let group = groupes[indexPath.item]
         let image = UIImage(named: info.imagesForLocations[indexPath.row])
         cell.configureCell(group: group, image: image!)
@@ -35,7 +35,7 @@ class LocationsViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSetLocation" {
             if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
-                let containerVC = segue.destination as! ContainerForTableViewVC
+                let containerVC = segue.destination as! ContainerForLocationDetail
                 containerVC.currentGroup = groupes[indexPath.row]
             }
         }
@@ -43,6 +43,7 @@ class LocationsViewController: UICollectionViewController {
     
 }
 
+// MARK: - Collection View Flow Layout
 extension LocationsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingWidth: CGFloat = 30 * 2

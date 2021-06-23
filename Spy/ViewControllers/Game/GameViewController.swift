@@ -14,10 +14,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var faqLabel: UILabel!
     @IBOutlet weak var overButton: UIButton!
     
+    var totalTime: Int!
     private var timer: Timer?
     private var secondsInBackground = 0
-    var totalTime: Int!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +30,6 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    static func getTimeDifference(startDate: Date) -> Int {
-        let components = Calendar.current.dateComponents([.second], from: startDate, to: Date())
-        return(components.second ?? 0)
-    }
-    
     @IBAction func stopTimerButton() {
         if let timer = timer {
             timer.invalidate()
@@ -44,7 +38,7 @@ class GameViewController: UIViewController {
     }
 }
 
-// MARK: - Private Methods
+// MARK: - Configure Timer
 extension GameViewController {
     private func createTimer() {
         UIApplication.shared.isIdleTimerDisabled = true
@@ -68,6 +62,11 @@ extension GameViewController {
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
         return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    private func getTimeDifference(startDate: Date) -> Int {
+        let components = Calendar.current.dateComponents([.second], from: startDate, to: Date())
+        return(components.second ?? 0)
     }
     
     @objc private func updateTimer() {
@@ -95,11 +94,10 @@ extension GameViewController {
     
     @objc private func willEnterForeground(noti: Notification) {
         if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
-            totalTime -= GameViewController.getTimeDifference(startDate: savedDate)
+            totalTime -= getTimeDifference(startDate: savedDate)
             createTimer()
         }
     }
-    
     
 }
 

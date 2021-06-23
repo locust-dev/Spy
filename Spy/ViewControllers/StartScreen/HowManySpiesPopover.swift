@@ -13,9 +13,8 @@ class HowManySpiesPopover: UIViewController {
     
     var players: Int!
     var delegate: HowMuchSpiesDelegate!
-    
     private var countArray: [Int] = []
-    private var countOfSpyes = 1
+    private var countOfSpies = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +27,7 @@ class HowManySpiesPopover: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        delegate.getSpiesCount(count: countOfSpyes)
+        delegate.getSpiesCount(count: countOfSpies)
     }
     
 }
@@ -50,8 +49,6 @@ extension HowManySpiesPopover {
         }
         
     }
-    
-    
 }
 
 // MARK: - Picker View Configure
@@ -66,7 +63,7 @@ extension HowManySpiesPopover:  UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        countOfSpyes = countArray[row]
+        countOfSpies = countArray[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {

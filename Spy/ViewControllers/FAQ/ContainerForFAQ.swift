@@ -7,14 +7,14 @@
 
 import UIKit
 
-class ContainerForFaqVC: UIViewController {
+class ContainerForFAQ: UIViewController {
 
-    @IBOutlet weak var allRightOutlet: UIButton!
+    @IBOutlet weak var allRightButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .white
-        setCornerRadiusToCircle(allRightOutlet)
-        setBackgroundImage(with: "backForButtons", for: allRightOutlet)
+        setCornerRadiusToCircle(allRightButton)
+        setBackgroundImage(with: "backForButtons", for: allRightButton)
     }
 }

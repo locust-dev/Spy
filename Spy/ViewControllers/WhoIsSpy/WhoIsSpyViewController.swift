@@ -19,7 +19,7 @@ class WhoIsSpyViewController: UIViewController {
     var currentGroup: LocationGroup!
     var currentGame: Game!
     
-    private var roles: [Bool] = []
+    private var roles = [Bool]()
     private var touches = 0
     private var index = 0
     private var randomLocationFromGroup: String!
@@ -54,10 +54,19 @@ class WhoIsSpyViewController: UIViewController {
         }
     }
     
+    private func configureStartScreen() {
+        navigationItem.hidesBackButton = true
+        setBackgroundImage(with: "Spy_Background", for: view)
+        whoIsSpyLocation.text = ""
+        startTextLabel.text = "Игрок 1 \n \n Коснись, чтобы узнать роль!"
+        randomLocationFromGroup = currentGroup.locations.randomElement()
+        addShadows(whoIsSpyBTN, exitButton)
+        setCornerRadiusToCircle(exitButton)
+    }
     
 }
 
-// MARK: - Private Methods
+// MARK: - Logic setup
 extension WhoIsSpyViewController {
     
     private func setRoleSpyIfTrue(role: Bool) {
@@ -107,15 +116,5 @@ extension WhoIsSpyViewController {
             roles.append(false)
         }
         roles.shuffle()
-    }
-    
-    private func configureStartScreen() {
-        navigationItem.hidesBackButton = true
-        setBackgroundImage(with: "Spy_Background", for: view)
-        whoIsSpyLocation.text = ""
-        startTextLabel.text = "Игрок 1 \n \n Коснись, чтобы узнать роль!"
-        randomLocationFromGroup = currentGroup.locations.randomElement()
-        addShadows(whoIsSpyBTN, exitButton)
-        setCornerRadiusToCircle(exitButton)
     }
 }

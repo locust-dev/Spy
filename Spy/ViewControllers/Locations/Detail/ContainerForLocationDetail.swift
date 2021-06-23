@@ -11,7 +11,7 @@ protocol SetGroupDelegate {
     func getChangedGroup(new group: LocationGroup)
 }
 
-class ContainerForTableViewVC: UIViewController {
+class ContainerForLocationDetail: UIViewController {
     
     @IBOutlet weak var chooseOutlet: UIButton!
     
@@ -26,7 +26,7 @@ class ContainerForTableViewVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tableVC = segue.destination as? SetGroupViewController else { return }
+        guard let tableVC = segue.destination as? LocationsDetailViewController else { return }
         tableVC.delegate = self
         tableVC.currentGroup = currentGroup
         tableVC.locationsForRecover = currentGroup
@@ -42,14 +42,12 @@ class ContainerForTableViewVC: UIViewController {
     
 }
 
-
-extension ContainerForTableViewVC: SetGroupDelegate {
-    
+// MARK: - Set group delegate
+extension ContainerForLocationDetail: SetGroupDelegate {
     func getChangedGroup(new group: LocationGroup) {
         currentGroup.locations = group.locations.filter{$0 != ""}
         if currentGroup.locations.isEmpty {
             alert(title: "Ошибка!", message: "Должна быть выбрана хотя бы одна локация из списка!")
         }
     }
-    
 }

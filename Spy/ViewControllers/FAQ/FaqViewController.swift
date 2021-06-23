@@ -25,25 +25,19 @@ class FaqViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "info", for: indexPath)
-        let info = InfoManager.shared.definitionsForFAQ[indexPath.section]
-        
-        cell.textLabel?.text = info
+        cell.textLabel?.text = InfoManager.shared.definitionsForFAQ[indexPath.section]
         cell.textLabel?.font = UIFont(name: "Montserrat", size: 20) ?? .systemFont(ofSize: 22)
         cell.textLabel?.textColor = .white
         cell.textLabel?.numberOfLines = 0
-        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UILabel()
-        let title = InfoManager.shared.titlesForFAQ[section]
-        
         view.textColor = .white
         view.font = UIFont(name: "Montserrat", size: 22) ?? .systemFont(ofSize: 22)
         view.numberOfLines = 0
-        view.text = title
-        
+        view.text = InfoManager.shared.titlesForFAQ[section]
         return view
     }
 
