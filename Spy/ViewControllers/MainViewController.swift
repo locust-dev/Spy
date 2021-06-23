@@ -1,5 +1,5 @@
 //
-//  Main_VC.swift
+//  MainViewController.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 06.04.2021.
@@ -28,15 +28,9 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for picker in pickers {
-            picker.tintColor = .white
-        }
-        
-        setBackgroundImage(with: "Spy_Background", for: view)
-        chooseLocation.setTitle(locationGroup.title, for: .normal)
         RateManager.showRatesController()
         setupGestures()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,16 +50,16 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let whoSpyVC = segue.destination as? WhoIsSpyVC else { return }
+        guard let whoSpyVC = segue.destination as? WhoIsSpyViewController else { return }
         whoSpyVC.currentGroup = locationGroup
         whoSpyVC.currentGame = game
     }
     
-    @IBAction func begins(_ sender: UIButton) {
+    @IBAction func beginsPressed(_ sender: UIButton) {
         sender.showAnimationWithHaptic()
     }
     
-    @IBAction func requestReviewButton() {
+    @IBAction func reviewPressed() {
         alertForReview()
     }
     
@@ -75,11 +69,18 @@ class MainViewController: UIViewController {
         chooseLocation.setTitle(locationGroup.title, for: .normal)
     }
     
+    private func setupUI() {
+        setBackgroundImage(with: "Spy_Background", for: view)
+        chooseLocation.setTitle(locationGroup.title, for: .normal)
+        for picker in pickers {
+            picker.tintColor = .white
+        }
+    }
+    
 }
 
 // MARK: - Configure popover
 extension MainViewController: UIPopoverPresentationControllerDelegate {
-    
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
         tapGesture.numberOfTapsRequired = 1
@@ -108,7 +109,6 @@ extension MainViewController: UIPopoverPresentationControllerDelegate {
 
 // MARK: - Picker View configure
 extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }

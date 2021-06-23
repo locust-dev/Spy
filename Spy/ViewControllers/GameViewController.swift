@@ -1,5 +1,5 @@
 //
-//  GameVC.swift
+//  GameViewController.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 07.04.2021.
@@ -8,7 +8,7 @@
 import UIKit
 import AudioToolbox
 
-class GameVC: UIViewController {
+class GameViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var faqLabel: UILabel!
@@ -45,7 +45,7 @@ class GameVC: UIViewController {
 }
 
 // MARK: - Private Methods
-extension GameVC {
+extension GameViewController {
     private func createTimer() {
         UIApplication.shared.isIdleTimerDisabled = true
         
@@ -95,7 +95,7 @@ extension GameVC {
     
     @objc private func willEnterForeground(noti: Notification) {
         if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
-            totalTime -= GameVC.getTimeDifference(startDate: savedDate)
+            totalTime -= GameViewController.getTimeDifference(startDate: savedDate)
             createTimer()
         }
     }

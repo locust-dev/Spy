@@ -1,5 +1,5 @@
 //
-//  WhoIsSpyVC.swift
+//  WhoIsSpyViewController.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 06.04.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WhoIsSpyVC: UIViewController {
+class WhoIsSpyViewController: UIViewController {
     
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var whoIsSpyBTN: UIButton!
@@ -32,7 +32,7 @@ class WhoIsSpyVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let gameVC = segue.destination as? GameVC else { return }
+        guard let gameVC = segue.destination as? GameViewController else { return }
         gameVC.totalTime = currentGame.time * 60
     }
     
@@ -58,7 +58,7 @@ class WhoIsSpyVC: UIViewController {
 }
 
 // MARK: - Private Methods
-extension WhoIsSpyVC {
+extension WhoIsSpyViewController {
     
     private func setRoleSpyIfTrue(role: Bool) {
         whoIsSpyLabel.isHidden = false

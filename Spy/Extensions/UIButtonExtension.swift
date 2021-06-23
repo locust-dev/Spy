@@ -4,10 +4,10 @@
 //
 //  Created by Илья Тюрин on 09.04.2021.
 //
+
 import UIKit
 
-extension UIView {
-    
+extension UIButton {
     func showAnimationWithHaptic() {
         let haptic = UIImpactFeedbackGenerator(style: .medium)
         haptic.prepare()
@@ -27,5 +27,4 @@ extension UIView {
                            })
         }
     }
-    
 }

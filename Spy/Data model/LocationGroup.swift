@@ -5,7 +5,6 @@
 //  Created by Илья Тюрин on 06.04.2021.
 //
 
-
 struct LocationGroup {
     let title: String
     var locations: [String]

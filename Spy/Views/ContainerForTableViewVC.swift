@@ -26,7 +26,7 @@ class ContainerForTableViewVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tableVC = segue.destination as? SetGroupVC else { return }
+        guard let tableVC = segue.destination as? SetGroupViewController else { return }
         tableVC.delegate = self
         tableVC.currentGroup = currentGroup
         tableVC.locationsForRecover = currentGroup

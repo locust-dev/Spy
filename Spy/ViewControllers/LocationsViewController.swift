@@ -1,5 +1,5 @@
 //
-//  LocationsVC.swift
+//  LocationsViewController.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 07.04.2021.
@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "locGroup"
 
-class LocationsVC: UICollectionViewController {
+class LocationsViewController: UICollectionViewController {
     
     private let groupes = LocationGroup.getGroupes()
     private let info = InfoManager.shared
@@ -43,7 +43,7 @@ class LocationsVC: UICollectionViewController {
     
 }
 
-extension LocationsVC: UICollectionViewDelegateFlowLayout {
+extension LocationsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingWidth: CGFloat = 30 * 2
         let avalibleWidth = collectionView.frame.width - paddingWidth

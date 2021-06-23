@@ -1,5 +1,5 @@
 //
-//  FAQ_VC.swift
+//  FaqViewController.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 17.04.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FaqVC: UITableViewController {
+class FaqViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

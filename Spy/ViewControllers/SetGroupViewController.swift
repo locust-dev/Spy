@@ -1,5 +1,5 @@
 //
-//  SetGroupVC.swift
+//  SetGroupViewController.swift
 //  Spy
 //
 //  Created by Илья Тюрин on 07.04.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SetGroupVC: UITableViewController {
+class SetGroupViewController: UITableViewController {
     
     var currentGroup: LocationGroup!
     var locationsForRecover: LocationGroup!
