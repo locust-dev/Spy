@@ -175,16 +175,16 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LayoutHelper/LayoutHelper.framework"
-  install_framework "${PODS_ROOT}/YandexMobileAds/dynamic/YandexMobileAds.framework"
-  install_framework "${PODS_ROOT}/YandexMobileMetrica/ios/dynamic/YandexMobileMetrica.framework"
-  install_framework "${PODS_ROOT}/YandexMobileMetrica/ios/dynamic/YandexMobileMetricaCrashes.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LayoutHelper/LayoutHelper.framework"
-  install_framework "${PODS_ROOT}/YandexMobileAds/dynamic/YandexMobileAds.framework"
-  install_framework "${PODS_ROOT}/YandexMobileMetrica/ios/dynamic/YandexMobileMetrica.framework"
-  install_framework "${PODS_ROOT}/YandexMobileMetrica/ios/dynamic/YandexMobileMetricaCrashes.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

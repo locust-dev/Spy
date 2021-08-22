@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19BB719126D19BAD00C9A9D2 /* GoogleAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB719026D19BAD00C9A9D2 /* GoogleAds.swift */; };
 		E91D1C64262AE53C0007736F /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* InfoManager.swift */; };
 		E9393B1C2620B50A00E0D09F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9393B1B2620B50A00E0D09F /* UIButtonExtension.swift */; };
 		E9393B212620BB1400E0D09F /* o_Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9393B1F2620BB1400E0D09F /* o_Montserrat.ttf */; };
@@ -36,6 +37,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19BB719026D19BAD00C9A9D2 /* GoogleAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAds.swift; sourceTree = "<group>"; };
+		19BB719226D2761000C9A9D2 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/GoogleAppMeasurement.xcframework"; sourceTree = "<group>"; };
+		19BB719626D2761F00C9A9D2 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PromisesObjC.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/PromisesObjC.xcframework"; sourceTree = "<group>"; };
+		19BB719726D2761F00C9A9D2 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = nanopb.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/nanopb.xcframework"; sourceTree = "<group>"; };
+		19BB719826D2761F00C9A9D2 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
+		19BB719926D2761F00C9A9D2 /* Licenses */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Licenses; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/Licenses"; sourceTree = "<group>"; };
+		19BB719A26D2761F00C9A9D2 /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = UserMessagingPlatform.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/UserMessagingPlatform.xcframework"; sourceTree = "<group>"; };
+		19BB719B26D2761F00C9A9D2 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleUtilities.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/GoogleUtilities.xcframework"; sourceTree = "<group>"; };
 		49063B9FF2375D28AE9FAD77 /* Pods-Spy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spy.release.xcconfig"; path = "Target Support Files/Pods-Spy/Pods-Spy.release.xcconfig"; sourceTree = "<group>"; };
 		50E99E07ABBE0B84C5FD22EE /* Pods_Spy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE8F449D5A0DACDAD7E9D43 /* Pods-Spy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spy.debug.xcconfig"; path = "Target Support Files/Pods-Spy/Pods-Spy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +96,13 @@
 		7F6C3F86C3B368D96042F9EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19BB719826D2761F00C9A9D2 /* GoogleMobileAds.xcframework */,
+				19BB719B26D2761F00C9A9D2 /* GoogleUtilities.xcframework */,
+				19BB719926D2761F00C9A9D2 /* Licenses */,
+				19BB719726D2761F00C9A9D2 /* nanopb.xcframework */,
+				19BB719626D2761F00C9A9D2 /* PromisesObjC.xcframework */,
+				19BB719A26D2761F00C9A9D2 /* UserMessagingPlatform.xcframework */,
+				19BB719226D2761000C9A9D2 /* GoogleAppMeasurement.xcframework */,
 				E9569477262F607E00F054C1 /* LayoutHelper.framework */,
 				E9114D75262F589700AFFD9B /* LayoutHelper.framework */,
 				E9EE0E1E262F551A002061C7 /* LayoutHelper.framework */,
@@ -110,6 +126,7 @@
 			children = (
 				E91D1C63262AE53C0007736F /* InfoManager.swift */,
 				E93A3C952631AF3600312B47 /* RateManager.swift */,
+				19BB719026D19BAD00C9A9D2 /* GoogleAds.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -279,7 +296,6 @@
 				E954EFFF261C950A00E89673 /* Frameworks */,
 				E954F000261C950A00E89673 /* Resources */,
 				16262A78F85A6C84EB7E0743 /* [CP] Embed Pods Frameworks */,
-				0E03FD6C2E63C9D90F0B114E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,23 +354,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E03FD6C2E63C9D90F0B114E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Spy/Pods-Spy-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Spy/Pods-Spy-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spy/Pods-Spy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		16262A78F85A6C84EB7E0743 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E0EC9126219309001AD4C9 /* UIViewController.swift in Sources */,
+				19BB719126D19BAD00C9A9D2 /* GoogleAds.swift in Sources */,
 				E93A3C962631AF3600312B47 /* RateManager.swift in Sources */,
 				E91D1C64262AE53C0007736F /* InfoManager.swift in Sources */,
 				E9393B1C2620B50A00E0D09F /* UIButtonExtension.swift in Sources */,

@@ -26,7 +26,7 @@
 	<array>
 		<dict>
 			<key>SKAdNetworkIdentifier</key>
-			<string>zq492l623r.skadnetwork</string>
+			<string>cstr6suwn9.skadnetwork</string>
 		</dict>
 	</array>
 	<key>UIAppFonts</key>
@@ -67,6 +67,8 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-7412585754420452~5453654690</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

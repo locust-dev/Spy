@@ -5,6 +5,6 @@ target 'Spy' do
 
   use_frameworks!
   pod 'LayoutHelper'
-  pod 'YandexMobileAds/Dynamic', '4.1.2'
+  pod 'Google-Mobile-Ads-SDK'
 
 end
