@@ -726,8 +726,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopTimerButton" destination="CbJ-Qa-lV7" eventType="touchUpInside" id="K5s-Me-rZV"/>
-                                    <segue destination="s0V-RI-oDa" kind="unwind" unwindAction="unwindFor:" id="Az7-m0-tri"/>
+                                    <action selector="stopGameButton" destination="CbJ-Qa-lV7" eventType="touchUpInside" id="K5s-Me-rZV"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eUx-yg-bvD">
@@ -772,6 +771,7 @@
                         <outlet property="faqLabel" destination="tr8-qX-YTW" id="k1F-zi-391"/>
                         <outlet property="overButton" destination="dzX-XZ-YwJ" id="Zpy-12-jkX"/>
                         <outlet property="timerLabel" destination="ec1-bU-9Ar" id="laz-kg-q6c"/>
+                        <segue destination="s0V-RI-oDa" kind="unwind" identifier="toMain" unwindAction="unwindFor:" id="d51-KY-uqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1HY-oI-8UM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

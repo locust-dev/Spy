@@ -7,39 +7,103 @@
 
 import UIKit
 import AudioToolbox
+import GoogleMobileAds
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GADFullScreenContentDelegate {
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var faqLabel: UILabel!
     @IBOutlet weak var overButton: UIButton!
+
+    
+    // MARK: - Properties
     
     var totalTime: Int!
+    private var interstitial: GADInterstitialAd?
     private var timer: Timer?
     private var secondsInBackground = 0
+    
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+        createTimer()
+        addObservers()
+        adRequest()
+        
+    }
+    
+    
+    // MARK: - Actions
+    
+    @IBAction func stopGameButton() {
+        stopTimer()
+        
+        GoogleAds.shared.showInterstitial(ad: interstitial, viewController: self) {
+            performSegue(withIdentifier: "toMain", sender: nil)
+        }
+        
+        GoogleAds.shared.adCount += 1
+    }
+    
+    
+    // MARK: - Private methods
+    
+    private func setupUI() {
         navigationItem.hidesBackButton = true
         setBackgroundImage(with: "Spy_Background", for: view)
         cornerAndShadows(overButton)
-        createTimer()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    @IBAction func stopTimerButton() {
-        if let timer = timer {
-            timer.invalidate()
-        }
-        UIApplication.shared.isIdleTimerDisabled = false
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(pauseWhenBackground(noti:)),
+                                               name: UIApplication.didEnterBackgroundNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willEnterForeground(noti:)),
+                                               name: UIApplication.willEnterForegroundNotification,
+                                               object: nil)
     }
+
+    
 }
+
+
+// MARK: - Setup AD
+extension GameViewController {
+    
+    private func adRequest() {
+        GoogleAds.shared.createAdsRequest { [weak self] ad in
+            self?.interstitial = ad
+            self?.interstitial?.fullScreenContentDelegate = self
+        }
+    }
+    
+    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did present full screen content.")
+    }
+
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad failed to present full screen content with error \(error.localizedDescription).")
+    }
+
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
+        performSegue(withIdentifier: "toMain", sender: nil)
+    }
+    
+}
+
 
 // MARK: - Configure Timer
 extension GameViewController {
+    
     private func createTimer() {
         UIApplication.shared.isIdleTimerDisabled = true
         
@@ -67,6 +131,14 @@ extension GameViewController {
     private func getTimeDifference(startDate: Date) -> Int {
         let components = Calendar.current.dateComponents([.second], from: startDate, to: Date())
         return(components.second ?? 0)
+    }
+    
+    private func stopTimer() {
+        if let timer = timer {
+            timer.invalidate()
+        }
+        
+        UIApplication.shared.isIdleTimerDisabled = false
     }
     
     @objc private func updateTimer() {
