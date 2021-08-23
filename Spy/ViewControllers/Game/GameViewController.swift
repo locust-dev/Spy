@@ -85,16 +85,7 @@ extension GameViewController {
         }
     }
     
-    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did present full screen content.")
-    }
-
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        print("Ad failed to present full screen content with error \(error.localizedDescription).")
-    }
-
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did dismiss full screen content.")
         performSegue(withIdentifier: "toMain", sender: nil)
     }
     

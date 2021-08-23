@@ -15,7 +15,7 @@ class GoogleAds {
         
         enum adBlocks {
             
-            static let id1 = "ca-app-pub-8123415297019784/4985798738"
+            static let fullscreenBlock = "ca-app-pub-7412585754420452/2827491358"
             
         }
         
@@ -36,8 +36,11 @@ class GoogleAds {
     // MARK: - Methods
     
     func createAdsRequest(completion: @escaping (GADInterstitialAd?) -> Void) {
+        
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID: Locals.adBlocks.id1, request: request) { ad, error in
+        let id = Locals.adBlocks.fullscreenBlock
+        
+        GADInterstitialAd.load(withAdUnitID: id, request: request) { ad, error in
             
             if let error = error {
                 print("Failed to load interstitial ad with error: \(error.localizedDescription)")
@@ -45,17 +48,19 @@ class GoogleAds {
             }
             
             completion(ad)
-            print("ad was loaded from server")            
+            print("ad has been loaded from server")
         }
+        
     }
     
     func showInterstitial(ad: GADInterstitialAd?, viewController: UIViewController, completion: () -> Void) {
+        
         if let ad = ad, adCount % 2 == 0 {
             ad.present(fromRootViewController: viewController)
         } else {
-            print("Ad wasn't ready")
             completion()
         }
+        
     }
     
 }
