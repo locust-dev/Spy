@@ -121,14 +121,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E91D1C62262AE52C0007736F /* Service */ = {
+		E91D1C62262AE52C0007736F /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				E91D1C63262AE53C0007736F /* InfoManager.swift */,
 				E93A3C952631AF3600312B47 /* RateManager.swift */,
 				19BB719026D19BAD00C9A9D2 /* GoogleAds.swift */,
 			);
-			path = Service;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		E9393B1A2620B4FD00E0D09F /* Extensions */ = {
@@ -165,22 +165,22 @@
 				E9FD4864261D0F6D005C29A1 /* Supportings */,
 				E9393B1A2620B4FD00E0D09F /* Extensions */,
 				E972BD5E262061250005D20D /* Fonts */,
-				E91D1C62262AE52C0007736F /* Service */,
-				E954F01D261C96C700E89673 /* DataModel */,
-				E9FD4862261D0F59005C29A1 /* ViewControllers */,
+				E91D1C62262AE52C0007736F /* Core */,
+				E954F01D261C96C700E89673 /* Model */,
+				E9FD4862261D0F59005C29A1 /* Modules */,
 				E9FD4868261D0FB8005C29A1 /* Storyboards */,
 				E9FD4867261D0FA1005C29A1 /* Files */,
 			);
 			path = Spy;
 			sourceTree = "<group>";
 		};
-		E954F01D261C96C700E89673 /* DataModel */ = {
+		E954F01D261C96C700E89673 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E954F01E261C96D800E89673 /* LocationGroup.swift */,
 				E9EC35EE26518CFF001FB35B /* Game.swift */,
 			);
-			path = DataModel;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E972BD5E262061250005D20D /* Fonts */ = {
@@ -245,7 +245,7 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
-		E9FD4862261D0F59005C29A1 /* ViewControllers */ = {
+		E9FD4862261D0F59005C29A1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				E9877A9D2683659000DD0F4B /* StartScreen */,
@@ -254,7 +254,7 @@
 				E9877AA0268365DA00DD0F4B /* Game */,
 				E9877A9E268365A200DD0F4B /* FAQ */,
 			);
-			path = ViewControllers;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		E9FD4864261D0F6D005C29A1 /* Supportings */ = {
@@ -568,7 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -593,7 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
