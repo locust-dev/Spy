@@ -174,28 +174,28 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JJ-vA-1II">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JJ-vA-1II">
                                 <rect key="frame" x="352" y="820" width="42" height="42"/>
                                 <color key="backgroundColor" red="0.6655848124" green="0.71088971999999995" blue="0.68892257180000005" alpha="0.35633870309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4JJ-vA-1II" secondAttribute="height" multiplier="1:1" id="bKa-mp-mDl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="?">
+                                <color key="tintColor" red="0.86235857709999997" green="0.86235857709999997" blue="0.86235857709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="gearshape" catalog="system">
                                     <color key="titleColor" red="0.86235857707698171" green="0.86235857707698171" blue="0.86235857707698171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="N5R-Mk-FuA" kind="show" id="EaT-Jh-DQb"/>
+                                    <segue destination="vG4-8L-bUg" kind="show" id="7PT-AI-rZm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz2-9o-lmN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz2-9o-lmN">
                                 <rect key="frame" x="20" y="820" width="42" height="42"/>
                                 <color key="backgroundColor" red="0.6655848124" green="0.71088971999999995" blue="0.68892257180000005" alpha="0.35633870309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bz2-9o-lmN" secondAttribute="height" multiplier="1:1" id="7KD-WI-j07"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="☆">
+                                <color key="tintColor" red="0.86235857709999997" green="0.86235857709999997" blue="0.86235857709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="star" catalog="system">
                                     <color key="titleColor" red="0.86235857707698171" green="0.86235857707698171" blue="0.86235857707698171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -207,7 +207,9 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rgg-IS-2Iy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AKu-76-dZn"/>
+                            <constraint firstItem="Bz2-9o-lmN" firstAttribute="top" secondItem="GxJ-s5-Tpf" secondAttribute="bottom" constant="38" id="Jjg-mT-SmC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aN8-Xl-owC" secondAttribute="bottom" constant="80" id="Jrn-Hj-Sf8"/>
+                            <constraint firstItem="4JJ-vA-1II" firstAttribute="top" secondItem="GxJ-s5-Tpf" secondAttribute="bottom" constant="38" id="Qcv-JZ-lzA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4JJ-vA-1II" secondAttribute="trailing" constant="20" id="U2V-ub-6bz" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
@@ -362,7 +364,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETK-sl-lYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="h3g-iI-MjL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1860.8695652173915" y="795.53571428571422"/>
+            <point key="canvasLocation" x="2606" y="795"/>
         </scene>
         <!--Faq View Controller-->
         <scene sceneID="Egn-BD-PZ4">
@@ -391,7 +393,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4K6-PW-RsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="796"/>
+            <point key="canvasLocation" x="3332" y="796"/>
         </scene>
         <!--Локации-->
         <scene sceneID="6NR-Gi-vz2">
@@ -833,10 +835,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSe-SS-eX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="647"/>
+            <point key="canvasLocation" x="209" y="542"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="I7b-wK-f11">
+            <objects>
+                <tableViewController id="vG4-8L-bUg" customClass="SettingsViewController" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="u5j-VV-YlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Ena-8j-cKF">
+                                <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ena-8j-cKF" id="hfT-So-zoY">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.045454205234892395" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="N5R-Mk-FuA" kind="show" identifier="toFaq" id="faP-I0-RMD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vG4-8L-bUg" id="GWe-EK-Uy7"/>
+                            <outlet property="delegate" destination="vG4-8L-bUg" id="LgE-Sn-CEQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="C29-vU-iMB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="seR-bb-oLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1487" y="833"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

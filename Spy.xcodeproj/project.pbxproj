@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19484FD626D8DCCE0057D2A3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19484FD526D8DCCE0057D2A3 /* SettingsViewController.swift */; };
 		19BB719126D19BAD00C9A9D2 /* GoogleAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB719026D19BAD00C9A9D2 /* GoogleAds.swift */; };
 		E91D1C64262AE53C0007736F /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* InfoManager.swift */; };
 		E9393B1C2620B50A00E0D09F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9393B1B2620B50A00E0D09F /* UIButtonExtension.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19484FD526D8DCCE0057D2A3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		19BB719026D19BAD00C9A9D2 /* GoogleAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAds.swift; sourceTree = "<group>"; };
 		19BB719226D2761000C9A9D2 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/GoogleAppMeasurement.xcframework"; sourceTree = "<group>"; };
 		19BB719626D2761F00C9A9D2 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PromisesObjC.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/PromisesObjC.xcframework"; sourceTree = "<group>"; };
@@ -220,13 +222,14 @@
 			path = StartScreen;
 			sourceTree = "<group>";
 		};
-		E9877A9E268365A200DD0F4B /* FAQ */ = {
+		E9877A9E268365A200DD0F4B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				E97C7A15262B1556001D75F7 /* FaqViewController.swift */,
 				E9CCA8D126290D4F008B5F24 /* ContainerForFAQ.swift */,
+				19484FD526D8DCCE0057D2A3 /* SettingsViewController.swift */,
 			);
-			path = FAQ;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		E9877A9F268365AE00DD0F4B /* WhoIsSpy */ = {
@@ -252,7 +255,7 @@
 				E9877A9B26834E0B00DD0F4B /* Locations */,
 				E9877A9F268365AE00DD0F4B /* WhoIsSpy */,
 				E9877AA0268365DA00DD0F4B /* Game */,
-				E9877A9E268365A200DD0F4B /* FAQ */,
+				E9877A9E268365A200DD0F4B /* Settings */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			files = (
 				E9E0EC9126219309001AD4C9 /* UIViewController.swift in Sources */,
 				19BB719126D19BAD00C9A9D2 /* GoogleAds.swift in Sources */,
+				19484FD626D8DCCE0057D2A3 /* SettingsViewController.swift in Sources */,
 				E93A3C962631AF3600312B47 /* RateManager.swift in Sources */,
 				E91D1C64262AE53C0007736F /* InfoManager.swift in Sources */,
 				E9393B1C2620B50A00E0D09F /* UIButtonExtension.swift in Sources */,
@@ -568,7 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -593,7 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
