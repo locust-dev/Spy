@@ -105,6 +105,16 @@ final class InAppManager: NSObject {
 // MARK: - Configure transactions
 extension InAppManager: SKPaymentTransactionObserver, SKProductsRequestDelegate {
     
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        if paymentQueue.transactions.isEmpty {
+            createPostNoti(NotiKeys.nothingToRestoreNoti)
+        }
+    }
+
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        createPostNoti(NotiKeys.nothingToRestoreNoti)
+    }
+    
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if let product = response.products.first {
             removeAdsProduct = product
@@ -118,9 +128,11 @@ extension InAppManager: SKPaymentTransactionObserver, SKProductsRequestDelegate 
             switch transaction.transactionState {
                 
             case .deferred:
+                print("deffered")
                 break
                 
             case .purchasing:
+                print("purchasing")
                 break
                 
             case .failed:
@@ -136,6 +148,7 @@ extension InAppManager: SKPaymentTransactionObserver, SKProductsRequestDelegate 
                 paymentQueue.finishTransaction(transaction)
                 
             @unknown default:
+                print("unknown")
                 break
                 
             }
