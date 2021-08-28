@@ -7,7 +7,7 @@
 
 import GoogleMobileAds
 
-class GoogleAds {
+final class GoogleAds {
     
     // MARK: - Locals
     

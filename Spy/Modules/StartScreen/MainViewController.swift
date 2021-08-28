@@ -12,7 +12,9 @@ protocol HowMuchSpiesDelegate {
     func getSpiesCount(count: Int)
 }
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    
+    
     
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
@@ -26,12 +28,47 @@ class MainViewController: UIViewController {
     private var game = Game(time: 1, players: 3, spies: 1)
     private var locationGroup = LocationGroup.getDefaultGroup()
 
+    var prod: SKProduct?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         RateManager.showRatesController()
         setupGestures()
         setupUI()
+        fetch()
     }
+    
+    
+    func fetch() {
+        let request = SKProductsRequest(productIdentifiers: ["voxx.spy.removeads"])
+        request.delegate = self
+        request.start()
+        removeAds()
+    }
+    
+    private func removeAds() {
+        guard let ads = prod else {
+            print("returned")
+            return
+        }
+        
+        if SKPaymentQueue.canMakePayments() {
+            let payment = SKPayment(product: ads)
+            SKPaymentQueue.default().add(self)
+            SKPaymentQueue.default().add(payment)
+        }
+    }
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print("prod")
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        print("queue")
+    }
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -15,6 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         RateManager.incrementCount()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        InAppManager.shared.setupPurchases { success in
+            if success {
+                print("App can make payments")
+                InAppManager.shared.getProducts()
+            }
+        }
+        
+        UserDefaults.standard.set(false, forKey: "ads_removed")
         
         return true
     }

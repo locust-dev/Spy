@@ -34,20 +34,7 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
         setupUI()
         createTimer()
         addObservers()
-        //adRequest()
-        
-        let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-8123415297019784/4985798738",
-                                        request: request,
-                              completionHandler: { (ad, error) in
-                                if let error = error {
-                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                  return
-                                }
-                                self.interstitial = ad
-                                self.interstitial?.fullScreenContentDelegate = self
-                              }
-            )
+        adRequest()
         
     }
     
@@ -92,9 +79,11 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
 extension GameViewController {
     
     private func adRequest() {
-        GoogleAds.shared.createAdsRequest { [weak self] ad in
-            self?.interstitial = ad
-            self?.interstitial?.fullScreenContentDelegate = self
+        if !UserDefaults.standard.bool(forKey: "ads_removed") {
+            GoogleAds.shared.createAdsRequest { [weak self] ad in
+                self?.interstitial = ad
+                self?.interstitial?.fullScreenContentDelegate = self
+            }
         }
     }
     

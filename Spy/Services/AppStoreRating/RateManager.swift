@@ -7,7 +7,7 @@
 
 import StoreKit
 
-class RateManager {
+final class RateManager {
     
     class func incrementCount() {
         let count = UserDefaults.standard.integer(forKey: "run_count")
