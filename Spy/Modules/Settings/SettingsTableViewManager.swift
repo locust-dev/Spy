@@ -12,6 +12,7 @@ final class SettingsTableViewManager {
     enum Cells: String {
         case faq = "FAQ"
         case adsRemove = "Отключить рекламу"
+        case restorePurchases = "Восстановить покупки"
     }
     
     static func getCells() -> [Cells] {
@@ -23,9 +24,12 @@ final class SettingsTableViewManager {
         titlesArray.append(Cells.faq)
         
         /// Remove ads cell
-        if !UserDefaults.standard.bool(forKey: "ads_removed") {
+        if !UserDefaults.standard.bool(forKey: ProductKeys.removeAds.userDefaultsKey) {
             titlesArray.append(Cells.adsRemove)
         }
+        
+        /// Restore purchases cell
+        titlesArray.append(Cells.restorePurchases)
         
         return titlesArray
     }

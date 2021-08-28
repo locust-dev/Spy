@@ -17,12 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         InAppManager.shared.setupPurchases { success in
             if success {
-                print("App can make payments")
                 InAppManager.shared.getProducts()
             }
         }
         
-        UserDefaults.standard.set(false, forKey: "ads_removed")
+        if !UserDefaults.standard.bool(forKey: ProductKeys.removeAds.userDefaultsKey) {
+            UserDefaults.standard.set(false, forKey: ProductKeys.removeAds.userDefaultsKey)
+        }
         
         return true
     }

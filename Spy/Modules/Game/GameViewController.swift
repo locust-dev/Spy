@@ -79,7 +79,7 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
 extension GameViewController {
     
     private func adRequest() {
-        if !UserDefaults.standard.bool(forKey: "ads_removed") {
+        if !UserDefaults.standard.bool(forKey: ProductKeys.removeAds.userDefaultsKey) {
             GoogleAds.shared.createAdsRequest { [weak self] ad in
                 self?.interstitial = ad
                 self?.interstitial?.fullScreenContentDelegate = self

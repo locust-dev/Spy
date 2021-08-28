@@ -13,6 +13,7 @@
 		19548C6526D92F6D00DA66DC /* Groupes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19548C6426D92F6D00DA66DC /* Groupes.swift */; };
 		19548C6726D92F8400DA66DC /* SettingsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19548C6626D92F8400DA66DC /* SettingsTableViewManager.swift */; };
 		19A8B97B26DA787600C2D39B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8B97A26DA787600C2D39B /* SettingsCell.swift */; };
+		19A8B97F26DAB18900C2D39B /* ProductKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8B97E26DAB18900C2D39B /* ProductKeys.swift */; };
 		19BB719126D19BAD00C9A9D2 /* GoogleAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB719026D19BAD00C9A9D2 /* GoogleAds.swift */; };
 		E91D1C64262AE53C0007736F /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D1C63262AE53C0007736F /* InfoManager.swift */; };
 		E9393B1C2620B50A00E0D09F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9393B1B2620B50A00E0D09F /* UIButtonExtension.swift */; };
@@ -49,6 +50,7 @@
 		19548C6426D92F6D00DA66DC /* Groupes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groupes.swift; sourceTree = "<group>"; };
 		19548C6626D92F8400DA66DC /* SettingsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewManager.swift; sourceTree = "<group>"; };
 		19A8B97A26DA787600C2D39B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		19A8B97E26DAB18900C2D39B /* ProductKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductKeys.swift; sourceTree = "<group>"; };
 		19BB719026D19BAD00C9A9D2 /* GoogleAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAds.swift; sourceTree = "<group>"; };
 		19BB719226D2761000C9A9D2 /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/GoogleAppMeasurement.xcframework"; sourceTree = "<group>"; };
 		19BB719626D2761F00C9A9D2 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PromisesObjC.xcframework; path = "../../../../Downloads/GoogleMobileAdsSdkiOS-8.9.0/PromisesObjC.xcframework"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				19548C5C26D9225100DA66DC /* InAppManager.swift */,
+				19A8B97E26DAB18900C2D39B /* ProductKeys.swift */,
 			);
 			path = Purchases;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				19A8B97B26DA787600C2D39B /* SettingsCell.swift in Sources */,
 				E9E7B6A8261E216400455F72 /* ContainerForLocationDetail.swift in Sources */,
 				E9B8DD63262C6FB7002B623A /* UITextField.swift in Sources */,
+				19A8B97F26DAB18900C2D39B /* ProductKeys.swift in Sources */,
 				E97C7A16262B1556001D75F7 /* FaqViewController.swift in Sources */,
 				19548C6526D92F6D00DA66DC /* Groupes.swift in Sources */,
 				E9CCA8D226290D4F008B5F24 /* ContainerForFAQ.swift in Sources */,
@@ -521,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -582,6 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
