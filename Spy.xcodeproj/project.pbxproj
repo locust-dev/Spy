@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		19484FD626D8DCCE0057D2A3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19484FD526D8DCCE0057D2A3 /* SettingsViewController.swift */; };
 		19548C5D26D9225100DA66DC /* InAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19548C5C26D9225100DA66DC /* InAppManager.swift */; };
-		19548C6326D9266100DA66DC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19548C6226D9266100DA66DC /* StoreKit.framework */; };
 		19548C6526D92F6D00DA66DC /* Groupes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19548C6426D92F6D00DA66DC /* Groupes.swift */; };
 		19548C6726D92F8400DA66DC /* SettingsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19548C6626D92F8400DA66DC /* SettingsTableViewManager.swift */; };
 		19A8B97B26DA787600C2D39B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8B97A26DA787600C2D39B /* SettingsCell.swift */; };
@@ -47,7 +46,6 @@
 /* Begin PBXFileReference section */
 		19484FD526D8DCCE0057D2A3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		19548C5C26D9225100DA66DC /* InAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppManager.swift; sourceTree = "<group>"; };
-		19548C6226D9266100DA66DC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		19548C6426D92F6D00DA66DC /* Groupes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groupes.swift; sourceTree = "<group>"; };
 		19548C6626D92F8400DA66DC /* SettingsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewManager.swift; sourceTree = "<group>"; };
 		19A8B97A26DA787600C2D39B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19548C6326D9266100DA66DC /* StoreKit.framework in Frameworks */,
 				E9569479262F625700F054C1 /* LayoutHelper.framework in Frameworks */,
 				E9EE0E1C262F4C61002061C7 /* Pods_Spy.framework in Frameworks */,
 			);
@@ -164,7 +161,6 @@
 		7F6C3F86C3B368D96042F9EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				19548C6226D9266100DA66DC /* StoreKit.framework */,
 				19BB719826D2761F00C9A9D2 /* GoogleMobileAds.xcframework */,
 				19BB719B26D2761F00C9A9D2 /* GoogleUtilities.xcframework */,
 				19BB719926D2761F00C9A9D2 /* Licenses */,
@@ -650,19 +646,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
-				DEVELOPMENT_TEAM = UHQ7TS5P9H;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 27;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = voxx.Spy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Spy_profile;
 				SKIP_INSTALL = NO;
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_VERSION = 5.0;
@@ -677,19 +676,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
-				DEVELOPMENT_TEAM = UHQ7TS5P9H;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 27;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = UHQ7TS5P9H;
 				INFOPLIST_FILE = Spy/Supportings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = voxx.Spy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Spy_profile;
 				SKIP_INSTALL = NO;
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_VERSION = 5.0;

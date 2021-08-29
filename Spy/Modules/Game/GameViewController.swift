@@ -34,8 +34,7 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
         setupUI()
         createTimer()
         addObservers()
-        adRequest()
-        
+//        adRequest()
     }
     
     
@@ -43,12 +42,13 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
     
     @IBAction func stopGameButton() {
         stopTimer()
+        performSegue(withIdentifier: "toMain", sender: nil)
         
-        GoogleAds.shared.showInterstitial(ad: interstitial, viewController: self) {
-            performSegue(withIdentifier: "toMain", sender: nil)
-        }
-        
-        GoogleAds.shared.adCount += 1
+//        GoogleAds.shared.showInterstitial(ad: interstitial, viewController: self) {
+//            performSegue(withIdentifier: "toMain", sender: nil)
+//        }
+//        
+//        GoogleAds.shared.adCount += 1
     }
     
     
