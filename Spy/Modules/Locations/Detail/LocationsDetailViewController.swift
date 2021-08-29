@@ -9,9 +9,14 @@ import UIKit
 
 class LocationsDetailViewController: UITableViewController {
     
+    // MARK: - Properties
+    
     var currentGroup: LocationGroup!
     var locationsForRecover: LocationGroup!
     var delegate: SetGroupDelegate!
+    
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,9 @@ class LocationsDetailViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.sizeToFit()
     }
+    
+    
+    // MARK: - Table view configure
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         currentGroup.locations.count

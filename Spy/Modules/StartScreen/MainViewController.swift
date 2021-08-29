@@ -14,25 +14,32 @@ protocol HowMuchSpiesDelegate {
 
 class MainViewController: UIViewController {
     
-    
+    // MARK: - Outlets
     
     @IBOutlet weak var chooseLocation: UIButton!
     @IBOutlet weak var startButtonOutlet: UIButton!
     @IBOutlet weak var faqButton: UIButton!
     @IBOutlet weak var reviewButton: UIButton!
     @IBOutlet weak var countSpyButton: UIButton!
+    @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet var pickers: [UIPickerView]!
+    
+    
+    // MARK: - Properties
     
     private var playersPicker = Array(3...25)
     private var timerPicker = Array(1...25)
     private var game = Game(time: 1, players: 3, spies: 1)
     private var locationGroup = LocationGroup.getDefaultGroup()
     
+    
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         RateManager.showRatesController()
         setupGestures()
-        setupUI()
+        drawSelf()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,11 +58,8 @@ class MainViewController: UIViewController {
         )
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let whoSpyVC = segue.destination as? WhoIsSpyViewController else { return }
-        whoSpyVC.currentGroup = locationGroup
-        whoSpyVC.currentGame = game
-    }
+    
+    // MARK: - IBActions
     
     @IBAction func beginsPressed(_ sender: UIButton) {
         sender.showAnimationWithHaptic()
@@ -71,14 +75,30 @@ class MainViewController: UIViewController {
         chooseLocation.setTitle(locationGroup.title, for: .normal)
     }
     
-    private func setupUI() {
+    
+    // MARK: - Public methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let whoSpyVC = segue.destination as? WhoIsSpyViewController else { return }
+        whoSpyVC.currentGroup = locationGroup
+        whoSpyVC.currentGame = game
+    }
+    
+    
+    // MARK: - Private methods
+    
+    private func drawSelf() {
         setBackgroundImage(with: "Spy_Background", for: view)
         chooseLocation.setTitle(locationGroup.title, for: .normal)
+        detailLabel.text = "как можно скорее!"
+        title = ""
+        
         for picker in pickers {
             picker.tintColor = .white
         }
     }
     
+   
 }
 
 // MARK: - Configure popover
@@ -117,8 +137,8 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         pickerView.tag == 1
-            ? playersPicker.count
-            : timerPicker.count
+        ? playersPicker.count
+        : timerPicker.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -134,10 +154,10 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         pickerView.tag == 1
-            ? NSAttributedString(string: String(playersPicker[row]),
-                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-            : NSAttributedString(string: String(timerPicker[row]),
-                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        ? NSAttributedString(string: String(playersPicker[row]),
+                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        : NSAttributedString(string: String(timerPicker[row]),
+                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
 }
 

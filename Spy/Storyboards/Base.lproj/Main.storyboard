@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Шпион-->
+        <!--Найти шпиона-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Spy" customModuleProvider="target" sceneMemberID="viewController">
@@ -167,21 +167,33 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время на исходе!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIi-cu-gMd">
-                                <rect key="frame" x="16" y="140" width="382" height="20"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pCA-9Q-J2L">
+                                <rect key="frame" x="20" y="120" width="374" height="64.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Найди шпиона" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bs-R8-mSx">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="как можно скорее!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIi-cu-gMd">
+                                        <rect key="frame" x="0.0" y="37.5" width="374" height="27"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JJ-vA-1II">
-                                <rect key="frame" x="352" y="820" width="42" height="42"/>
+                                <rect key="frame" x="348" y="816" width="46" height="46"/>
                                 <color key="backgroundColor" red="0.6655848124" green="0.71088971999999995" blue="0.68892257180000005" alpha="0.35633870309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4JJ-vA-1II" secondAttribute="height" multiplier="1:1" id="bKa-mp-mDl"/>
                                 </constraints>
                                 <color key="tintColor" red="0.86235857709999997" green="0.86235857709999997" blue="0.86235857709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="gearshape" catalog="system">
+                                <state key="normal" image="questionmark" catalog="system">
                                     <color key="titleColor" red="0.86235857707698171" green="0.86235857707698171" blue="0.86235857707698171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -189,7 +201,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz2-9o-lmN">
-                                <rect key="frame" x="20" y="820" width="42" height="42"/>
+                                <rect key="frame" x="20" y="816" width="46" height="46"/>
                                 <color key="backgroundColor" red="0.6655848124" green="0.71088971999999995" blue="0.68892257180000005" alpha="0.35633870309999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bz2-9o-lmN" secondAttribute="height" multiplier="1:1" id="7KD-WI-j07"/>
@@ -206,10 +218,30 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pCA-9Q-J2L" secondAttribute="trailing" constant="20" id="AEg-3C-qGh"/>
                             <constraint firstItem="rgg-IS-2Iy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AKu-76-dZn"/>
-                            <constraint firstItem="Bz2-9o-lmN" firstAttribute="top" secondItem="GxJ-s5-Tpf" secondAttribute="bottom" constant="38" id="Jjg-mT-SmC"/>
+                            <constraint firstItem="Bz2-9o-lmN" firstAttribute="top" secondItem="GxJ-s5-Tpf" secondAttribute="bottom" constant="34" id="Jjg-mT-SmC" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone12Mini">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aN8-Xl-owC" secondAttribute="bottom" constant="80" id="Jrn-Hj-Sf8"/>
-                            <constraint firstItem="4JJ-vA-1II" firstAttribute="top" secondItem="GxJ-s5-Tpf" secondAttribute="bottom" constant="38" id="Qcv-JZ-lzA"/>
+                            <constraint firstItem="4JJ-vA-1II" firstAttribute="top" secondItem="GxJ-s5-Tpf" secondAttribute="bottom" constant="34" id="Qcv-JZ-lzA" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone12Mini">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="pCA-9Q-J2L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ShV-r9-l0c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4JJ-vA-1II" secondAttribute="trailing" constant="20" id="U2V-ub-6bz" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
@@ -223,7 +255,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </constraint>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NIi-cu-gMd" secondAttribute="trailing" constant="16" id="e4B-QL-Q1M"/>
+                            <constraint firstItem="pCA-9Q-J2L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="duU-zG-yVb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4JJ-vA-1II" secondAttribute="bottom" id="gwC-6s-4NN" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
@@ -267,7 +299,6 @@
                                 </userDefinedRuntimeAttributes>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="rgg-IS-2Iy" secondAttribute="trailing" constant="20" id="mGr-jF-cu9"/>
-                            <constraint firstItem="NIi-cu-gMd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oaQ-Zp-YrL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bz2-9o-lmN" secondAttribute="bottom" id="s1h-lo-eFU" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
@@ -296,14 +327,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </constraint>
-                            <constraint firstItem="NIi-cu-gMd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="u3I-88-8NW"/>
                             <constraint firstItem="aN8-Xl-owC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xcI-82-mmh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Шпион" id="qhp-Qm-WQ1"/>
+                    <navigationItem key="navigationItem" title="Найти шпиона" largeTitleDisplayMode="always" id="qhp-Qm-WQ1"/>
                     <connections>
                         <outlet property="chooseLocation" destination="G1B-ho-wLK" id="Utq-W5-lfz"/>
                         <outlet property="countSpyButton" destination="XZ2-Ub-x4U" id="ntD-Jo-dTA"/>
+                        <outlet property="detailLabel" destination="NIi-cu-gMd" id="hGa-xx-jC2"/>
                         <outlet property="faqButton" destination="4JJ-vA-1II" id="UCo-Ie-5dJ"/>
                         <outlet property="reviewButton" destination="Bz2-9o-lmN" id="gNq-Nh-RdQ"/>
                         <outlet property="startButtonOutlet" destination="GxJ-s5-Tpf" id="fc4-R3-J26"/>
@@ -364,7 +395,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETK-sl-lYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="h3g-iI-MjL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2606" y="795"/>
+            <point key="canvasLocation" x="2343" y="832"/>
         </scene>
         <!--Faq View Controller-->
         <scene sceneID="Egn-BD-PZ4">
@@ -393,7 +424,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4K6-PW-RsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3332" y="796"/>
+            <point key="canvasLocation" x="3165" y="831"/>
         </scene>
         <!--Локации-->
         <scene sceneID="6NR-Gi-vz2">
@@ -888,7 +919,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

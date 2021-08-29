@@ -14,11 +14,8 @@ final class GoogleAds {
     private enum Locals {
         
         enum adBlocks {
-            
             static let fullscreenBlock = "ca-app-pub-7412585754420452/2827491358"
-            
         }
-        
     }
     
     
