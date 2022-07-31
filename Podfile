@@ -5,6 +5,8 @@ target 'Spy' do
 
   use_frameworks!
   
+  pod 'R.swift'
+  pod 'PureLayout'
   pod 'Google-Mobile-Ads-SDK'
 
 end
