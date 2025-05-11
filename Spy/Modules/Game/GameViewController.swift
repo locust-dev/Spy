@@ -7,9 +7,9 @@
 
 import UIKit
 import AudioToolbox
-import GoogleMobileAds
+//import GoogleMobileAds
 
-class GameViewController: UIViewController, GADFullScreenContentDelegate {
+class GameViewController: UIViewController {
     
     // MARK: - Outlets
     
@@ -21,7 +21,7 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
     // MARK: - Properties
     
     var totalTime: Int!
-    private var interstitial: GADInterstitialAd?
+//    private var interstitial: GADInterstitialAd?
     private var timer: Timer?
     private var secondsInBackground = 0
     
@@ -78,18 +78,18 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
 // MARK: - Setup AD
 extension GameViewController {
     
-    private func adRequest() {
-        if !UserDefaults.standard.bool(forKey: ProductKeys.removeAds.userDefaultsKey) {
-            GoogleAds.shared.createAdsRequest { [weak self] ad in
-                self?.interstitial = ad
-                self?.interstitial?.fullScreenContentDelegate = self
-            }
-        }
-    }
+//    private func adRequest() {
+//        if !UserDefaults.standard.bool(forKey: ProductKeys.removeAds.userDefaultsKey) {
+//            GoogleAds.shared.createAdsRequest { [weak self] ad in
+//                self?.interstitial = ad
+//                self?.interstitial?.fullScreenContentDelegate = self
+//            }
+//        }
+//    }
     
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        performSegue(withIdentifier: "toMain", sender: nil)
-    }
+//    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+//        performSegue(withIdentifier: "toMain", sender: nil)
+//    }
     
 }
 

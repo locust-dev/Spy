@@ -11,7 +11,6 @@ final class SettingsTableViewManager {
     
     enum Cells: String {
         case faq = "FAQ"
-        case adsRemove = "Отключить рекламу"
         case restorePurchases = "Восстановить покупки"
     }
     
@@ -22,11 +21,6 @@ final class SettingsTableViewManager {
         
         /// FAQ cell
         titlesArray.append(Cells.faq)
-        
-        /// Remove ads cell
-        if !UserDefaults.standard.bool(forKey: ProductKeys.removeAds.userDefaultsKey) {
-            titlesArray.append(Cells.adsRemove)
-        }
         
         /// Restore purchases cell
         titlesArray.append(Cells.restorePurchases)

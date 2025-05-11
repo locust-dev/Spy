@@ -139,9 +139,9 @@ extension SettingsViewController {
         cell.configureWith(title: cellType.rawValue)
         cell.type = cellType
         
-        if cellType == .adsRemove {
-            cell.detailTextLabel?.text = InAppManager.shared.getStringPrice()
-        }
+//        if cellType == .adsRemove {
+//            cell.detailTextLabel?.text = InAppManager.shared.getStringPrice()
+//        }
         
         return cell
     }
@@ -155,12 +155,12 @@ extension SettingsViewController {
         case .faq:
             performSegue(withIdentifier: "toFaq", sender: nil)
             
-        case .adsRemove:
-            InAppManager.shared.purchaseRemoveAds()
-            
-            if !isIndicatorDraw {
-                drawActivity()
-            }
+//        case .adsRemove:
+//            InAppManager.shared.purchaseRemoveAds()
+//            
+//            if !isIndicatorDraw {
+//                drawActivity()
+//            }
             
         case .restorePurchases:
             InAppManager.shared.restoreCompletedTransactions()

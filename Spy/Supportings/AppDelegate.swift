@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         RateManager.incrementCount()
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+//        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         InAppManager.shared.setupPurchases { success in
             if success {
@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        if !UserDefaults.standard.bool(forKey: ProductKeys.removeAds.userDefaultsKey) {
-            UserDefaults.standard.set(false, forKey: ProductKeys.removeAds.userDefaultsKey)
-        }
+//        if !UserDefaults.standard.bool(forKey: ProductKeys.removeAds.userDefaultsKey) {
+//            UserDefaults.standard.set(false, forKey: ProductKeys.removeAds.userDefaultsKey)
+//        }
         
         return true
     }
